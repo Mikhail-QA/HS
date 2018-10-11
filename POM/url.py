@@ -19,6 +19,9 @@ class UrlHomeSchool(object):
     def go_to_lesson_page_test(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21715/video/92701")
 
+    def go_to_lesson_page_tab_homework(self):
+            self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21715/homework/92702")
+
     def go_to_lesson_tab_test_iu(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/18402/training_iu/91896")
         assert (self.driver.find_element_by_css_selector("#step9 > button"))
