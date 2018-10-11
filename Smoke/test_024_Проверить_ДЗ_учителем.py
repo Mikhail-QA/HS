@@ -1,9 +1,14 @@
 import allure
 from POM.asserts import AssertForTest024
+from POM.popup_auth_and_reg import PopupSignIn
+from POM.schedule_page import SchedulePage
 from POM.setup import StartSchoolClassMethod
 from POM.school_page import FormSignIn
-from POM.users import Teacher
+from POM.tilda_page import TildaPage
+from POM.users import Teacher, Hs05
 from POM.teacher import StepTeacher
+from POM.url import UrlHomeSchool
+from POM.new_window import NewWindow
 
 
 @allure.feature("Проверка ДЗ учителем")
@@ -22,7 +27,7 @@ class LoginTeacherAndCheckHomeWorks(StartSchoolClassMethod):
         with allure.step("Нажать на кнопку Авторизоваться"):
             step_enter.click_button_login_teacher()
         with allure.step("Учителем ввести в поле поиска П hs02@yopmail.com"):
-            step_teacher.search_user()
+            step_teacher.search_user(user_name="dawczchjdsah7213913@Mail.ru")
         with allure.step("Учителем нажать на кнопку Показать"):
             step_teacher.click_button_show()
         with allure.step("Нажать на кнопку Проверить"):
@@ -35,3 +40,24 @@ class LoginTeacherAndCheckHomeWorks(StartSchoolClassMethod):
             step_teacher.click_button_save()
         with allure.step("После проставления оценки отображается оценка 4 и ФИО учителя"):
             step_assert.check_bal_and_teacher()
+
+    def test_check_ball_for_student(self):
+        driver = self.driver
+        step_tilda = TildaPage(driver)
+        step_enter = PopupSignIn(driver)
+        step_user = Hs05(driver)
+        step_url = UrlHomeSchool(driver)
+        step_window = NewWindow(driver)
+        # with allure.step("Открыть новую вкладку в браузере"):
+        #     step_window.open_new_window()
+        with allure.step("Перейти на страницу урока"):
+            step_url.go_to_tilda_landing()
+        with allure.step("На TILDA нажать на кнопку Войти"):
+            step_tilda.click_button_enter()
+        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
+            step_user.enter_email(user_name="hs02@yopmail.com")
+            step_user.enter_password(password="123456")
+        with allure.step("Нажать на кнопку Авторизоваться"):
+            step_enter.click_button_login()
+        with allure.step("Перейти на страницу урока"):
+            step_url.go_to_lesson_page_tab_homework()
