@@ -5,9 +5,9 @@ class StepTeacher(object):
     def __init__(self, driver):
         self.driver = driver
 
-    def search_user(self):
+    def search_user(self, user_name="hs02@yopmail.com"):
         self.driver.find_element_by_css_selector("input.form-control:nth-child(2)").send_keys(
-            "hs02@yopmail.com")
+            user_name)
 
     def click_button_show(self):
         self.driver.find_element_by_css_selector(
