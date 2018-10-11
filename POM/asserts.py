@@ -632,6 +632,7 @@ class AssertForTest024(AssertForTest001):
         super(AssertForTest024, self).__init__(driver)
 
     def check_bal_and_teacher(self):
-        self.assertEquals("4 балла", self.driver.find_element_by_css_selector(
+        self.assertIn("4 балла", self.driver.find_element_by_css_selector(
             "div.text-center:nth-child(7)").text)
+        time.sleep(1)
 
