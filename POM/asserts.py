@@ -571,7 +571,7 @@ class AssertForTest017(AssertForTest001):
 
     def check_email_for_user(self):
         self.assertEqual(
-            u"hs06@yopmail.com", self.driver.find_element_by_css_selector("label.control-label.ng-binding").text)
+            u"hs05@yopmail.com", self.driver.find_element_by_css_selector("label.control-label.ng-binding").text)
 
 
 class AssertForTest019(AssertForTest001):
