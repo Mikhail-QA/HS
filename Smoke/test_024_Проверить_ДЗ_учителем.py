@@ -1,14 +1,12 @@
 import allure
 from POM.asserts import AssertForTest024
 from POM.popup_auth_and_reg import PopupSignIn
-from POM.schedule_page import SchedulePage
 from POM.setup import StartSchoolClassMethod
 from POM.school_page import FormSignIn
 from POM.tilda_page import TildaPage
 from POM.users import Teacher, Hs05
 from POM.teacher import StepTeacher
 from POM.url import UrlHomeSchool
-from POM.new_window import NewWindow
 
 
 @allure.feature("Проверка ДЗ учителем")
@@ -47,9 +45,7 @@ class LoginTeacherAndCheckHomeWorks(StartSchoolClassMethod):
         step_enter = PopupSignIn(driver)
         step_user = Hs05(driver)
         step_url = UrlHomeSchool(driver)
-        step_window = NewWindow(driver)
-        # with allure.step("Открыть новую вкладку в браузере"):
-        #     step_window.open_new_window()
+
         with allure.step("Перейти на страницу урока"):
             step_url.go_to_tilda_landing()
         with allure.step("На TILDA нажать на кнопку Войти"):
