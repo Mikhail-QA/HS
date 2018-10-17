@@ -32,7 +32,7 @@ class SchedulePage(object):
         self.driver.find_element_by_css_selector("button.btn.btn-success.pull-right").click()
         assert (self.driver.find_element_by_css_selector(
             "body > div.modal.fade.ng-isolate-scope.iu-fade.modal-review.in > div > div > div:nth-child(4) > span"))
-        time.sleep(1)
+        time.sleep(2)
 
     def click_button_close_popup_feedback(self):
         self.driver.find_element_by_css_selector(
