@@ -36,7 +36,7 @@ class LoginAndExtendCourseSchool(StartTildaClassMethod):
         with allure.step("Нажать на кнопку Продлить обучение"):
             step_profile.click_button_extend_access()
         with allure.step("Включить ПН"):
-            step_buy.selected_service_personal_mentor()
+            step_buy.extend_service_personal_mentor()
         with allure.step(
                 "На странице продления отображается текст: Класс: 7 класс, Формат обучения: С учителем, Продление обучения на: 3 месяца, Сумма к оплате: 13 800 руб."):
             step_assert.check_text_in_tab_total()
