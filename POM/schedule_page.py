@@ -17,6 +17,7 @@ class SchedulePage(object):
     def click_button_list_all_activities(self):
         self.driver.find_element_by_link_text("Список всех занятий").click()
         assert (self.driver.find_element_by_css_selector("td.schedule-list_item_date.ng-binding"))
+        time.sleep(5)
 
     def click_button_chosen_subject(self):
         self.driver.find_element_by_css_selector("a.subject-switch-link").click()
@@ -47,7 +48,7 @@ class SchedulePage(object):
         assert (self.driver.find_element_by_css_selector("td.journal_table_td.ng-scope"))
 
     def go_to_feed(self):
-        self.driver.find_element_by_css_selector("a.fee2d.ng-scope").click()
+        self.driver.find_element_by_css_selector("a.feed.ng-scope").click()
         assert (self.driver.find_element_by_css_selector("div.feed_header_text"))
         time.sleep(1)
 
