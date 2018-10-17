@@ -49,8 +49,8 @@ class SchedulePage(object):
 
     def go_to_feed(self):
         self.driver.find_element_by_css_selector("a.feed.ng-scope").click()
-        assert (self.driver.find_element_by_css_selector("div.feed_header_text"))
-        time.sleep(1)
+        assert (u"События не найдены", self.driver.find_element_by_css_selector("div.empty-block.ng-scope").text)
+        # time.sleep(1)
 
     def click_button_my_profile(self):
         self.driver.find_element_by_css_selector("#step7 > a").click()
