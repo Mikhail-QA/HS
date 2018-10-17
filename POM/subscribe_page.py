@@ -45,6 +45,10 @@ class PageSubscribe(object):
         self.driver.find_element_by_css_selector("label.mentor__checkbox-label").click()
         time.sleep(1)
 
+    def extend_service_personal_mentor(self):
+        self.driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div[5]/div[1]/div[1]/label").click()
+        time.sleep(1)
+
     def click_off_button_auto_payments_in_curse(self):
         self.driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[3]/div[3]/label").click()
