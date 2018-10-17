@@ -62,7 +62,7 @@ class LessonPage(object):
         time.sleep(0.5)
 
     def click_button_prew_in_tour(self):
-        self.driver.find_element_by_css_selector("a.introjs-prevbutton ").click()
+        self.driver.find_element_by_css_selector("a.introjs-prevbutton").click()
         time.sleep(0.5)
 
     def click_button_close_in_tour(self):
