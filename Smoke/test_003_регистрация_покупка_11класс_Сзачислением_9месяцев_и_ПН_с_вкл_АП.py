@@ -29,8 +29,8 @@ class CreateAccountAndBuyLearningNineMonth(StartSchoolClassMethod):
         with allure.step("На странице /school в форме нажать на кнопку Зарегистрироваться"):
             step_school.go_to_popup_registration()
         with allure.step("В поле email и password ввести hs03@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs03@yopmail.com")
-            step_user.enter_password(password="123456")
+            step_user.reg_email(user_name="hs03@yopmail.com")
+            step_user.reg_password(password="123456")
         with allure.step("Нажать на кнопку Зарегистрироваться"):
             step_reg.click_sign_up()
         with allure.step("Перейти в Личный кабинет"):
