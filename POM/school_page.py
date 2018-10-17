@@ -23,6 +23,7 @@ class SchoolPage(object):
 
     def go_to_popup_registration(self):
         self.driver.find_element_by_class_name("page-login-footer__text").click()
+        assert (self.driver.find_element_by_css_selector("button.form-button"))
 
     def go_to_popup_authorization(self):
         self.driver.find_element_by_link_text("Авторизуйтесь").click()
