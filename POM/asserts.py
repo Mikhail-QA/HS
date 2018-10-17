@@ -464,7 +464,22 @@ class AssertForTest012(AssertForTest001):
         super(AssertForTest012, self).__init__(driver)
 
     def check_text_in_page_chosen_subject(self):
-        self.assertEqual(u"Домашняя школа, 7 класс:"
+        self.assertEqual(u"Домашняя школа, 11 класс:"
+                         u"\n Алгебра"
+                         u"\n Геометрия"
+                         u"\n Информатика"
+                         u"\n Физика"
+                         u"\n Химия"
+                         u"\n Биология"
+                         u"\n Русский язык"
+                         u"\n Литература"
+                         u"\n Английский язык"
+                         u"\n История"
+                         u"\n Обществознание"
+                         u"\n Физкультура"
+                         u"\n ОБЖ"
+                         u"\n Астрономия"
+                         u"\nДомашняя школа, 7 класс:"
                          u"\n Алгебра. Стандартный курс"
                          u"\n Геометрия. Стандартный курс"
                          u"\n Информатика"
@@ -480,7 +495,9 @@ class AssertForTest012(AssertForTest001):
                          u"\n История"
                          u"\n Обществознание"
                          u"\n Физкультура"
-                         u"\n Технология",
+                         u"\n Технология"
+                         u"\nРепетитор ЕГЭ:"
+                         u"\n Математика Профильный",
                          self.driver.find_element_by_css_selector("div.block-subject-elem-container").text)
 
 
@@ -516,14 +533,16 @@ class AssertForTest014(AssertForTest001):
 
     def check_button_go_to_schedule(self):
         self.assertEqual(u"Перейти к расписанию",
-                         self.driver.find_element_by_css_selector("button.btn.btn-primary.pull-right.ng-scope").text)
+                         self.driver.find_element_by_css_selector(
+                             "button.btn.btn-primary.pull-right.ng-scope").text)
         time.sleep(0.5)
         URL = "https://web-dev01.interneturok.ru/school/lesson/21715/homework/92702"
         assert self.driver.current_url == URL
 
     def check_message_for_ask_questions(self):
         assert (self.driver.find_element_by_css_selector("div.chat-message-content.ng-scope"))
-        self.assertEqual(u"ومنظومة الظواهر الملحوظة", self.driver.find_element_by_css_selector("p.msg.ng-binding").text)
+        self.assertEqual(u"ومنظومة الظواهر الملحوظة",
+                         self.driver.find_element_by_css_selector("p.msg.ng-binding").text)
 
     def check_text_successfully_download_az(self):
         self.assertEqual(u"Ваше решение успешно отправлено и ожидает проверки учителем.",
@@ -635,4 +654,3 @@ class AssertForTest024(AssertForTest001):
         self.assertIn("4 балла", self.driver.find_element_by_css_selector(
             "div.text-center:nth-child(7)").text)
         time.sleep(1)
-
