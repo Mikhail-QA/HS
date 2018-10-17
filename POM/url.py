@@ -7,7 +7,8 @@ class UrlHomeSchool(object):
 
     def go_to_my_profile(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/profile/my_profile")
-        assert (self.driver.find_element_by_css_selector("button.btn.btn-primary.btn-centered"))
+        assert (u"E-mail:", self.driver.find_element_by_xpath(
+            "//*[@id='subjects-page-wrapper']/div/div[2]/form/div[1]/div/div[1]/user-personal-info/div[7]/label").text)
 
     def go_to_tilda_landing(self):
         self.driver.get("http://iu:123456@project752209.tilda.ws/")
