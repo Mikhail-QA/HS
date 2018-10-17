@@ -25,7 +25,7 @@ class LoginTeacherAndCheckHomeWorks(StartSchoolClassMethod):
         with allure.step("Нажать на кнопку Авторизоваться"):
             step_enter.click_button_login_teacher()
         with allure.step("Учителем ввести в поле поиска П hs02@yopmail.com"):
-            step_teacher.search_user(user_name="dawczchjdsah7213913@Mail.ru")
+            step_teacher.search_user(user_name="hs02@yopmail.com")
         with allure.step("Учителем нажать на кнопку Показать"):
             step_teacher.click_button_show()
         with allure.step("Нажать на кнопку Проверить"):
