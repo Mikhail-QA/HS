@@ -44,6 +44,8 @@ class SchedulePage(object):
         time.sleep(2)
 
     def go_to_academic_journal(self):
+        self.driver.find_element_by_css_selector("a.dropdown-toggle.without-animate").click()
+        time.sleep(0.5)
         self.driver.find_element_by_css_selector("#step6 > ul > li:nth-child(2)").click()
         assert (self.driver.find_element_by_css_selector("td.journal_table_td.ng-scope"))
 
