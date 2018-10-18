@@ -8,27 +8,27 @@ class Test(object):
     def start_test(self):
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
-        time.sleep(2)
+        time.sleep(3)
 
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
-        time.sleep(2)
+        time.sleep(3)
 
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
-        time.sleep(2)
+        time.sleep(3)
 
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
-        time.sleep(2)
+        time.sleep(3)
 
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
-        time.sleep(2)
+        time.sleep(3)
 
     def click_button_finish(self):
         self.driver.find_element_by_link_text("Завершить").click()
-        time.sleep(0.5)
+        time.sleep(1)
 
 
 class Exercise(object):
@@ -40,7 +40,7 @@ class Exercise(object):
         answer = 1
         please = False
         for n in range(1, 7):
-            time.sleep(3)
+            time.sleep(4)
             major_text = self.driver.find_element_by_css_selector("small.b-progress-test__desc").text
             cont_list = major_text.split(" ")
             # print(">>> ANSW COUNT", major_text)
@@ -59,4 +59,4 @@ class Exercise(object):
 
     def click_button_finish(self):
         self.driver.find_element_by_link_text("Завершить").click()
-        time.sleep(0.5)
+        time.sleep(1)
