@@ -51,17 +51,17 @@ class LessonPage(object):
 
     def click_button_next_in_tour(self):
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
-        time.sleep(0.5)
+        time.sleep(1)
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
-        time.sleep(0.5)
+        time.sleep(1)
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
-        time.sleep(0.5)
+        time.sleep(1)
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
-        time.sleep(0.5)
+        time.sleep(1)
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
-        time.sleep(0.5)
+        time.sleep(1)
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
-        time.sleep(0.5)
+        time.sleep(1)
 
     def click_button_prew_in_tour(self):
         self.driver.find_element_by_css_selector("a.introjs-prevbutton").click()
