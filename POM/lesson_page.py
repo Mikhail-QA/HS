@@ -36,6 +36,8 @@ class LessonPage(object):
             u"D:\photo_2018-09-18_13-28-24.jpg")
         self.driver.find_element_by_id("upload-homework").clear()
         self.driver.find_element_by_id("upload-homework").send_keys(Imagepath)
+        assert (u"photo_2018-09-18_13-28-24.jpg",
+                self.driver.find_element_by_css_selector("div.homework-img-name.ng-binding").text)
 
     def click_submit_a_job(self):
         self.driver.find_element_by_xpath(
