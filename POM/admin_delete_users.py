@@ -8,6 +8,7 @@ class AdminDeleteUser(object):
     def go_to_admin(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/admin/users")
         assert (self.driver.find_element_by_css_selector("button.btn:nth-child(3)"))
+        time.sleep(3)
 
     def user_1(self, pupil_1):
         self.driver.find_element_by_css_selector("input.form-control.ng-pristine.ng-untouched.ng-valid").clear()
