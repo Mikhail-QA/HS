@@ -10,8 +10,9 @@ class Refresh(unittest.TestCase):
         self.counter = 56
 
     def refresh(self):
-        time.sleep(8)
+        time.sleep(4)
         self.driver.refresh()
+        time.sleep(1)
 
 
 
