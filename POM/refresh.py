@@ -12,7 +12,7 @@ class Refresh(unittest.TestCase):
     def refresh(self):
         time.sleep(4)
         self.driver.refresh()
-        time.sleep(1)
+        time.sleep(4)
 
 
 
