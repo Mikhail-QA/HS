@@ -37,5 +37,5 @@ class PassTrainer(StartTildaClassMethod):
             ask_trainer.test()
         with allure.step("В финальном поп-апе нажать на кнопку Завершить"):
             ask_trainer.click_button_finish()
-        with allure.step("После пройденного Теста название кнопки Пройти поменялась на Повторить"):
+        with allure.step("После пройденного Тренажёра название кнопки Пройти поменялась на Повторить"):
             assert_step.check_button_finish_trainer()
