@@ -15,8 +15,8 @@ class AdminDeleteUser(object):
         self.driver.find_element_by_css_selector("input.form-control.ng-pristine.ng-untouched.ng-valid").send_keys(
             pupil_1)
         self.driver.find_element_by_css_selector(".input-group-btn > button:nth-child(1)").click()
-        assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
         time.sleep(3)
+        assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
         self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-remove").click()
         time.sleep(1)
         self.driver.find_element_by_css_selector(".modal-footer > button:nth-child(1)").click()
