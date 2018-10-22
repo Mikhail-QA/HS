@@ -59,4 +59,4 @@ class Exercise(object):
 
     def click_button_finish(self):
         self.driver.find_element_by_link_text("Завершить").click()
-        time.sleep(1)
+        time.sleep(2)
