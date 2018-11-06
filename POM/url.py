@@ -21,6 +21,9 @@ class UrlHomeSchool(object):
 
     def go_to_lesson_page_tab_homework(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21715/homework/92702")
+        assert (self.driver.find_element_by_css_selector(
+            "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div > div > div:nth-child(2) > div"))
+        time.sleep(6)
 
     def go_to_lesson_tab_test_iu(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/18402/training_iu/91896")
