@@ -654,3 +654,7 @@ class AssertForTest024(AssertForTest001):
         self.assertIn("4 балла", self.driver.find_element_by_css_selector(
             "div.text-center:nth-child(7)").text)
         time.sleep(1)
+
+    def check_bal_in_homweork_for_lesson_page(self):
+        self.assertIn("Итоговая оценка: 4 / Хорошо", self.driver.find_element_by_css_selector(
+            "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div > div > div:nth-child(2) > div").text)
