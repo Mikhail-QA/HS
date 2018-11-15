@@ -35,6 +35,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
 
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
+            step_refresh.refresh()
         with allure.step("Пройти весь тур кликнув Далее 7 раз"):
             step_tour.click_button_next_in_tour()
         with allure.step("В туре нажать на кнопку Назад"):
@@ -65,7 +66,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         go_lesson_page = UrlHomeSchool(driver)
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Перейти на страницу урока"):
+        with allure.step("Перейти на страницу урока Информатика, 7 класс , неделя 12 (12 ноября - 17 ноября)тест"):
             go_lesson_page.go_to_lesson_page_test()
         with allure.step("Нажать на кнопку Показать конспект"):
             step_lesson_page.click_button_show_summary()
@@ -83,7 +84,20 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         with allure.step("После появляется сообщение от П с текстом ومنظومة الظواهر الملحوظة"):
             step_assert.check_message_for_ask_questions()
 
-    def test_005_click_button_next_step(self):
+    def test_005_in_tab_ask_a_question_teacher_download_file(self):
+        driver = self.driver
+        step_lesson_page = LessonPage(driver)
+        step_assert = AssertForTest014(driver)
+        with allure.step("Нажать на кнопку Загрузить файл"):
+            step_lesson_page.click_button_download_file_in_ask_question()
+        with allure.step("Загрузить картинку"):
+            step_lesson_page.attach_img_in_ask_question()
+        with allure.step("Нажать на кнопку Отправить"):
+            step_lesson_page.click_button_send()
+        with allure.step("После появляется сообщение от П с название файла photo_2018-09-18_13-28-24.jpg "):
+            step_assert.check_file_for_ask_question()
+
+    def test_006_click_button_next_step(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
@@ -95,14 +109,14 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
                 "кнопка поменяла название на Перейти к расписанию и поменлся URL"):
             step_assert.check_button_go_to_schedule()
 
-    def test_006_to_download_dz(self):
+    def test_007_to_download_dz(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Нажать на кнопку Следующий шаг"):
+        with allure.step("Нажать на кнопку Загрузить решение"):
             step_lesson_page.click_download_dz()
         with allure.step("Загрузить картинку"):
-            step_lesson_page.attach_img()
+            step_lesson_page.attach_img_in_upload_homework()
         with allure.step("Нажать на кнопку Отправить решение"):
             step_lesson_page.click_submit_a_job()
         with allure.step("В попапе нажать на кнопку Да"):
@@ -111,7 +125,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
                 "После отправки ДЗ появилось сообщение Ваше решение успешно отправлено и ожидает проверки учителем."):
             step_assert.check_text_successfully_download_az()
 
-    def test_007_click_button_go_to_schedule(self):
+    def test_008_click_button_go_to_schedule(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
