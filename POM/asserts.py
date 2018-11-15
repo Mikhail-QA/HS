@@ -536,13 +536,17 @@ class AssertForTest014(AssertForTest001):
                          self.driver.find_element_by_css_selector(
                              "button.btn.btn-primary.pull-right.ng-scope").text)
         time.sleep(0.5)
-        URL = "https://web-dev01.interneturok.ru/school/lesson/21715/homework/92702"
+        URL = "https://web-dev01.interneturok.ru/school/lesson/21806/homework/94579"
         assert self.driver.current_url == URL
 
     def check_message_for_ask_questions(self):
         assert (self.driver.find_element_by_css_selector("div.chat-message-content.ng-scope"))
         self.assertEqual(u"ومنظومة الظواهر الملحوظة",
                          self.driver.find_element_by_css_selector("p.msg.ng-binding").text)
+
+    def check_file_for_ask_question(self):
+        self.assertEqual(u"photo_2018-09-18_13-28-24.jpg",
+                         self.driver.find_element_by_css_selector("div.msg-img.ng-scope").text)
 
     def check_text_successfully_download_az(self):
         self.assertEqual(u"Ваше решение успешно отправлено и ожидает проверки учителем.",
@@ -658,3 +662,25 @@ class AssertForTest024(AssertForTest001):
     def check_bal_in_homweork_for_lesson_page(self):
         self.assertIn("Итоговая оценка: 4 / Хорошо", self.driver.find_element_by_css_selector(
             "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div > div > div:nth-child(2) > div").text)
+
+
+class AssertForTest025(AssertForTest001):
+    def __init__(self, driver):
+        super(AssertForTest025, self).__init__(driver)
+
+    def check_step_one(self):
+        self.assertEqual("Доступ к материалам ограничен", self.driver.find_element_by_css_selector(
+            "#lesson-content > div > div > div > div > div > div > div > div > div:nth-child(2) > div.b-empty.bl.ng-isolate-scope > div > div > div:nth-child(2)").text)
+
+        self.assertIn(
+            "Для получения доступа к заданиями со множеством вариантов условий,\nавтоматической проверкой и разными уровнями сложности\nоплатите обучение в форматах «С учителем» или «С зачислением»\nПодробнее о форматах обучения",
+            self.driver.find_element_by_css_selector(
+                "#lesson-content > div > div > div > div > div > div > div > div > div:nth-child(2) > div.b-empty.bl.ng-isolate-scope > div > div > div:nth-child(3)").text)
+
+        self.assertEqual("Оплатить обучение", self.driver.find_element_by_css_selector("button.btn.btn-success").text)
+
+    def check_step_two(self):
+        self.assertIn(
+            "В формате обучения «С учителем» вы сможете загрузить свое решение.\nУчитель проверит работу, даст развернутый комментарий и выставит оценку\nПодробнее",
+            self.driver.find_element_by_css_selector(
+                "#lesson-content > div > div > div > div > div > div > div > div > div.fading.ng-scope.in > div.tab-footer.tab-footer__homework.ng-scope").text)
