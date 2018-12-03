@@ -475,10 +475,12 @@ class AssertForTest012(AssertForTest001):
                          u"\n Литература"
                          u"\n Английский язык"
                          u"\n История"
+                         u"\n Вводный урок"
                          u"\n Обществознание"
                          u"\n Физкультура"
                          u"\n ОБЖ"
                          u"\n Астрономия"
+                         u"\n Профориентации от SuperJob"
                          u"\nДомашняя школа, 7 класс:"
                          u"\n Алгебра. Стандартный курс"
                          u"\n Геометрия. Стандартный курс"
@@ -496,6 +498,7 @@ class AssertForTest012(AssertForTest001):
                          u"\n Обществознание"
                          u"\n Физкультура"
                          u"\n Технология"
+                         u"\n Профориентации от SuperJob"
                          u"\nРепетитор ЕГЭ:"
                          u"\n Математика Профильный",
                          self.driver.find_element_by_css_selector("div.block-subject-elem-container").text)
@@ -565,7 +568,7 @@ class AssertForTest015(AssertForTest001):
         super(AssertForTest015, self).__init__(driver)
 
     def check_text_all_page(self):
-        self.assertEqual(u"I четверть", self.driver.find_element_by_css_selector(
+        self.assertEqual(u"II четверть", self.driver.find_element_by_css_selector(
             "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div.col-sm-12.ng-scope > div > div > div > span").text)
 
     def check_url(self):
