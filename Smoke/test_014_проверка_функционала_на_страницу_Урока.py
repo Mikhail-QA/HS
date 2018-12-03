@@ -1,4 +1,6 @@
 import allure
+import time
+
 from POM.setup import StartTildaClassMethod
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
@@ -35,6 +37,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
 
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
+            time.sleep(10)
             step_refresh.refresh()
         with allure.step("Пройти весь тур кликнув Далее 7 раз"):
             step_tour.click_button_next_in_tour()
