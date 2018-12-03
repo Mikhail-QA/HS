@@ -1,4 +1,5 @@
 import allure
+import time
 from POM.url import UrlHomeSchool
 from POM.setup import StartSchoolClassMethod
 from POM.school_page import SchoolPage
@@ -62,6 +63,7 @@ class CreateAccountAndBuyLearningOneMonth(StartSchoolClassMethod):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
+            time.sleep(40)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):
