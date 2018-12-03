@@ -23,6 +23,7 @@ class MyProfile(object):
         self.driver.find_element_by_css_selector(
             "#subjects-page-wrapper > div > div.col-sm-3.col-md-3 > div > div:nth-child(3) > div > a").click()
         assert (u"Домашняя школа", self.driver.find_element_by_css_selector("h2.courses-prepare__payment-title").text)
+        time.sleep(2)
 
     def click_button_pay_other_classes(self):
         self.driver.find_element_by_css_selector(
