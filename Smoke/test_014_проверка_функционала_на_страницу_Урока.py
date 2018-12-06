@@ -12,6 +12,7 @@ from POM.url import UrlHomeSchool
 from POM.refresh import Refresh
 
 
+@allure.issue("EDU-4327")
 @allure.feature("Страница урока/Страница расписания")
 @allure.story(
     "Проверить тур на странице расписания, перейти на страницу урока, проверить фкнуционал страницы урока")
@@ -37,7 +38,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
 
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
-            time.sleep(10)
+            time.sleep(20)
             step_refresh.refresh()
         with allure.step("Пройти весь тур кликнув Далее 7 раз"):
             step_tour.click_button_next_in_tour()
