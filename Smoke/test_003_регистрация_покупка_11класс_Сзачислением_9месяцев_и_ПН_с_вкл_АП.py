@@ -66,11 +66,8 @@ class CreateAccountAndBuyLearningNineMonth(StartSchoolClassMethod):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(40)
+            time.sleep(20)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
-
-            # element = driver.find_element_by_css_selector("#subjects-page-wrapper > div > div.col-sm-3.col-md-3 > div > div.profile-courses > div > div.profile-courses_item_list > div > div.profile-course_body > div.profile-course_curator.ng-scope")
-            # print(element.text)
         with allure.step("В ЛК проверить соответствия купленному курсу"):
             step_assert.check_text_in_widget_my_school()
