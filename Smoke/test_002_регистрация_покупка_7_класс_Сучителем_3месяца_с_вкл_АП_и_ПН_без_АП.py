@@ -64,7 +64,7 @@ class CreateAccountAndBuyLearningThreeMonth(StartSchoolClassMethod):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(40)
+            time.sleep(10)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):
