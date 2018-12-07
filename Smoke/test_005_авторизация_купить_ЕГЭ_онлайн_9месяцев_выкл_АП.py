@@ -50,7 +50,7 @@ class LoginBuyEgeCourseNineMonth(StartTildaClassMethod):
         with allure.step("На странице ЯК ввести данные карты"):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
-            time.sleep(40)
+            time.sleep(20)
             step_go_to_profile.go_to_my_profile()
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
