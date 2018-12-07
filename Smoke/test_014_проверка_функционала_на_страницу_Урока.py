@@ -35,11 +35,10 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         driver = self.driver
         step_tour = SchedulePage(driver)
         step_refresh = Refresh(driver)
-
+        time.sleep(10)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
-            time.sleep(20)
-            step_refresh.refresh()
+        time.sleep(15)
         with allure.step("Пройти весь тур кликнув Далее 7 раз"):
             step_tour.click_button_next_in_tour()
         with allure.step("В туре нажать на кнопку Назад"):
@@ -70,7 +69,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         go_lesson_page = UrlHomeSchool(driver)
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Перейти на страницу урока Информатика, 7 класс , неделя 12 (12 ноября - 17 ноября)тест"):
+        with allure.step("Перейти на страницу урока Информатика, 7 класс , неделя 13 (19 ноября - 24 ноября)тест"):
             go_lesson_page.go_to_lesson_page_test()
         with allure.step("Нажать на кнопку Показать конспект"):
             step_lesson_page.click_button_show_summary()
@@ -110,7 +109,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
             step_lesson_page.click_button_next_step()
         with allure.step(
                 "После нажатия на кнопку Следующий шаг П перешел во вкладку ДЗ"
-                "кнопка поменяла название на Перейти к расписанию и поменлся URL"):
+                "кнопка поменяла название на Перейти к расписанию и поменялся URL"):
             step_assert.check_button_go_to_schedule()
 
     def test_007_to_download_dz(self):
