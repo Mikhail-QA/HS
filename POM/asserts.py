@@ -23,6 +23,7 @@ class AssertForTest001(unittest.TestCase):
 
         self.assertEqual(u"Сумма к оплате: 800 руб.", self.driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[2]").text)
+        time.sleep(3)
 
     def check_text_in_demo_kassa(self):
         self.assertIn("800", self.driver.find_element_by_class_name("price__whole-amount").text)
@@ -105,6 +106,7 @@ class AssertForTest002(AssertForTest001):
 
         self.assertEqual(u"Сумма к оплате: 13 800 руб.", self.driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[2]").text)
+        time.sleep(3)
 
     def check_text_in_demo_kassa(self):
         self.assertIn("13 800", self.driver.find_element_by_class_name("price__whole-amount").text)
@@ -480,7 +482,7 @@ class AssertForTest012(AssertForTest001):
                          u"\n Физкультура"
                          u"\n ОБЖ"
                          u"\n Астрономия"
-                         u"\n Профориентации от SuperJob"
+                         u"\n Профориентация от SuperJob"
                          u"\nДомашняя школа, 7 класс:"
                          u"\n Алгебра. Стандартный курс"
                          u"\n Геометрия. Стандартный курс"
@@ -498,7 +500,7 @@ class AssertForTest012(AssertForTest001):
                          u"\n Обществознание"
                          u"\n Физкультура"
                          u"\n Технология"
-                         u"\n Профориентации от SuperJob"
+                         u"\n Профориентация от SuperJob"
                          u"\nРепетитор ЕГЭ:"
                          u"\n Математика Профильный",
                          self.driver.find_element_by_css_selector("div.block-subject-elem-container").text)
@@ -539,7 +541,7 @@ class AssertForTest014(AssertForTest001):
                          self.driver.find_element_by_css_selector(
                              "button.btn.btn-primary.pull-right.ng-scope").text)
         time.sleep(0.5)
-        URL = "https://web-dev01.interneturok.ru/school/lesson/21806/homework/94579"
+        URL = "https://web-dev01.interneturok.ru/school/lesson/21829/homework/94973"
         assert self.driver.current_url == URL
 
     def check_message_for_ask_questions(self):
