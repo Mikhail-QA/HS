@@ -81,21 +81,23 @@ class PageSubscribe(object):
 
     def click_button_pay_school(self):
         self.driver.find_element_by_class_name("button__w100").click()
-        time.sleep(61)
+        # time.sleep(61)
 
     def click_button_pay_ege_independent(self):
         self.driver.find_element_by_css_selector("button.btn.btn-primary.ng-binding").click()
-        time.sleep(40)
+        # time.sleep(40)
 
     def click_button_pay_ege_online(self):
         self.driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[2]/div/div/div[1]/tarif-table-ege/div/div/div/table/tfoot/tr[2]/td[3]/button").click()
-        time.sleep(40)
+        # time.sleep(40)
 
     def enter_data_card(self):
         self.driver.find_element_by_id("cardNumber").send_keys("4444444444444448")
         self.driver.find_element_by_name("skr_month").send_keys("12")
         self.driver.find_element_by_name("skr_year").send_keys("19")
         self.driver.find_element_by_name("skr_cardCvc").send_keys("000")
+        time.sleep(3)
         self.driver.find_element_by_class_name("payment-contract__pay-button").click()
         assert (self.driver.find_element_by_css_selector("h1.title.title_last_yes"))
+        time.sleep(3)
