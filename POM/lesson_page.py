@@ -9,7 +9,7 @@ class LessonPage(object):
 
     def click_button_show_summary(self):
         self.driver.find_element_by_link_text("Показать конспект").click()
-        time.sleep(0.5)
+        time.sleep(1)
 
     def click_button_next_step(self):
         self.driver.find_element_by_css_selector("#step9").click()
