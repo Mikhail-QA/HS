@@ -177,7 +177,7 @@ class AssertForTest003(AssertForTest001):
         super(AssertForTest003, self).__init__(driver)
 
     def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 11", self.driver.find_element_by_xpath(
+        self.assertEqual(u"Класс: 10", self.driver.find_element_by_xpath(
             "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[1]").text)
 
         self.assertEqual(u"Формат обучения: «С зачислением»", self.driver.find_element_by_xpath(
@@ -200,7 +200,7 @@ class AssertForTest003(AssertForTest001):
 
     def check_text_in_widget_my_school(self):
         self.assertEqual(
-            u"11 класс",
+            u"10 класс",
             self.driver.find_element_by_xpath(
                 "//*[@id='subjects-page-wrapper']/div/div[1]/div/div[1]/div/div[2]/div/div[1]").text)
         self.assertEqual(
