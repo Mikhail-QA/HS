@@ -4,17 +4,24 @@ class Hs01(object):
 
     def reg_email(self, user_name="hs01@yopmail.com"):
         self.driver.find_element_by_css_selector(
-            "#page-login > div > iu-registration > div > form > div:nth-child(1) > input").send_keys(user_name)
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(1) > input").send_keys(
+            user_name)
 
     def reg_password(self, password="123456"):
         self.driver.find_element_by_css_selector(
-            "#page-login > div > iu-registration > div > form > div:nth-child(2) > input").send_keys(password)
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(2) > input").send_keys(
+            password)
 
     def enter_email(self, user_name="hs01@yopmail.com"):
         self.driver.find_element_by_name("user[email]").send_keys(user_name)
 
     def enter_password(self, password="123456"):
         self.driver.find_element_by_name("user[password]").send_keys(password)
+
+    def reg_mobile(self, number="+71234567"):
+        self.driver.find_element_by_css_selector(
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(3) > input").send_keys(
+            number)
 
 
 class Hs02(object):
@@ -23,17 +30,24 @@ class Hs02(object):
 
     def reg_email(self, user_name="hs02@yopmail.com"):
         self.driver.find_element_by_css_selector(
-            "#page-login > div > iu-registration > div > form > div:nth-child(1) > input").send_keys(user_name)
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(1) > input").send_keys(
+            user_name)
 
     def reg_password(self, password="123456"):
         self.driver.find_element_by_css_selector(
-            "#page-login > div > iu-registration > div > form > div:nth-child(2) > input").send_keys(password)
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(2) > input").send_keys(
+            password)
 
     def enter_email(self, user_name="hs02@yopmail.com"):
         self.driver.find_element_by_name("user[email]").send_keys(user_name)
 
     def enter_password(self, password="123456"):
         self.driver.find_element_by_name("user[password]").send_keys(password)
+
+    def reg_mobile(self, number="+712345678"):
+        self.driver.find_element_by_css_selector(
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(3) > input").send_keys(
+            number)
 
 
 class Hs03(object):
@@ -42,17 +56,22 @@ class Hs03(object):
 
     def reg_email(self, user_name="hs03@yopmail.com"):
         self.driver.find_element_by_css_selector(
-            "#page-login > div > iu-registration > div > form > div:nth-child(1) > input").send_keys(user_name)
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(1) > input").send_keys(user_name)
 
     def reg_password(self, password="123456"):
         self.driver.find_element_by_css_selector(
-            "#page-login > div > iu-registration > div > form > div:nth-child(2) > input").send_keys(password)
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(2) > input").send_keys(password)
 
     def enter_email(self, user_name="hs03@yopmail.com"):
         self.driver.find_element_by_name("user[email]").send_keys(user_name)
 
     def enter_password(self, password="123456"):
         self.driver.find_element_by_name("user[password]").send_keys(password)
+
+    def reg_mobile(self, number="+7123456789"):
+        self.driver.find_element_by_css_selector(
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(3) > input").send_keys(
+            number)
 
 
 class Hs04(object):
