@@ -64,7 +64,7 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
         with allure.step("Включить АП в ПН"):
             step_buy.enable_button_auto_payments_in_personal_mentor()
         with allure.step(
-                "В блоке № 5 отображается текст Класс: 11, Формат обучения: «С Зачислением», «Персональный наставник»: включена, Сумма к оплате: 57 600 руб."):
+                "В блоке № 5 отображается текст Класс: 10, Формат обучения: «С Зачислением», «Персональный наставник»: включена, Сумма к оплате: 57 600 руб."):
             step_assert.check_text_in_tab_5()
         with allure.step("Нажать на кнопку Оплатить обучение"):
             step_buy.click_button_pay_school()
