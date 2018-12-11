@@ -120,6 +120,11 @@ class Hs05(object):
     def enter_password(self, password="123456"):
         self.driver.find_element_by_name("user[password]").send_keys(password)
 
+    def reg_mobile(self, number="+71234567890"):
+        self.driver.find_element_by_css_selector(
+            "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > div:nth-child(3) > input").send_keys(
+            number)
+
 
 class Hs06(object):
     def __init__(self, driver):
