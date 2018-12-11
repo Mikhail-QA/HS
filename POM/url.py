@@ -21,7 +21,7 @@ class UrlHomeSchool(object):
         assert (self.driver.find_element_by_css_selector("#step9"))
 
     def go_to_lesson_page_1_klass(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21519/homework/90734")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21485/homework/90516")
 
     def go_to_lesson_page_tab_homework(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21829/homework/94973")
