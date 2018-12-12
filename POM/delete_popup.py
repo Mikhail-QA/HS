@@ -1,3 +1,7 @@
+import time
+from selenium.webdriver.common.keys import Keys
+
+
 class DeleteModalPopup(object):
     def __init__(self, driver):
         self.driver = driver
@@ -23,3 +27,7 @@ class DeleteModalPopup(object):
         var element = arguments[0];
         element.parentNode.removeChild(element);
         """, element)
+
+    def delete_popup_trial(self):
+        self.driver.find_element_by_tag_name('body').send_keys(Keys.ESCAPE)
+        time.sleep(2)

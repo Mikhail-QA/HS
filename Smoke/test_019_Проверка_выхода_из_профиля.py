@@ -1,5 +1,4 @@
 import allure
-
 from POM.delete_popup import DeleteModalPopup
 from POM.setup import StartTildaClassMethod
 from POM.tilda_page import TildaPage
@@ -28,8 +27,10 @@ class LoginAndExitProfile(StartTildaClassMethod):
             step_user.enter_password(password="123456")
         with allure.step("Нажать на кнопку Авторизоваться"):
             step_enter.click_button_login()
-        # with allure.step("Удалить попап подтверждения телефона"):
-        #     step_delete.delete_popup_mobile()
+            # with allure.step("Удалить попап подтверждения телефона"):
+            #     step_delete.delete_popup_mobile()
+        with allure.step("Удалить попап ПД"):
+            step_delete.delete_popup_trial()
         with allure.step("Нажать на кнопку Мой профиль"):
             step_schedule.click_button_my_profile()
         with allure.step("Нажать на кнопку Выход"):
