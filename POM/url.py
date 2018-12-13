@@ -43,3 +43,7 @@ class UrlHomeSchool(object):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/18112/video/72658")
         assert (self.driver.find_element_by_css_selector("#step9 > button"))
         time.sleep(1.5)
+
+    def go_to_page_subjects_subscribe(self):
+        self.driver.get("https://web-dev01.interneturok.ru/school/subjects-subscribe")
+        assert (u"Домашняя школа", self.driver.find_element_by_css_selector("h2.courses-prepare__payment-title").text)

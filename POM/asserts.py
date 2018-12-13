@@ -689,3 +689,17 @@ class AssertForTest025(AssertForTest001):
             "В формате обучения «С учителем» вы сможете загрузить свое решение.\nУчитель проверит работу, даст развернутый комментарий и выставит оценку\nПодробнее",
             self.driver.find_element_by_css_selector(
                 "#lesson-content > div > div > div > div > div > div > div > div > div.fading.ng-scope.in > div.tab-footer.tab-footer__homework.ng-scope").text)
+
+
+class AssertForTest026(AssertForTest001):
+    def __init__(self, driver):
+        super(AssertForTest026, self).__init__(driver)
+
+    def check_text_block_tariff_change(self):
+        self.assertIn(
+            "Чтобы оплатить другой формат обучения,\nнужно отправить запрос на смену формата в Личном кабинете.",
+            self.driver.find_element_by_css_selector("div.payment-summary_info").text)
+
+    def check_button_pay_abonement(self):
+        assert len(
+            self.driver.find_elements_by_link_text("Продлить обучение")) == 0
