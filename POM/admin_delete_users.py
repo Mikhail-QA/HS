@@ -18,7 +18,7 @@ class AdminDeleteUser(object):
         with allure.step("В инпуте ввести почту ученика"):
             self.driver.find_element_by_css_selector("input.form-control.ng-pristine.ng-untouched.ng-valid").send_keys(
                 pupil_1)
-            time.sleep(4)
+            time.sleep(2)
         with allure.step("Нажать на кнопку Найти"):
             self.driver.find_element_by_css_selector(".input-group-btn > button:nth-child(1)").click()
             assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
@@ -46,7 +46,7 @@ class AdminDeleteUser(object):
             self.driver.find_element_by_css_selector(
                 "input.form-control.ng-valid.ng-dirty.ng-valid-parse.ng-touched").send_keys(
                 pupil_2)
-            time.sleep(4)
+            time.sleep(2)
         with allure.step("Нажать на кнопку Найти"):
             self.driver.find_element_by_css_selector(".input-group-btn > button:nth-child(1)").click()
             assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
@@ -74,7 +74,7 @@ class AdminDeleteUser(object):
             self.driver.find_element_by_css_selector(
                 "input.form-control.ng-valid.ng-dirty.ng-valid-parse.ng-touched").send_keys(
                 pupil_3)
-            time.sleep(4)
+            time.sleep(2)
         with allure.step("Нажать на кнопку Найти"):
             self.driver.find_element_by_css_selector(".input-group-btn > button:nth-child(1)").click()
             assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
@@ -102,7 +102,7 @@ class AdminDeleteUser(object):
             self.driver.find_element_by_css_selector(
                 "input.form-control.ng-valid.ng-dirty.ng-valid-parse.ng-touched").send_keys(
                 pupil_4)
-            time.sleep(4)
+            time.sleep(2)
         with allure.step("Нажать на кнопку Найти"):
             self.driver.find_element_by_css_selector(".input-group-btn > button:nth-child(1)").click()
             assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
@@ -130,7 +130,7 @@ class AdminDeleteUser(object):
             self.driver.find_element_by_css_selector(
                 "input.form-control.ng-valid.ng-dirty.ng-valid-parse.ng-touched").send_keys(
                 pupil_5)
-            time.sleep(4)
+            time.sleep(2)
         with allure.step("Нажать на кнопку Найти"):
             self.driver.find_element_by_css_selector(".input-group-btn > button:nth-child(1)").click()
             assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
@@ -158,7 +158,7 @@ class AdminDeleteUser(object):
             self.driver.find_element_by_css_selector(
                 "input.form-control.ng-valid.ng-dirty.ng-valid-parse.ng-touched").send_keys(
                 pupil_6)
-            time.sleep(4)
+            time.sleep(2)
         with allure.step("Нажать на кнопку Найти"):
             self.driver.find_element_by_css_selector(".input-group-btn > button:nth-child(1)").click()
             assert (self.driver.find_element_by_css_selector("i.glyphicon.glyphicon-pencil"))
