@@ -81,7 +81,7 @@ class PageSubscribe(object):
 
     def click_button_pay_school(self):
         self.driver.find_element_by_class_name("button__w100").click()
-        # time.sleep(61)
+        time.sleep(61)
 
     def click_button_pay_ege_independent(self):
         self.driver.find_element_by_css_selector("button.btn.btn-primary.ng-binding").click()
@@ -95,7 +95,7 @@ class PageSubscribe(object):
     def enter_data_card(self):
         self.driver.find_element_by_id("cardNumber").send_keys("4444444444444448")
         self.driver.find_element_by_name("skr_month").send_keys("12")
-        self.driver.find_element_by_name("skr_year").send_keys("19")
+        self.driver.find_element_by_name("skr_year").send_keys("20")
         self.driver.find_element_by_name("skr_cardCvc").send_keys("000")
         time.sleep(3)
         self.driver.find_element_by_class_name("payment-contract__pay-button").click()
