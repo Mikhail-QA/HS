@@ -42,7 +42,7 @@ class LoginAndExtendCourseSchool(StartTildaClassMethod):
         with allure.step(
                 "На странице продления отображается текст: Класс: 7 класс, Формат обучения: С учителем, Продление обучения на: 3 месяца, Сумма к оплате: 13 800 руб."):
             step_assert.check_text_in_tab_total()
-        with allure.step("Нажать на кнопку Оплатить"):
+        with allure.step("Нажать на кнопку Продлить обучение"):
             step_buy.click_button_pay_school()
         with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 13 800 руб"):
             step_assert.check_text_in_demo_kassa()
