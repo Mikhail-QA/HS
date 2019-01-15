@@ -88,7 +88,7 @@ class StartTildaClassMethod(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         cls.driver.implicitly_wait(40)
         cls.driver.maximize_window()
-        cls.driver.get("http://iu:123456@project752209.tilda.ws/")
+        cls.driver.get("http://iu:123456@test-school01.interneturok.ru/")
         time.sleep(3)
         cls.verificationErrors = []
 
