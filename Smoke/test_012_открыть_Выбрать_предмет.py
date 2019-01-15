@@ -2,7 +2,7 @@ import allure
 from POM.setup import StartTildaClassMethod
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
-from POM.users import Hs05
+from POM.users import Hs02
 from POM.schedule_page import SchedulePage
 from POM.asserts import AssertForTest012
 
@@ -14,7 +14,7 @@ class LoginAndOpenChosenSubject(StartTildaClassMethod):
         driver = self.driver
         step_tilda = TildaPage(driver)
         step_enter = PopupSignIn(driver)
-        step_user = Hs05(driver)
+        step_user = Hs02(driver)
         step_assert = AssertForTest012(driver)
         step_schedule = SchedulePage(driver)
 
@@ -28,5 +28,5 @@ class LoginAndOpenChosenSubject(StartTildaClassMethod):
         with allure.step("Нажать на кнопку Выбрать предметы"):
             step_schedule.click_button_chosen_subject()
         with allure.step(
-                "Проверить отображение списка предметов в открытом списке Выбрать Предметы"):
+                "Проверить отображение списка предметов в открытом списке Выбрать Предметы + 11 бонусный класс за кейс 005"):
             step_assert.check_text_in_page_chosen_subject()

@@ -2,7 +2,7 @@ import allure
 from POM.popup_auth_and_reg import PopupSignIn
 from POM.setup import StartTildaClassMethod
 from POM.tilda_page import TildaPage
-from POM.users import Hs05
+from POM.users import Hs02
 from POM.url import UrlHomeSchool
 from POM.lesson_page import LessonPage
 from POM.TT import Test
@@ -16,7 +16,7 @@ class PassTest(StartTildaClassMethod):
         driver = self.driver
         step_tilda = TildaPage(driver)
         step_enter = PopupSignIn(driver)
-        step_user = Hs05(driver)
+        step_user = Hs02(driver)
         url_go = UrlHomeSchool(driver)
         steps_test = LessonPage(driver)
         ask_test = Test(driver)

@@ -3,7 +3,7 @@ from POM.setup import StartTildaClassMethod
 from POM.url import UrlHomeSchool
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
-from POM.users import Hs06
+from POM.users import Hs05
 from POM.asserts import AssertForTest017
 
 
@@ -14,7 +14,7 @@ class LoginAndCheckEmailForUser(StartTildaClassMethod):
         driver = self.driver
         step_tilda = TildaPage(driver)
         step_enter = PopupSignIn(driver)
-        step_user = Hs06(driver)
+        step_user = Hs05(driver)
         step_go_to_profile = UrlHomeSchool(driver)
         step_assert = AssertForTest017(driver)
 

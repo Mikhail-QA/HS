@@ -3,7 +3,7 @@ from POM.url import UrlHomeSchool
 from POM.lesson_page import LessonPage
 from POM.setup import StartTildaClassMethod
 from POM.tilda_page import TildaPage
-from POM.users import Hs05
+from POM.users import Hs02
 from POM.popup_auth_and_reg import PopupSignIn
 from POM.asserts import AssertForTest023
 
@@ -16,7 +16,7 @@ class PlayVideoIu(StartTildaClassMethod):
         get_lesson = UrlHomeSchool(driver)
         steps_video = LessonPage(driver)
         step_tilda = TildaPage(driver)
-        step_user = Hs05(driver)
+        step_user = Hs02(driver)
         step_enter = PopupSignIn(driver)
         step_assert = AssertForTest023(driver)
         with allure.step("На TILDA нажать на кнопку Войти"):

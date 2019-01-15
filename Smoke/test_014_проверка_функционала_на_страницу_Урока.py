@@ -4,7 +4,7 @@ import time
 from POM.setup import StartTildaClassMethod
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
-from POM.users import Hs05
+from POM.users import Hs02
 from POM.schedule_page import SchedulePage
 from POM.lesson_page import LessonPage
 from POM.asserts import AssertForTest014
@@ -21,7 +21,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         driver = self.driver
         step_tilda = TildaPage(driver)
         step_enter = PopupSignIn(driver)
-        step_user = Hs05(driver)
+        step_user = Hs02(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
             step_tilda.click_button_enter()
@@ -48,11 +48,11 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
 
     def test_002_check_tour_in_lesson_page(self):
         driver = self.driver
-        step_schedule = SchedulePage(driver)
+        go_lesson_page = UrlHomeSchool(driver)
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Перейти на страницу урока"):
-            step_schedule.go_to_lesson_page()
+        with allure.step("Перейти на страницу видеоурока Информатика, 7 класс , неделя 13 (19 ноября - 24 ноября)тест"):
+            go_lesson_page.go_to_lesson_page_test()
         with allure.step("Пройти весь тур кликнув Далее 5 раз"):
             step_lesson_page.click_button_next_in_tour()
         with allure.step("В туре нажать на кнопку Назад"):

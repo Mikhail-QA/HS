@@ -3,7 +3,7 @@ from POM.delete_popup import DeleteModalPopup
 from POM.setup import StartTildaClassMethod
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
-from POM.users import Hs06
+from POM.users import Hs05
 from POM.asserts import AssertForTest019
 from POM.schedule_page import SchedulePage
 
@@ -15,7 +15,7 @@ class LoginAndExitProfile(StartTildaClassMethod):
         driver = self.driver
         step_tilda = TildaPage(driver)
         step_enter = PopupSignIn(driver)
-        step_user = Hs06(driver)
+        step_user = Hs05(driver)
         step_schedule = SchedulePage(driver)
         step_assert = AssertForTest019(driver)
         step_delete = DeleteModalPopup(driver)
