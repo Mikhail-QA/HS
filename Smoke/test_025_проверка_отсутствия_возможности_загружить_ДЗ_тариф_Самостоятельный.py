@@ -29,7 +29,7 @@ class LoginAndGoToLessonPageCheckHomeworkAndYaklass(StartTildaClassMethod):
         go_lesson_page = UrlHomeSchool(driver)
         step_assert = AssertForTest025(driver)
         with allure.step(
-                "Перейти на страницу урока Русский язык, Математика, 1 класс , неделя 13 (19 ноября - 24 ноября)Задача (условие, вопрос)."):
+                "Перейти на страницу урока Математика, 1 класс , неделя 13 (19 ноября - 24 ноября)Задача (условие, вопрос)."):
             go_lesson_page.go_to_lesson_page_1_klass()
         with allure.step("В шаге № 1 Якласса отображается заглушка с текстом Доступ к материалам ограничен"):
             step_assert.check_step_one()
