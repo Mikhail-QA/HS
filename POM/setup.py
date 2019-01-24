@@ -45,7 +45,7 @@ class StartInterneturokAdmin(unittest.TestCase):
         self.driver = webdriver.Edge()
         self.driver.implicitly_wait(40)
         self.driver.maximize_window()
-        self.driver.get("hhttps://web-dev01.interneturok.ru/school/")
+        self.driver.get("https://web-dev01.interneturok.ru/school/")
         self.verificationErrors = []
 
 
