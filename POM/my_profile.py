@@ -40,14 +40,14 @@ class OffAutoPayInSchool(object):
         self.driver = driver
 
     def click_off_auto_pay_in_widget(self):
-        self.driver.find_element_by_xpath(
-            "//*[@id='subjects-page-wrapper']/div/div[1]/div/div[1]/div/div[2]/div/div[2]/div[5]/label/span[1]").click()
+        self.driver.find_element_by_css_selector(
+            "div:nth-child(1) > div.profile-course_body > div.profile-course_autopay > label > span.switch-reverse.ng-scope").click()
 
     def click_off_auto_pay_in_tooltip(self):
         self.driver.find_element_by_css_selector("button.btn-autopay").click()
 
     def click_off_auto_pay_in_popup(self):
-        self.driver.find_element_by_xpath("/html/body/div[5]/div/div/div[3]/button[2]").click()
+        self.driver.find_element_by_css_selector(".autopay-modal-footer.ng-scope > button:nth-child(2)").click()
 
 
 class OffAutoPayInPersonalMentor(object):
@@ -55,12 +55,12 @@ class OffAutoPayInPersonalMentor(object):
         self.driver = driver
 
     def click_off_auto_pay_in_widget(self):
-        self.driver.find_element_by_xpath(
-            "//*[@id='subjects-page-wrapper']/div/div[1]/div/div[1]/div/div[2]/div/div[2]/div[6]/div[3]/label/span[1]").click()
+        self.driver.find_element_by_css_selector(
+            "div:nth-child(1) > div.profile-course_body > div.profile-course_curator.ng-scope > div.autopay-curator > label > span.switch-label").click()
 
     def click_off_auto_pay_in_tooltip(self):
-        self.driver.find_element_by_xpath(
-            "//*[@id='subjects-page-wrapper']/div/div[1]/div/div[1]/div/div[2]/div/div[2]/div[6]/div[3]/label/div/button").click()
+        self.driver.find_element_by_css_selector(
+            "div:nth-child(1) > div.profile-course_body > div.profile-course_curator.ng-scope > div.autopay-curator > label > div > button").click()
 
     def click_off_auto_pay_in_popup(self):
-        self.driver.find_element_by_xpath("/html/body/div[5]/div/div/div[3]/button[2]").click()
+        self.driver.find_element_by_css_selector(".autopay-modal-footer.ng-scope > button:nth-child(2)").click()
