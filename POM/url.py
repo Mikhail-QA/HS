@@ -17,14 +17,14 @@ class UrlHomeSchool(object):
         self.driver.get("https://web-dev01.interneturok.ru/school/logout")
 
     def go_to_lesson_page_test(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21853/video/95143")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21177/video/91613")
         assert (self.driver.find_element_by_css_selector("#step9"))
 
     def go_to_lesson_page_1_klass(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21485/homework/90516")
 
     def go_to_lesson_page_tab_homework(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21853/homework/95144")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21177/homework/95233")
         assert (self.driver.find_element_by_css_selector(
             "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div > div > div:nth-child(2) > div"))
         time.sleep(6)
