@@ -6,8 +6,7 @@ class SchedulePage(object):
         self.driver = driver
 
     def select_class_10(self):
-        self.driver.find_element_by_xpath(
-            "/html/body/div[5]/div/div/div/div/div[3]/div[10]/div/div[1]").click()
+        self.driver.find_element_by_css_selector(".class-list_item.ng-scope:nth-child(10)").click()
         time.sleep(1)
 
     def click_button_see_schedule_page(self):
