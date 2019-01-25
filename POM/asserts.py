@@ -541,7 +541,7 @@ class AssertForTest014(AssertForTest001):
                          self.driver.find_element_by_css_selector(
                              "button.btn.btn-primary.pull-right.ng-scope").text)
         time.sleep(0.5)
-        URL = "https://web-dev01.interneturok.ru/school/lesson/21853/homework/95144"
+        URL = "https://web-dev01.interneturok.ru/school/lesson/21177/homework/95233"
         assert self.driver.current_url == URL
 
     def check_message_for_ask_questions(self):
