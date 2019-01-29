@@ -24,7 +24,7 @@ class LoginAndOpenChosenSubject(StartTildaClassMethod):
             step_user.enter_email(user_name="hs02@yopmail.com")
             step_user.enter_password(password="123456")
         with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
+            step_enter.click_button_login_and_wait_donwload_main_page()
         with allure.step("Нажать на кнопку Выбрать предметы"):
             step_schedule.click_button_chosen_subject()
         with allure.step(
