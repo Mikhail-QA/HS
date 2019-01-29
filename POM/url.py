@@ -7,6 +7,7 @@ class UrlHomeSchool(object):
 
     def go_to_my_profile(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/profile/my_profile")
+        time.sleep(2)
         assert (u"E-mail:", self.driver.find_element_by_xpath(
             "//*[@id='subjects-page-wrapper']/div/div[2]/form/div[1]/div/div[1]/user-personal-info/div[7]/label").text)
 
@@ -17,17 +18,17 @@ class UrlHomeSchool(object):
         self.driver.get("https://web-dev01.interneturok.ru/school/logout")
 
     def go_to_lesson_page_test(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21177/video/91613")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21860/video/95238")
         assert (self.driver.find_element_by_css_selector("#step9"))
 
     def go_to_lesson_page_1_klass(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21485/homework/90516")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21493/homework/91341")
 
     def go_to_lesson_page_tab_homework(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21177/homework/95233")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21860/homework/95239")
         assert (self.driver.find_element_by_css_selector(
-            "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div > div > div:nth-child(2) > div"))
-        time.sleep(6)
+            ".next-item-btn"))
+        time.sleep(2)
 
     def go_to_lesson_tab_test_iu(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/18402/training_iu/91896")
