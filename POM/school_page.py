@@ -30,8 +30,8 @@ class SchoolPage(object):
 
     def click_vk(self):
         self.driver.find_element_by_css_selector("a.page-loign-social-list__link.vk-login").click()
-        assert (u"Получить код",
-                self.driver.find_element_by_xpath("/html/body/div[5]/div/div/div[2]/div/div[1]/div[3]/button").text)
+        assert (u"Проверить почту",
+                self.driver.find_element_by_css_selector("a.btn.btn-success.btn-success__ok").text)
 
 
 class LandingPage(object):
@@ -45,6 +45,7 @@ class LandingPage(object):
         self.driver.find_element_by_css_selector(
             "#iuAuthContainer > div > div.auth__modal__body > div > div:nth-child(3) > form:nth-child(9) > input").click()
         assert (self.driver.find_element_by_css_selector("div.new-modal__body"))
+        time.sleep(2)
 
 
 class FormSignIn(SchoolPage):
