@@ -54,7 +54,7 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
         with allure.step("Нажать на кнопку Оплатить доступ"):
             step_profile.click_button_pay_for_access()
         with allure.step("Выбрать 10 класс"):
-            step_buy.select_eleven_class()
+            step_buy.select_ten_class()
         with allure.step("Выбрать период 9 месяцев"):
             step_buy.choose_period_nine_month()
         with allure.step("Выбрать тарифа с Зачислением"):
