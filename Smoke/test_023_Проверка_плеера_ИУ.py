@@ -30,7 +30,7 @@ class PlayVideoIu(StartTildaClassMethod):
             get_lesson.go_to_lesson_tab_video()
         with allure.step("Нажать на кнопку Плей"):
             steps_video.click_play_video_iu()
-        with allure.step("После вкл видео в плеере появилась кнопка Pause"):
-            step_assert.check_button_play_video()
+        # with allure.step("После вкл видео в плеере появилась кнопка Pause"): ## убрал проверку после обновления плеера
+        #     step_assert.check_button_pause_in_video()
         with allure.step("Элемент плеера поменял статус на vjs-playing"):
             step_assert.check_button_play_video()
