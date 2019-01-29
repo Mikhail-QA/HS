@@ -34,11 +34,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
     def test_001_check_tour_in_schedule_page(self):
         driver = self.driver
         step_tour = SchedulePage(driver)
-        step_refresh = Refresh(driver)
-        time.sleep(5)
-        # with allure.step("Обновить страницу"):
-        #     step_refresh.refresh()
-        # time.sleep(15)
+        time.sleep(15)
         with allure.step("Пройти весь тур кликнув Далее 7 раз"):
             step_tour.click_button_next_in_tour()
         with allure.step("В туре нажать на кнопку Назад"):
