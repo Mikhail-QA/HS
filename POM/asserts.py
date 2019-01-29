@@ -9,20 +9,20 @@ class AssertForTest001(unittest.TestCase):
         self.driver = driver
 
     def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 1", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[1]").text)
+        self.assertEqual(u"Класс: 1", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
 
-        self.assertEqual(u"Формат обучения: «Самостоятельный»", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[2]").text)
+        self.assertEqual(u"Формат обучения: «Самостоятельный»", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
 
-        self.assertEqual(u"Оплата за: 1 месяц", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[3]").text)
+        self.assertEqual(u"Оплата за: 1 месяц", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: выключена", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[5]").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: выключена", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
 
-        self.assertEqual(u"Сумма к оплате: 800 руб.", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[2]").text)
+        self.assertEqual(u"Сумма к оплате: 800 руб.",
+                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
         time.sleep(3)
 
     def check_text_in_demo_kassa(self):
@@ -89,23 +89,23 @@ class AssertForTest002(AssertForTest001):
         super(AssertForTest002, self).__init__(driver)
 
     def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 7", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[1]").text)
+        self.assertEqual(u"Класс: 7", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
 
-        self.assertEqual(u"Формат обучения: «С учителем»", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[2]").text)
+        self.assertEqual(u"Формат обучения: «С учителем»", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
 
-        self.assertEqual(u"Оплата за: 3 месяца", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[3]").text)
+        self.assertEqual(u"Оплата за: 3 месяца", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[5]").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
 
-        self.assertEqual(u"Период действия услуги: 3 месяца", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[6]").text)
+        self.assertEqual(u"Период действия услуги: 3 месяца", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(6)").text)
 
-        self.assertEqual(u"Сумма к оплате: 13 800 руб.", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[2]").text)
+        self.assertEqual(u"Сумма к оплате: 13 800 руб.",
+                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
         time.sleep(3)
 
     def check_text_in_demo_kassa(self):
@@ -177,23 +177,23 @@ class AssertForTest003(AssertForTest001):
         super(AssertForTest003, self).__init__(driver)
 
     def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 10", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[1]").text)
+        self.assertEqual(u"Класс: 10", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
 
-        self.assertEqual(u"Формат обучения: «С зачислением»", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[2]").text)
+        self.assertEqual(u"Формат обучения: «С зачислением»", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
 
-        self.assertEqual(u"Оплата за: 9 месяцев", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[3]").text)
+        self.assertEqual(u"Оплата за: 9 месяцев", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[5]").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
 
-        self.assertEqual(u"Период действия услуги: 9 месяцев", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[6]").text)
+        self.assertEqual(u"Период действия услуги: 9 месяцев", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(6)").text)
 
-        self.assertEqual(u"Сумма к оплате: 57 600 руб.", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[2]").text)
+        self.assertEqual(u"Сумма к оплате: 57 600 руб.",
+                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
 
     def check_text_in_demo_kassa(self):
         self.assertIn("57 600", self.driver.find_element_by_class_name("price__whole-amount").text)
@@ -235,23 +235,23 @@ class AssertForTest006(AssertForTest001):
         super(AssertForTest006, self).__init__(driver)
 
     def check_text_in_tab_total(self):
-        self.assertEqual(u"Класс: 7 класс", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div[6]/div[2]/div[2]/div[1]/div[1]").text)
+        self.assertEqual(u"Класс: 7 класс", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
 
-        self.assertEqual(u"Формат обучения: С учителем", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div[6]/div[2]/div[2]/div[1]/div[2]").text)
+        self.assertEqual(u"Формат обучения: С учителем", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
 
-        self.assertEqual(u"Продление обучения на: 3 месяца", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div[6]/div[2]/div[2]/div[1]/div[3]").text)
+        self.assertEqual(u"Продление обучения на: 3 месяца", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div[6]/div[2]/div[2]/div[1]/div[5]").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
 
-        self.assertEqual(u"Период продления услуги: 3 месяца", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div[6]/div[2]/div[2]/div[1]/div[6]").text)
+        self.assertEqual(u"Период продления услуги: 3 месяца", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(6)").text)
 
-        self.assertEqual(u"Сумма к оплате: 13 800 руб.", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div[6]/div[2]/div[2]/div[2]").text)
+        self.assertEqual(u"Сумма к оплате: 13 800 руб.",
+                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
 
     def check_text_in_demo_kassa(self):
         self.assertIn("13 800", self.driver.find_element_by_class_name("price__whole-amount").text)
@@ -383,20 +383,20 @@ class AssertForTest010(AssertForTest001):
         super(AssertForTest010, self).__init__(driver)
 
     def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 10", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[1]").text)
+        self.assertEqual(u"Класс: 10", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
 
-        self.assertEqual(u"Формат обучения: «С учителем»", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[2]").text)
+        self.assertEqual(u"Формат обучения: «С учителем»", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
 
-        self.assertEqual(u"Оплата за: 3 месяца", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[3]").text)
+        self.assertEqual(u"Оплата за: 3 месяца", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: выключена", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/div[5]").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: выключена", self.driver.find_element_by_css_selector(
+            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
 
-        self.assertEqual(u"Сумма к оплате: 6 600 руб.", self.driver.find_element_by_xpath(
-            "/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[2]").text)
+        self.assertEqual(u"Сумма к оплате: 6 600 руб.",
+                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
 
     def check_text_in_demo_kassa(self):
         self.assertIn("6600", self.driver.find_element_by_class_name("price__whole-amount").text)
@@ -541,7 +541,7 @@ class AssertForTest014(AssertForTest001):
                          self.driver.find_element_by_css_selector(
                              "button.btn.btn-primary.pull-right.ng-scope").text)
         time.sleep(0.5)
-        URL = "https://web-dev01.interneturok.ru/school/lesson/21177/homework/95233"
+        URL = "https://web-dev01.interneturok.ru/school/lesson/21860/homework/95239"
         assert self.driver.current_url == URL
 
     def check_message_for_ask_questions(self):
@@ -570,8 +570,8 @@ class AssertForTest015(AssertForTest001):
         super(AssertForTest015, self).__init__(driver)
 
     def check_text_all_page(self):
-        self.assertEqual(u"II четверть", self.driver.find_element_by_css_selector(
-            "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div.col-sm-12.ng-scope > div > div > div > span").text)
+        self.assertEqual(u"III четверть", self.driver.find_element_by_css_selector(
+            ".journal_header_name span").text)
 
     def check_url(self):
         URL = "https://web-dev01.interneturok.ru/school/student-journal/school/7"
@@ -620,8 +620,8 @@ class AssertForTest020(AssertForTest001):
         super(AssertForTest020, self).__init__(driver)
 
     def check_popup_received_code(self):
-        assert (u"Получить код",
-                self.driver.find_element_by_xpath("/html/body/div[5]/div/div/div[2]/div/div[1]/div[3]/button").text)
+        assert (u"Проверить почту",
+                self.driver.find_element_by_css_selector("a.btn.btn-success.btn-success__ok").text)
 
     def check_url(self):
         URL = "https://web-dev01.interneturok.ru/school/login?from=logout&auth=true"
@@ -651,8 +651,11 @@ class AssertForTest023(AssertForTest001):
         super(AssertForTest023, self).__init__(driver)
 
     def check_button_play_video(self):
-        self.assertEquals(u"Pause", self.driver.find_element_by_xpath("//div[6]/div[3]/div/span").text)
         assert (self.driver.find_element_by_class_name("vjs-playing"))
+
+    def check_button_pause_in_video(self):
+        self.assertEquals(u"Pause",
+                          self.driver.find_element_by_class_name(".vjs-play-control.vjs-playing > div > span").text)
 
 
 class AssertForTest024(AssertForTest001):
@@ -666,7 +669,7 @@ class AssertForTest024(AssertForTest001):
 
     def check_bal_in_homweork_for_lesson_page(self):
         self.assertIn("Итоговая оценка: 4 / Хорошо", self.driver.find_element_by_css_selector(
-            "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div > div > div:nth-child(2) > div").text)
+            "h2.yaclass-score").text)
 
 
 class AssertForTest025(AssertForTest001):
