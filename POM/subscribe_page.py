@@ -8,8 +8,8 @@ class PageSubscribe(object):
     def select_one_class(self):
         self.driver.find_element_by_css_selector(".payment-class-item:nth-child(1)").click()
 
-    def select_six_class(self):
-        self.driver.find_element_by_css_selector(".payment-class-item:nth-child(6)").click()
+    def select_seven_class(self):
+        self.driver.find_element_by_css_selector(".payment-class-item:nth-child(7)").click()
 
     def select_ten_class(self):
         self.driver.find_element_by_css_selector(".payment-class-item:nth-child(10)").click()
@@ -38,7 +38,7 @@ class PageSubscribe(object):
         time.sleep(1)
 
     def extend_service_personal_mentor(self):
-        self.driver.find_element_by_css_selector(".mentor__checkbox-label").click()
+        self.driver.find_element_by_css_selector(".payment-item:nth-child(5) div.mentor__checkbox").click()
         time.sleep(1)
 
     def click_off_button_auto_payments_in_curse(self):
@@ -62,7 +62,7 @@ class PageSubscribe(object):
 
     def choose_period_nine_month_in_ege(self):
         self.driver.find_element_by_css_selector(
-            "div:nth-child(2) > tarif-table-ege > div > div > div > table > tfoot > tr:nth-child(1) > td:nth-child(2) > div:nth-child(4) > label > i").click()
+            "div:nth-child(2) > div > div > div:nth-child(2) > tarif-table-ege > div > div > div > table > tfoot > tr:nth-child(1) > td:nth-child(3) > div:nth-child(2) > div:nth-child(4) > label > i").click()
         time.sleep(1)
 
     def click_off_button_auto_payments_in_ege(self):
