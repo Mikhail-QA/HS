@@ -31,7 +31,7 @@ class LoginAndOffAutoPaymentInPersonalMentor(StartTildaClassMethod):
             step_enter.click_button_login()
         with allure.step("Перейти в Личный кабинет"):
             step_go_to_profile.go_to_my_profile()
-        with allure.step("В виджите Нажать на кнопку Вкл в автоплатеже"):
+        with allure.step("В виджите Нажать на кнопку Выкл в автоплатеже"):
             step_off.click_off_auto_pay_in_widget()
         with allure.step("В тултипе нажать на кнопку Отключить автоплатеж"):
             step_off.click_off_auto_pay_in_tooltip()
