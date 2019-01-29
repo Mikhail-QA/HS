@@ -27,7 +27,7 @@ class MyProfile(object):
 
     def click_button_pay_other_classes(self):
         self.driver.find_element_by_css_selector(
-            "#subjects-page-wrapper > div > div.col-sm-3.col-md-3 > div > div.profile-courses > div > a").click()
+            ".col-sm-3.col-md-3 div.profile-courses div a:nth-child(3)").click()
         assert (u"Домашняя школа", self.driver.find_element_by_css_selector("h2.courses-prepare__payment-title").text)
 
     def click_button_pay_school_in_pd(self):
