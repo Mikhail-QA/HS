@@ -10,16 +10,16 @@ class StepTeacher(object):
             user_name)
 
     def click_button_show(self):
-        self.driver.find_element_by_css_selector(
-            "div.row:nth-child(7) > div:nth-child(1) > div:nth-child(2) > button").click()
-        assert (self.driver.find_element_by_css_selector("a.btn.btn-sm.btn-primary"))
+        self.driver.find_element_by_css_selector("div:nth-child(2) > button").click()
+        time.sleep(2)
+        assert (self.driver.find_element_by_css_selector("div.text-center:nth-child(7) a:nth-child(1)"))
 
     def click_button_check(self):
         self.driver.find_element_by_css_selector("a.btn.btn-sm.btn-primary").click()
+        assert (self.driver.find_element_by_css_selector("div.col-sm-2"))
 
     def open_select(self):
-        self.driver.find_element_by_css_selector(
-            "body > div.page-wrapper.ng-isolate-scope > div > div.container > div.row.ng-scope > div > div > div > div > div.tab-pane.ng-scope.active > div > div > div > div:nth-child(9) > ul > li.list-group-item.row.cf.ng-scope > form > div.row.homeworks-row > div:nth-child(7) > select").click()
+        self.driver.find_element_by_css_selector(".text-center select").click()
 
     def enter_bal_5(self):
         self.driver.find_element_by_css_selector("select.pull-right > option:nth-child(5)").click()
