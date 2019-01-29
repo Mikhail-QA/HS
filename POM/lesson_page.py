@@ -21,14 +21,13 @@ class LessonPage(object):
 
     def click_button_send(self):
         self.driver.find_element_by_id("step10").click()
-        time.sleep(0.5)
+        time.sleep(2)
 
     def click_button_go_to_schedule(self):
         self.driver.find_element_by_css_selector("#step9 > button").click()
 
     def click_download_dz(self):
-        self.driver.find_element_by_xpath(
-            "//*[@id='lesson-content']/div/div/div/div/div/div/div/div/div[4]/homework-tab-footer/div[2]/div/div/div[2]/div/div/button").click()
+        self.driver.find_element_by_css_selector(".tab-footer__homework-content div:nth-child(2) button").click()
         time.sleep(0.5)
 
     def click_button_download_file_in_ask_question(self):
@@ -42,6 +41,7 @@ class LessonPage(object):
         self.driver.find_element_by_id("upload-homework").send_keys(Imagepath)
         assert (u"photo_2018-09-18_13-28-24.jpg",
                 self.driver.find_element_by_css_selector("div.homework-img-name.ng-binding").text)
+        time.sleep(1)
 
     def attach_img_in_ask_question(self):
         Imagepath = os.path.abspath(
@@ -49,8 +49,8 @@ class LessonPage(object):
         self.driver.find_element_by_name("attach_file_select_lesson").send_keys(Imagepath)
 
     def click_submit_a_job(self):
-        self.driver.find_element_by_xpath(
-            "//*[@id='lesson-content']/div/div/div/div/div/div/div/div/div[5]/homework-tab-footer/div[2]/div/div/div[2]/div/div/button").click()
+        self.driver.find_element_by_css_selector(
+            "#lesson-content div div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope div div:nth-child(2) div button").click()
         assert (self.driver.find_element_by_css_selector("#step9 > button"))
 
     def click_yes_in_popup(self):
@@ -89,4 +89,4 @@ class LessonPage(object):
 
     def click_play_video_iu(self):
         self.driver.find_element_by_id("vlp-videobox-1").click()
-        time.sleep(2)
+        time.sleep(3)
