@@ -7,7 +7,7 @@ class SchedulePage(object):
 
     def select_class_10(self):
         self.driver.find_element_by_css_selector(".class-list_item.ng-scope:nth-child(10)").click()
-        time.sleep(1)
+        time.sleep(2)
 
     def click_button_see_schedule_page(self):
         self.driver.find_element_by_css_selector("a.button").click()
@@ -34,8 +34,7 @@ class SchedulePage(object):
         time.sleep(2)
 
     def click_button_close_popup_feedback(self):
-        self.driver.find_element_by_css_selector(
-            "body > div.modal.fade.ng-isolate-scope.iu-fade.modal-review.in > div > div > div.modal-footer.modal-footer_nbt.modal-footer_mt.text-center.ng-scope > button").click()
+        self.driver.find_element_by_css_selector(".close-green-btn:nth-child(1)").click()
 
     def go_to_lesson_page(self):
         self.driver.find_element_by_css_selector("div.schedule_list_item_info").click()
@@ -44,7 +43,7 @@ class SchedulePage(object):
 
     def go_to_academic_journal(self):
         self.driver.find_element_by_css_selector("a.dropdown-toggle.without-animate").click()
-        time.sleep(0.5)
+        time.sleep(4)
         self.driver.find_element_by_css_selector("#step6 > ul > li:nth-child(2)").click()
         assert (self.driver.find_element_by_css_selector("td.journal_table_td.ng-scope"))
 
