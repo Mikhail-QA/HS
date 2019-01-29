@@ -53,7 +53,7 @@ class CreateAccountAndBuyLearningThreeMonth(StartLandingClassMethod):
         with allure.step("Нажать на кнопку Оплатить доступ"):
             step_profile.click_button_pay_for_access()
         with allure.step("Выбрать 7 класс"):
-            step_buy.select_six_class()
+            step_buy.select_seven_class()
         with allure.step("Выбрать период 3 месяц"):
             step_buy.choose_period_three_month()
         with allure.step("Выбрать тарифа с Учителем"):
