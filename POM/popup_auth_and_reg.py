@@ -50,5 +50,4 @@ class PopupSignIn(object):
     def click_button_login_and_wait_donwload_main_page(self):
         self.driver.find_element_by_css_selector(
             "#form59637329 > div.t330__input-wrapper > div.t330__blockbutton > button").click()
-        assert (self.driver.find_element_by_css_selector("div.schedule_header > div:nth-child(3) a"))
-        time.sleep(8)
+        assert (self.driver.find_element_by_css_selector("div.schedule_list_item_rep_item:nth-child(1)"))
