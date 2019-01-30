@@ -87,8 +87,8 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Нажать на кнопку Загрузить файл"):
-            step_lesson_page.click_button_download_file_in_ask_question()
+        # with allure.step("Нажать на кнопку Загрузить файл"):
+            # step_lesson_page.click_button_download_file_in_ask_question()
         with allure.step("Загрузить картинку"):
             step_lesson_page.attach_img_in_ask_question()
         with allure.step("Нажать на кнопку Отправить"):
