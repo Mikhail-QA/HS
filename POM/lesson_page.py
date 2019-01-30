@@ -13,7 +13,7 @@ class LessonPage(object):
 
     def click_button_next_step(self):
         self.driver.find_element_by_css_selector("#step9").click()
-        time.sleep(1)
+        assert (self.driver.find_element_by_css_selector("a.lesson-step-print-blue.ng-scope"))
 
     def send_text_in_input_ask_question(self):
         self.driver.find_element_by_id("input-lesson-comment").send_keys("ومنظومة الظواهر الملحوظة")
@@ -50,13 +50,13 @@ class LessonPage(object):
 
     def click_submit_a_job(self):
         self.driver.find_element_by_css_selector(
-            "#lesson-content div div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope div div:nth-child(2) div button").click()
-        assert (self.driver.find_element_by_css_selector("#step9 > button"))
+            "#lesson-content div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope div:nth-child(2) button").click()
+        assert (self.driver.find_element_by_css_selector("button.btn.btn-success"))
 
     def click_yes_in_popup(self):
         self.driver.find_element_by_css_selector(
             "body > div.modal.fade.ng-isolate-scope.iu-fade.submit-images.in > div > div > div.new-modal_content.ng-scope > div > button.btn.btn-success").click()
-        assert (self.driver.find_element_by_css_selector("#step9 > button"))
+        assert (self.driver.find_element_by_css_selector("li.list-group-item.active"))
 
     def click_button_next_in_tour(self):
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
