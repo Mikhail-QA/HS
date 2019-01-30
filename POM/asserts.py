@@ -513,6 +513,7 @@ class AssertForTest013(AssertForTest001):
     def check_popup_thanks_for_the_feedback(self):
         self.assertEqual(u"Спасибо за отзыв!", self.driver.find_element_by_css_selector(
             "body > div.modal.fade.ng-isolate-scope.iu-fade.modal-review.in > div > div > div:nth-child(4)").text)
+        assert (self.driver.find_element_by_css_selector(".close-green-btn:nth-child(1)"))
 
 
 class AssertForTest014(AssertForTest001):
