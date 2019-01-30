@@ -547,16 +547,16 @@ class AssertForTest014(AssertForTest001):
     def check_message_for_ask_questions(self):
         assert (self.driver.find_element_by_css_selector("div.chat-message-content.ng-scope"))
         self.assertEqual(u"ومنظومة الظواهر الملحوظة",
-                         self.driver.find_element_by_css_selector("p.msg.ng-binding").text)
+                         self.driver.find_element_by_css_selector("div.chat-messages.chat-video-translation > div:nth-child(1)  div p").text)
 
     def check_file_for_ask_question(self):
         self.assertEqual(u"photo_2018-09-18_13-28-24.jpg",
-                         self.driver.find_element_by_css_selector("div.msg-img.ng-scope").text)
+                         self.driver.find_element_by_css_selector("div.chat-messages.chat-video-translation > div:nth-child(2)  div a").text)
 
     def check_text_successfully_download_az(self):
         self.assertEqual(u"Ваше решение успешно отправлено и ожидает проверки учителем.",
                          self.driver.find_element_by_css_selector(
-                             "#lesson-content > div > div > div > div > div > div > div > div > div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope > div > div > div.ng-scope > div > h3").text)
+                             ".ng-scope div.col-sm-12.col-md-12 div:nth-child(6) homework-tab-footer > div.ng-scope").text)
 
     def check_redirect_user_to_schedule_page(self):
         self.assertEqual(u"Выбрать предметы", self.driver.find_element_by_css_selector(
