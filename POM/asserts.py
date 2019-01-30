@@ -556,7 +556,7 @@ class AssertForTest014(AssertForTest001):
     def check_text_successfully_download_az(self):
         self.assertEqual(u"Ваше решение успешно отправлено и ожидает проверки учителем.",
                          self.driver.find_element_by_css_selector(
-                             ".ng-scope div.col-sm-12.col-md-12 div:nth-child(6) homework-tab-footer > div.ng-scope").text)
+                             "#lesson-content div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope div.col-sm-8").text)
 
     def check_redirect_user_to_schedule_page(self):
         self.assertEqual(u"Выбрать предметы", self.driver.find_element_by_css_selector(
