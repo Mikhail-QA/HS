@@ -51,3 +51,4 @@ class PopupSignIn(object):
         self.driver.find_element_by_css_selector(
             "#form59637329 > div.t330__input-wrapper > div.t330__blockbutton > button").click()
         assert (self.driver.find_element_by_css_selector("div.schedule_list_item_rep_item:nth-child(1)"))
+        time.sleep(5)
