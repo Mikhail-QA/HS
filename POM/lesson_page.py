@@ -56,8 +56,6 @@ class LessonPage(object):
     def click_yes_in_popup(self):
         self.driver.find_element_by_css_selector(
             "body > div.modal.fade.ng-isolate-scope.iu-fade.submit-images.in > div > div > div.new-modal_content.ng-scope > div > button.btn.btn-success").click()
-        assert (self.driver.find_element_by_css_selector("#lesson-content div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope div.col-sm-8"))
-        time.sleep(10)
 
     def click_button_next_in_tour(self):
         self.driver.find_element_by_css_selector("a.introjs-nextbutton").click()
