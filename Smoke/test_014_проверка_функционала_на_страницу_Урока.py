@@ -120,6 +120,8 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
             step_lesson_page.click_submit_a_job()
         with allure.step("В попапе нажать на кнопку Да"):
             step_lesson_page.click_yes_in_popup()
+        with allure.step("Проверка отображения прогресс-бара загрузки файлов"):
+            step_assert.check_uploader_progress()
         with allure.step(
                 "После отправки ДЗ появилось сообщение Ваше решение успешно отправлено и ожидает проверки учителем."):
             step_assert.check_text_successfully_download_az()
