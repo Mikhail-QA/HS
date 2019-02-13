@@ -547,16 +547,25 @@ class AssertForTest014(AssertForTest001):
     def check_message_for_ask_questions(self):
         assert (self.driver.find_element_by_css_selector("div.chat-message-content.ng-scope"))
         self.assertEqual(u"ومنظومة الظواهر الملحوظة",
-                         self.driver.find_element_by_css_selector("div.chat-messages.chat-video-translation > div:nth-child(1)  div p").text)
+                         self.driver.find_element_by_css_selector(
+                             "div.chat-messages.chat-video-translation > div:nth-child(1)  div p").text)
 
     def check_file_for_ask_question(self):
         self.assertEqual(u"photo_2018-09-18_13-28-24.jpg",
-                         self.driver.find_element_by_css_selector("div.chat-messages.chat-video-translation > div:nth-child(2)  div a").text)
+                         self.driver.find_element_by_css_selector(
+                             "div.chat-messages.chat-video-translation > div:nth-child(2)  div a").text)
 
     def check_text_successfully_download_az(self):
         self.assertEqual(u"Ваше решение успешно отправлено и ожидает проверки учителем.",
                          self.driver.find_element_by_css_selector(
-                             "#lesson-content div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope div.col-sm-8").text)
+                             "#lesson-content div.lesson-container > div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope  div.ng-scope > div > h3 > span").text)
+
+    def check_uploader_progress(self):
+        assert (self.driver.find_element_by_css_selector("div.file-uploader-progress"))
+        self.assertIn(u"Загрузка файлов:",
+                      self.driver.find_element_by_css_selector("div.file-uploader-progress label").text)
+        assert (self.driver.find_element_by_css_selector(
+            "#lesson-content div.lesson-container > div.fading.ng-scope.in > homework-tab-footer > div.tab-footer.tab-footer__homework.ng-scope  div.ng-scope > div > h3 > span"))
 
     def check_redirect_user_to_schedule_page(self):
         self.assertEqual(u"Выбрать предметы", self.driver.find_element_by_css_selector(
