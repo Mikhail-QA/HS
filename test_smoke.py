@@ -24,6 +24,10 @@ from Smoke.test_021_Пройти_Тест import PassTest
 from Smoke.test_022_Пройти_Тренажер import PassTrainer
 from Smoke.test_023_Проверка_плеера_ИУ import PlayVideoIu
 from Smoke.test_024_Проверить_ДЗ_учителем import LoginTeacherAndCheckHomeWorks
+from Smoke.test_025_проверка_отсутствия_возможности_загружить_ДЗ_тариф_Самостоятельный import LoginAndGoToLessonPageCheckHomeworkAndYaklass
+from Smoke.test_026_проверка_запрета_смены_тарифа import LoginAndChangeRateCourse
+from Smoke.test_027_проверка_отображения_оценки_на_страницу_урока import LoginStudentAndCheckBallInHomeWorks
+from Smoke.test_028_проверка_открытия_картинки_учителем import LoginTeacherAndCheckImg
 
 suite = unittest.TestSuite()
 
@@ -52,4 +56,10 @@ suite.addTest(unittest.makeSuite(PassTest))
 suite.addTest(unittest.makeSuite(PassTrainer))
 suite.addTest(unittest.makeSuite(PlayVideoIu))
 suite.addTest(unittest.makeSuite(LoginTeacherAndCheckHomeWorks))
+suite.addTest(unittest.makeSuite(LoginAndGoToLessonPageCheckHomeworkAndYaklass))
+suite.addTest(unittest.makeSuite(LoginAndChangeRateCourse))
+suite.addTest(unittest.makeSuite(LoginStudentAndCheckBallInHomeWorks))
+suite.addTest(unittest.makeSuite(LoginTeacherAndCheckImg))
+
+
 
