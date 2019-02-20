@@ -12,7 +12,7 @@ from POM.url import UrlHomeSchool
 from POM.refresh import Refresh
 
 
-@allure.issue("EDU-4327")
+@allure.issue("EDU-4327, EDU-4571")
 @allure.feature("Страница урока/Страница расписания")
 @allure.story(
     "Проверить тур на странице расписания, перейти на страницу урока, проверить фкнуционал страницы урока")
