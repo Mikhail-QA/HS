@@ -81,10 +81,12 @@ class LessonPage(object):
     def go_test(self):
         self.driver.find_element_by_css_selector(
             "#lesson-content > div > div > div > div > div > div.training-iu-table.b-practice > div.training-iu-section.tests > div > button").click()
+        time.sleep(4)
 
     def go_trainer(self):
         self.driver.find_element_by_css_selector(
             "#lesson-content > div > div > div > div > div > div.training-iu-table.b-practice > div.training-iu-section.trainers > div:nth-child(3) > button").click()
+        time.sleep(4)
 
     def click_play_video_iu(self):
         self.driver.find_element_by_id("vlp-videobox-1").click()
