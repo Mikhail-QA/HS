@@ -676,9 +676,8 @@ class AssertForTest024(AssertForTest001):
             "div.text-center:nth-child(7)").text)
         time.sleep(1)
 
-    def check_bal_in_homweork_for_lesson_page(self):
-        self.assertIn("Итоговая оценка: 4 / Хорошо", self.driver.find_element_by_css_selector(
-            "h2.yaclass-score").text)
+    def check_one_homework_in_list(self):
+        assert len(self.driver.find_elements_by_css_selector("a.user-name")) == 1
 
 
 class AssertForTest025(AssertForTest001):
@@ -715,3 +714,24 @@ class AssertForTest026(AssertForTest001):
     def check_button_pay_abonement(self):
         assert len(
             self.driver.find_elements_by_link_text("Продлить обучение")) == 0
+
+
+class AssertForTest027(AssertForTest001):
+    def __init__(self, driver):
+        super(AssertForTest027, self).__init__(driver)
+
+    def check_bal_in_homweork_for_lesson_page(self):
+        self.assertIn("Итоговая оценка: 4 / Хорошо", self.driver.find_element_by_css_selector(
+            "h2.yaclass-score").text)
+
+
+class AssertForTest028(AssertForTest001):
+    def __init__(self, driver):
+        super(AssertForTest028, self).__init__(driver)
+
+    def displayed_modal_window(self):
+        assert (self.driver.find_element_by_css_selector("div.modal-content"))
+
+    def visible_img_in_modal_window(self):
+        self.assertIn("https://dev-fileservice.cdnvideo.ru/",
+                      self.driver.find_element_by_css_selector("img.img-responsive").get_attribute("src"))
