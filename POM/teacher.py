@@ -12,11 +12,14 @@ class StepTeacher(object):
     def click_button_show(self):
         self.driver.find_element_by_css_selector("div:nth-child(2) > button").click()
         time.sleep(2)
-        assert (self.driver.find_element_by_css_selector("div.text-center:nth-child(7) a:nth-child(1)"))
+        assert (self.driver.find_element_by_css_selector("a.btn.btn-sm.btn-primary"))
 
     def click_button_check(self):
         self.driver.find_element_by_css_selector("a.btn.btn-sm.btn-primary").click()
         assert (self.driver.find_element_by_css_selector("div.col-sm-2"))
+
+    def click_button_ball(self):
+        self.driver.find_element_by_css_selector("div.text-center:nth-child(7) > a:nth-child(2)").click()
 
     def open_select(self):
         self.driver.find_element_by_css_selector(".text-center select").click()
@@ -28,3 +31,10 @@ class StepTeacher(object):
         self.driver.find_element_by_css_selector("button.btn.btn-primary.btn-xs").click()
         assert (self.driver.find_element_by_css_selector(".ng-submitted > div:nth-child(1) > div:nth-child(7) > a"))
         time.sleep(3)
+
+    def click_button_filter_checked(self):
+        self.driver.find_element_by_css_selector(
+            ".col-sm-4 > div:nth-child(1) > div:nth-child(2) > span:nth-child(4)").click()
+
+    def open_img(self):
+        self.driver.find_element_by_css_selector("span.atach-img").click()
