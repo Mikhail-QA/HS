@@ -32,9 +32,9 @@ class StepTeacher(object):
         assert (self.driver.find_element_by_css_selector(".ng-submitted > div:nth-child(1) > div:nth-child(7) > a"))
         time.sleep(3)
 
-    def click_button_filter_checked(self):
+    def click_button_filter_all(self):
         self.driver.find_element_by_css_selector(
-            ".col-sm-4 > div:nth-child(1) > div:nth-child(2) > span:nth-child(4)").click()
+            ".col-sm-4 > div:nth-child(1) > div:nth-child(2) > span:nth-child(2)").click()
 
     def open_img(self):
         self.driver.find_element_by_css_selector("span.atach-img").click()

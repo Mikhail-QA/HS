@@ -735,3 +735,6 @@ class AssertForTest028(AssertForTest001):
     def visible_img_in_modal_window(self):
         self.assertIn("https://dev-fileservice.cdnvideo.ru/",
                       self.driver.find_element_by_css_selector("img.img-responsive").get_attribute("src"))
+
+    def check_one_homework_in_list(self):
+        assert len(self.driver.find_elements_by_css_selector("a.user-name")) == 1
