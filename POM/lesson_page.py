@@ -81,7 +81,7 @@ class LessonPage(object):
     def go_test(self):
         self.driver.find_element_by_css_selector(
             "#lesson-content > div > div > div > div > div > div.training-iu-table.b-practice > div.training-iu-section.tests > div > button").click()
-        time.sleep(4)
+        time.sleep(5)
 
     def go_trainer(self):
         self.driver.find_element_by_css_selector(
