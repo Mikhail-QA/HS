@@ -30,7 +30,11 @@ class AssertForTest001(unittest.TestCase):
 
     def check_block_select_payment_types(self):
         assert len(
-            self.driver.find_elements_by_css_selector("div.payment-contract__payment-types-select.visibility")) == 1
+            self.driver.find_elements_by_css_selector("div.payment-iconostasis_type_epl")) == 1
+
+    def not_display_select_payment_types(self):
+        assert len(
+            self.driver.find_elements_by_css_selector("div.payment-iconostasis_type_epl")) == 0
 
     def check_text_in_demo_kassa_ege_hs01(self):
         self.assertIn("400", self.driver.find_element_by_class_name("price__whole-amount").text)
@@ -175,6 +179,10 @@ class AssertForTest002(AssertForTest001):
             self.driver.find_element_by_xpath(
                 "//*[@id='subjects-page-wrapper']/div/div[1]/div/div[2]/div[2]/div/div[2]/div[6]/button").text)
 
+    def not_display_select_payment_types(self):
+        assert len(
+            self.driver.find_elements_by_css_selector("div.payment-iconostasis_type_epl")) == 0
+
 
 class AssertForTest003(AssertForTest001):
     def __init__(self, driver):
@@ -232,6 +240,10 @@ class AssertForTest003(AssertForTest001):
             u"Продлить обучениe",
             self.driver.find_element_by_xpath(
                 "//*[@id='subjects-page-wrapper']/div/div[1]/div/div[1]/div/div[2]/div/div[2]/div[7]").text)
+
+    def not_display_select_payment_types(self):
+        assert len(
+            self.driver.find_elements_by_css_selector("div.payment-iconostasis_type_epl")) == 0
 
 
 class AssertForTest006(AssertForTest001):

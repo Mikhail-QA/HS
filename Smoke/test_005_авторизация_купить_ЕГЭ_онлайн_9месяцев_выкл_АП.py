@@ -47,7 +47,10 @@ class LoginBuyEgeCourseNineMonth(StartTildaClassMethod):
             step_buy.click_button_pay_ege_online()
         with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 6300 руб"):
             step_assert.check_text_in_demo_kassa_ege_hs02()
-        with allure.step("На странице ЯК ввести данные карты"):
+        with allure.step(
+                "На странице ЯКассы П без АП доступен выбор способа оплаты 1. Банковская карта 2. Яндекс день 3. Сбербанк Онлайн 4. Все способы оплаты"):
+            step_assert.check_block_select_payment_types()
+        with allure.step("На странице ЯК ввести данные карты и нажать на кнопку Заплатить"):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             time.sleep(20)
