@@ -28,6 +28,10 @@ class AssertForTest001(unittest.TestCase):
     def check_text_in_demo_kassa(self):
         self.assertIn("800", self.driver.find_element_by_class_name("price__whole-amount").text)
 
+    def check_block_select_payment_types(self):
+        assert len(
+            self.driver.find_elements_by_css_selector("div.payment-contract__payment-types-select.visibility")) == 1
+
     def check_text_in_demo_kassa_ege_hs01(self):
         self.assertIn("400", self.driver.find_element_by_class_name("price__whole-amount").text)
 
@@ -513,6 +517,10 @@ class AssertForTest013(AssertForTest001):
     def check_popup_thanks_for_the_feedback(self):
         self.assertEqual(u"Спасибо за отзыв!", self.driver.find_element_by_css_selector(
             "div.modal-header.ng-scope:nth-child(4)").text)
+        time.sleep(1)
+
+    def popup_thanks_for_the_feedback_not_display(self):
+        assert len(self.driver.find_elements_by_css_selector("div.modal-content")) == 0
 
 
 class AssertForTest014(AssertForTest001):

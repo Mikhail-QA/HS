@@ -35,6 +35,7 @@ class SchedulePage(object):
 
     def click_button_close_popup_feedback(self):
         self.driver.find_element_by_css_selector(".close-green-btn:nth-child(1)").click()
+        time.sleep(1)
 
     def go_to_lesson_page(self):
         self.driver.find_element_by_css_selector("div.schedule_list_item_info").click()

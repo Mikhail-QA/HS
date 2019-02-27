@@ -36,3 +36,6 @@ class LoginAndWrittenReview(StartTildaClassMethod):
             step_assert.check_popup_thanks_for_the_feedback()
         with allure.step("В поп-апе нажать на кнопку Закрыть"):
             step_schedule.click_button_close_popup_feedback()
+        with allure.step("Попап Спасибо за отзыв не отображается на странице"):
+            step_assert.popup_thanks_for_the_feedback_not_display()
+
