@@ -13,7 +13,7 @@ from POM.refresh import Refresh
 
 
 @allure.feature("Авторизоваться и продлить курс ДШ")
-@allure.story("Авторизация, продлить 7 класс, С Учителем, 3 месяца, вкл АП без ПН")
+@allure.story("Авторизация, продлить 7 класс, С Учителем, 3 месяца + ПН")
 class LoginAndExtendCourseSchool(StartTildaClassMethod):
     def test_extend_course_school(self):
         driver = self.driver
