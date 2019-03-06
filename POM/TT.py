@@ -16,7 +16,7 @@ class Test(object):
 
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
-        time.sleep(2)
+        time.sleep(3)
 
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
@@ -24,7 +24,7 @@ class Test(object):
 
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
-        time.sleep(2)
+        time.sleep(5)
 
     def click_button_finish(self):
         self.driver.find_element_by_link_text("Завершить").click()
