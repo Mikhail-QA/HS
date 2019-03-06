@@ -19,7 +19,8 @@ class SchedulePage(object):
         time.sleep(5)
 
     def click_button_chosen_subject(self):
-        self.driver.find_element_by_css_selector("a.subject-switch-link").click()
+        self.driver.find_element_by_css_selector("div.subject-switch-inner.ng-scope").click()
+        time.sleep(1)
 
     def click_button_review_block(self):
         self.driver.find_element_by_css_selector("div.review-block").click()
