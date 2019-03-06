@@ -80,6 +80,8 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
             step_lesson_page.send_text_in_input_ask_question()
         with allure.step("Нажать на кнопку Отправить"):
             step_lesson_page.click_button_send()
+        with allure.step("Обновить страницу"):  ## шаг необходим из-за выкл faye на дев01
+            self.driver.refresh()
         with allure.step("После появляется сообщение от П с текстом ومنظومة الظواهر الملحوظة"):
             step_assert.check_message_for_ask_questions()
 
@@ -87,12 +89,12 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        # with allure.step("Нажать на кнопку Загрузить файл"):
-            # step_lesson_page.click_button_download_file_in_ask_question()
         with allure.step("Загрузить картинку"):
             step_lesson_page.attach_img_in_ask_question()
         with allure.step("Нажать на кнопку Отправить"):
             step_lesson_page.click_button_send()
+        with allure.step("Обновить страницу"):  ## шаг необходим из-за выкл faye на дев01
+            self.driver.refresh()
         with allure.step("После появляется сообщение от П с название файла photo_2018-09-18_13-28-24.jpg "):
             step_assert.check_file_for_ask_question()
 
@@ -122,6 +124,8 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
             step_lesson_page.click_yes_in_popup()
         with allure.step("Проверка отображения прогресс-бара загрузки файлов"):
             step_assert.check_uploader_progress()
+        with allure.step("Обновить страницу"):  ## шаг необходим из-за выкл faye на дев01
+            self.driver.refresh()
         with allure.step(
                 "После отправки ДЗ появилось сообщение Ваше решение успешно отправлено и ожидает проверки учителем."):
             step_assert.check_text_successfully_download_az()
