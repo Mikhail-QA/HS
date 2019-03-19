@@ -19,8 +19,8 @@ class SchedulePage(object):
         time.sleep(5)
 
     def click_button_chosen_subject(self):
-        self.driver.find_element_by_css_selector("div.subject-switch-inner.ng-scope").click()
-        time.sleep(1)
+        self.driver.find_element_by_id("subjects-switch").click()
+        time.sleep(2)
 
     def click_button_review_block(self):
         self.driver.find_element_by_css_selector("div.review-block").click()
@@ -32,7 +32,7 @@ class SchedulePage(object):
         self.driver.find_element_by_css_selector("button.btn.btn-success.pull-right").click()
         time.sleep(2)
         assert (self.driver.find_element_by_css_selector(
-            ".close-green-btn:nth-child(1)"))
+            ".modal-content div:nth-child(5) button"))
 
     def click_button_close_popup_feedback(self):
         self.driver.find_element_by_css_selector(".close-green-btn:nth-child(1)").click()
