@@ -1,6 +1,9 @@
 import unittest
-
 import time
+
+from POM.prolongation_page import ProlongationLocators
+from POM.subscribe_page import SubscribeLocatorsStepSix
+from POM.yakassa_page import YakassaLocators
 
 
 class AssertForTest001(unittest.TestCase):
@@ -8,25 +11,26 @@ class AssertForTest001(unittest.TestCase):
         super().__init__()
         self.driver = driver
 
-    def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 1", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
+    def check_text_in_tab_6(self):
+        self.assertEqual(u"Учебный год: 2018/2019",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.school_years).text)
 
-        self.assertEqual(u"Формат обучения: «Самостоятельный»", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
+        self.assertEqual(u"Класс: 1", self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.grade).text)
 
-        self.assertEqual(u"Оплата за: 1 месяц", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
+        self.assertEqual(u"Формат обучения: «Самостоятельный»",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.format_in_course).text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: выключена", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
+        self.assertEqual(u"Оплата за: 1 месяц",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_course).text)
 
+        self.assertEqual(u"Услуга «Персональный наставник»: выключена",
+                         self.driver.find_element_by_css_selector(
+                             SubscribeLocatorsStepSix.mentor_service_included).text)
         self.assertEqual(u"Сумма к оплате: 800 руб.",
-                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
-        time.sleep(3)
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_summary_price).text)
 
-    def check_text_in_demo_kassa(self):
-        self.assertIn("800", self.driver.find_element_by_class_name("price__whole-amount").text)
+    def price_amount_displayed_in_demo_kassa(self):
+        self.assertIn("800", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     def check_block_select_payment_types(self):
         assert len(
@@ -36,11 +40,11 @@ class AssertForTest001(unittest.TestCase):
         assert len(
             self.driver.find_elements_by_css_selector("div.payment-iconostasis_type_epl")) == 0
 
-    def check_text_in_demo_kassa_ege_hs01(self):
-        self.assertIn("400", self.driver.find_element_by_class_name("price__whole-amount").text)
+    def price_amount_displayed_in_demo_kassa_ege_hs01(self):
+        self.assertIn("400", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
-    def check_text_in_demo_kassa_ege_hs02(self):
-        self.assertIn("6300", self.driver.find_element_by_class_name("price__whole-amount").text)
+    def price_amount_displayed_in_demo_kassa_ege_hs02(self):
+        self.assertIn("6300", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     def check_text_in_widget_my_school(self):
         self.assertEqual(
@@ -96,28 +100,31 @@ class AssertForTest002(AssertForTest001):
     def __init__(self, driver):
         super(AssertForTest002, self).__init__(driver)
 
-    def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 7", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
+    def check_text_in_tab_6(self):
+        self.assertEqual(u"Учебный год: 2018/2019",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.school_years).text)
 
-        self.assertEqual(u"Формат обучения: «С учителем»", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
+        self.assertEqual(u"Класс: 7", self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.grade).text)
 
-        self.assertEqual(u"Оплата за: 3 месяца", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
+        self.assertEqual(u"Формат обучения: «С учителем»",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.format_in_course).text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
+        self.assertEqual(u"Оплата за: 3 месяца",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_course).text)
 
-        self.assertEqual(u"Период действия услуги: 3 месяца", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(6)").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: включена",
+                         self.driver.find_element_by_css_selector(
+                             SubscribeLocatorsStepSix.mentor_service_included).text)
+
+        self.assertEqual(u"Период действия услуги: 3 месяца",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.period_mentor).text)
 
         self.assertEqual(u"Сумма к оплате: 13 800 руб.",
-                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_summary_price).text)
         time.sleep(3)
 
-    def check_text_in_demo_kassa(self):
-        self.assertIn("13 800", self.driver.find_element_by_class_name("price__whole-amount").text)
+    def price_amount_displayed_in_demo_kassa(self):
+        self.assertIn("13 800", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     def check_text_in_widget_my_school(self):
         self.assertEqual(
@@ -188,27 +195,30 @@ class AssertForTest003(AssertForTest001):
     def __init__(self, driver):
         super(AssertForTest003, self).__init__(driver)
 
-    def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 10", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
+    def check_text_in_tab_6(self):
+        self.assertEqual(u"Учебный год: 2018/2019",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.school_years).text)
 
-        self.assertEqual(u"Формат обучения: «С зачислением»", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
+        self.assertEqual(u"Класс: 10", self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.grade).text)
 
-        self.assertEqual(u"Оплата за: 9 месяцев", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
+        self.assertEqual(u"Формат обучения: «С зачислением»",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.format_in_course).text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
+        self.assertEqual(u"Оплата за: 9 месяцев",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_course).text)
 
-        self.assertEqual(u"Период действия услуги: 9 месяцев", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(6)").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: включена",
+                         self.driver.find_element_by_css_selector(
+                             SubscribeLocatorsStepSix.mentor_service_included).text)
+
+        self.assertEqual(u"Период действия услуги: 9 месяцев",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.period_mentor).text)
 
         self.assertEqual(u"Сумма к оплате: 57 600 руб.",
-                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_summary_price).text)
 
-    def check_text_in_demo_kassa(self):
-        self.assertIn("57 600", self.driver.find_element_by_class_name("price__whole-amount").text)
+    def price_amount_displayed_in_demo_kassa(self):
+        self.assertIn("57 600", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     def check_text_in_widget_my_school(self):
         self.assertEqual(
@@ -251,26 +261,25 @@ class AssertForTest006(AssertForTest001):
         super(AssertForTest006, self).__init__(driver)
 
     def check_text_in_tab_total(self):
-        self.assertEqual(u"Класс: 7 класс", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
+        self.assertEqual(u"Класс: 7 класс", self.driver.find_element_by_css_selector(ProlongationLocators.grade).text)
 
-        self.assertEqual(u"Формат обучения: С учителем", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
+        self.assertEqual(u"Формат обучения: С учителем",
+                         self.driver.find_element_by_css_selector(ProlongationLocators.format_in_course).text)
 
-        self.assertEqual(u"Продление обучения на: 3 месяца", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
+        self.assertEqual(u"Продление обучения на: 3 месяца",
+                         self.driver.find_element_by_css_selector(ProlongationLocators.payment_course).text)
 
-        self.assertEqual(u"Услуга «Персональный наставник»: включена", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
+        self.assertEqual(u"Услуга «Персональный наставник»: включена",
+                         self.driver.find_element_by_css_selector(ProlongationLocators.mentor_service_included).text)
 
-        self.assertEqual(u"Период продления услуги: 3 месяца", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(6)").text)
+        self.assertEqual(u"Период продления услуги: 3 месяца",
+                         self.driver.find_element_by_css_selector(ProlongationLocators.period_mentor).text)
 
         self.assertEqual(u"Сумма к оплате: 13 800 руб.",
-                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
+                         self.driver.find_element_by_css_selector(ProlongationLocators.payment_summary_price).text)
 
-    def check_text_in_demo_kassa(self):
-        self.assertIn("13 800", self.driver.find_element_by_class_name("price__whole-amount").text)
+    def price_amount_displayed_in_demo_kassa(self):
+        self.assertIn("13 800", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     def check_text_in_widget_my_school(self):
         self.assertEqual(
@@ -398,24 +407,26 @@ class AssertForTest010(AssertForTest001):
     def __init__(self, driver):
         super(AssertForTest010, self).__init__(driver)
 
-    def check_text_in_tab_5(self):
-        self.assertEqual(u"Класс: 10", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(1)").text)
+    def check_text_in_tab_6(self):
+        self.assertEqual(u"Учебный год: 2018/2019",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.school_years).text)
 
-        self.assertEqual(u"Формат обучения: «С учителем»", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(2)").text)
+        self.assertEqual(u"Класс: 10", self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.grade).text)
 
-        self.assertEqual(u"Оплата за: 3 месяца", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(3)").text)
+        self.assertEqual(u"Формат обучения: «С учителем»",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.format_in_course).text)
+
+        self.assertEqual(u"Оплата за: 3 месяца",
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_course).text)
 
         self.assertEqual(u"Услуга «Персональный наставник»: выключена", self.driver.find_element_by_css_selector(
-            ".payment-summary_list:nth-child(1) >  div:nth-child(5)").text)
+            SubscribeLocatorsStepSix.mentor_service_included).text)
 
         self.assertEqual(u"Сумма к оплате: 6 600 руб.",
-                         self.driver.find_element_by_css_selector(".payment-summary_price").text)
+                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.payment_summary_price).text)
 
-    def check_text_in_demo_kassa(self):
-        self.assertIn("6600", self.driver.find_element_by_class_name("price__whole-amount").text)
+    def price_amount_displayed_in_demo_kassa(self):
+        self.assertIn("6600", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     def check_text_in_widget_my_school(self):
         self.assertEqual(
