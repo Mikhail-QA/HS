@@ -1,0 +1,10 @@
+class ProlongationLocators:
+    school_years = ".payment-summary_list:nth-child(1) div:nth-child(1)"
+    grade = ".payment-summary_list:nth-child(1) div:nth-child(1)"
+    format_in_course = ".payment-summary_list:nth-child(1) div:nth-child(2)"
+    payment_course = ".payment-summary_list:nth-child(1) div:nth-child(3)"
+    lock_date_course = ".payment-summary_list:nth-child(1) div:nth-child(4)"
+    mentor_service_included = ".payment-summary_list:nth-child(1) div:nth-child(5)"
+    period_mentor = ".payment-summary_list:nth-child(1) div:nth-child(6)"
+    lock_date_mentor = ".payment-summary_list:nth-child(1) div:nth-child(7)"
+    payment_summary_price = ".payment-summary_price"
