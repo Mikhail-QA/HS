@@ -43,7 +43,7 @@ class PageSubscribe(object):
 
     def click_off_button_auto_payments_in_curse(self):
         self.driver.find_element_by_css_selector(
-            "div:nth-child(3) > div.payment-item_content_autopay.ng-scope > label").click()
+            "div:nth-child(4) div.payment-item_content_autopay.ng-scope label").click()
 
     def enable_button_auto_payments_in_personal_mentor(self):
         self.driver.find_element_by_css_selector(
@@ -72,23 +72,32 @@ class PageSubscribe(object):
 
     def click_button_pay_school(self):
         self.driver.find_element_by_class_name("button__w100").click()
-        time.sleep(61)
+        assert (self.driver.find_element_by_css_selector("button.payment-contract__pay-button"))
 
     def click_button_pay_ege_independent(self):
         self.driver.find_element_by_css_selector("button.btn.btn-primary.ng-binding").click()
-        # time.sleep(40)
 
     def click_button_pay_ege_online(self):
         self.driver.find_element_by_css_selector(
             "div:nth-child(2) > div > div > div:nth-child(2) > tarif-table-ege > div > div > div > table > tfoot > tr:nth-child(2) > td:nth-child(3)").click()
-        # time.sleep(40)
 
     def enter_data_card(self):
         self.driver.find_element_by_id("cardNumber").send_keys("4444444444444448")
         self.driver.find_element_by_name("skr_month").send_keys("12")
         self.driver.find_element_by_name("skr_year").send_keys("20")
         self.driver.find_element_by_name("skr_cardCvc").send_keys("000")
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_class_name("payment-contract__pay-button").click()
-        assert (self.driver.find_element_by_css_selector("h1.title.title_last_yes"))
-        time.sleep(3)
+        assert (self.driver.find_element_by_css_selector("i.icon_name_checkmark-green"))
+
+
+class SubscribeLocatorsStepSix:
+    school_years = ".payment-summary_list:nth-child(1) div:nth-child(1)"
+    grade = ".payment-summary_list:nth-child(1) div:nth-child(2)"
+    format_in_course = ".payment-summary_list:nth-child(1) div:nth-child(3)"
+    payment_course = ".payment-summary_list:nth-child(1) div:nth-child(4)"
+    lock_date_course = ".payment-summary_list:nth-child(1) div:nth-child(5)"
+    mentor_service_included = ".payment-summary_list:nth-child(1) div:nth-child(6)"
+    period_mentor = ".payment-summary_list:nth-child(1) div:nth-child(7)"
+    lock_date_mentor = ".payment-summary_list:nth-child(1) div:nth-child(8)"
+    payment_summary_price = ".payment-summary_price"
