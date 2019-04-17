@@ -20,8 +20,7 @@ class MyProfile(object):
         time.sleep(1)
 
     def click_button_pay_for_access(self):
-        self.driver.find_element_by_css_selector(
-            "#subjects-page-wrapper > div > div.col-sm-3.col-md-3 > div > div:nth-child(3) > div > a").click()
+        self.driver.find_element_by_css_selector("a.btn.btn-primary").click()
         assert (u"Домашняя школа", self.driver.find_element_by_css_selector("h2.courses-prepare__payment-title").text)
         time.sleep(2)
 
