@@ -61,19 +61,19 @@ class CreateAccountAndBuyLearningThreeMonth(StartLandingClassMethod):
         with allure.step("Включить ПН"):
             step_buy.selected_service_personal_mentor()
         with allure.step(
-                "В блоке № 5 отображается текст Класс: 7, Формат обучения: «С учителем», Дата Услуга «Персональный наставник»: включена, Сумма к оплате: 13 800 руб."):
-            step_assert.check_text_in_tab_5()
+                "В блоке № 6 отображается текст Класс: 7, Формат обучения: «С учителем», Дата Услуга «Персональный наставник»: включена, Сумма к оплате: 13 800 руб."):
+            step_assert.check_text_in_tab_6()
         with allure.step("Нажать на кнопку Оплатить обучение"):
             step_buy.click_button_pay_school()
         with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 13 800 руб"):
-            step_assert.check_text_in_demo_kassa()
+            step_assert.price_amount_displayed_in_demo_kassa()
         with allure.step("На странице ЯКассы П с вкл АП отсутствует блок выбора способа оплаты"):
             step_assert.not_display_select_payment_types()
         with allure.step("На странице ЯК ввести данные карты и нажать на кнопку Заплатить"):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(20)
+            time.sleep(5)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):

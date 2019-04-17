@@ -44,14 +44,14 @@ class LoginAndBuyEgeCourseOneMonth(StartTildaClassMethod):
         with allure.step("Нажать на кнопку Оплатить"):
             step_buy.click_button_pay_ege_independent()
         with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 400 руб"):
-            step_assert.check_text_in_demo_kassa_ege_hs01()
+            step_assert.price_amount_displayed_in_demo_kassa_ege_hs01()
         with allure.step("На странице ЯКассы П с вкл АП отсутствует блок выбора способа оплаты"):
             step_assert.not_display_select_payment_types()
         with allure.step("На странице ЯК ввести данные карты и нажать на кнопку Заплатить"):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(20)
+            time.sleep(5)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):

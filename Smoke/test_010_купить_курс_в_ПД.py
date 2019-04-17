@@ -39,16 +39,16 @@ class LoginAndBuyCourseInTrialAccess(StartTildaClassMethod):
             step_profile.click_button_pay_school_in_pd()
         with allure.step(
                 "В блоке № 5 отображается текст Класс: 10, Формат обучения: «С учителем», Дата Услуга «Персональный наставник»: выключена, Сумма к оплате: 6 600 руб."):
-            step_assert.check_text_in_tab_5()
+            step_assert.check_text_in_tab_6()
         with allure.step("На странице оплаты нажать на кнопку Оплатить обучение"):
             step_subscribe.click_button_pay_school()
         with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 6 600 руб"):
-            step_assert.check_text_in_demo_kassa()
+            step_assert.price_amount_displayed_in_demo_kassa()
         with allure.step("На странице ЯК ввести данные карты"):
             step_subscribe.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(20)
+            time.sleep(5)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):
