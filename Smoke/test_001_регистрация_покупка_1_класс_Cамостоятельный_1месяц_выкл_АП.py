@@ -61,12 +61,12 @@ class CreateAccountAndBuyLearningOneMonth(StartLandingClassMethod):
         with allure.step("Выключить АП"):
             step_buy.click_off_button_auto_payments_in_curse()
         with allure.step(
-                "В блоке № 5 отображается текст Класс: 1, Формат обучения: «Самостоятельный», Оплата за: 1 месяц Услуга «Персональный наставник»: выключена, Сумма к оплате: 800 руб."):
-            step_assert.check_text_in_tab_5()
+                "В блоке № 6 отображается текст Класс: 1, Формат обучения: «Самостоятельный», Оплата за: 1 месяц Услуга «Персональный наставник»: выключена, Сумма к оплате: 800 руб."):
+            step_assert.check_text_in_tab_6()
         with allure.step("Нажать на кнопку Оплатить обучение"):
             step_buy.click_button_pay_school()
         with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 800 руб"):
-            step_assert.check_text_in_demo_kassa()
+            step_assert.price_amount_displayed_in_demo_kassa()
         with allure.step(
                 "На странице ЯКассы П без АП доступен выбор способа оплаты 1. Банковская карта 2. Яндекс день 3. Сбербанк Онлайн 4. Все способы оплаты"):
             step_assert.check_block_select_payment_types()
@@ -74,7 +74,7 @@ class CreateAccountAndBuyLearningOneMonth(StartLandingClassMethod):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(20)
+            time.sleep(5)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):
