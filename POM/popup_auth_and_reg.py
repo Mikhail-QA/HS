@@ -1,5 +1,7 @@
 import time
 
+import allure
+
 
 class PopupSignIn(object):
     def __init__(self, driver):
@@ -41,6 +43,7 @@ class PopupSignIn(object):
     def click_button_yandex(self):
         self.driver.find_element_by_css_selector("a.b-omniauth__item.b-omniauth__item_icon_yd").click()
 
+    @allure.step
     def click_button_login(self):
         self.driver.find_element_by_css_selector(
             "#form59637329 > div.t330__input-wrapper > div.t330__blockbutton > button").click()
