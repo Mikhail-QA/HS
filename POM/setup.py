@@ -2,8 +2,11 @@ import time
 import unittest
 
 import os
+
+import allure
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+
 
 # Config = {
 #     "dev01": {
@@ -97,7 +100,7 @@ if __name__ == "__main__":
     unittest.main()
 
 
-class StartTildaClassMethod(unittest.TestCase):
+class OpenTilda(unittest.TestCase):
     driver = None
 
     @classmethod
