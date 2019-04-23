@@ -1,6 +1,8 @@
 import allure
+import pytest
+
 from POM.popup_auth_and_reg import PopupSignIn
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
 from POM.users import Hs02
 from POM.url import UrlHomeSchool
@@ -9,9 +11,10 @@ from POM.TT import Test
 from POM.asserts import AssertForTest021
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Тест")
 @allure.story("Авторизоваться, Пройти Тест")
-class PassTest(StartTildaClassMethod):
+class PassTest(OpenTilda):
     def test_passed(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -23,7 +26,7 @@ class PassTest(StartTildaClassMethod):
         assert_step = AssertForTest021(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
             step_user.enter_email(user_name="hs02@yopmail.com")
             step_user.enter_password(password="123456")
