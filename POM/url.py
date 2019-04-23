@@ -1,10 +1,13 @@
 import time
 
+import allure
+
 
 class UrlHomeSchool(object):
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step
     def go_to_my_profile(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/profile/my_profile")
         time.sleep(2)
