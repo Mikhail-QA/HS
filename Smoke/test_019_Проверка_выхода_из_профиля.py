@@ -1,6 +1,6 @@
 import allure
 from POM.delete_popup import DeleteModalPopup
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
 from POM.users import Hs05
@@ -10,7 +10,7 @@ from POM.schedule_page import SchedulePage
 
 @allure.feature("Выход из профиля")
 @allure.story("Авторизоваться П и выйти из аккаунта кнопкой выход")
-class LoginAndExitProfile(StartTildaClassMethod):
+class LoginAndExitProfile(OpenTilda):
     def test_exit_profile(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -21,7 +21,7 @@ class LoginAndExitProfile(StartTildaClassMethod):
         step_delete = DeleteModalPopup(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs05@yopmail.com/123456"):
             step_user.enter_email(user_name="hs05@yopmail.com")
             step_user.enter_password(password="123456")

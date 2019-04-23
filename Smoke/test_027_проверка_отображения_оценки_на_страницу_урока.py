@@ -22,7 +22,7 @@ class LoginStudentAndCheckBallInHomeWorks(StartSchoolClassMethod):
         with allure.step("Перейти на Tilda"):
             step_url.go_to_tilda_landing()
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
             step_user.enter_email(user_name="hs02@yopmail.com")
             step_user.enter_password(password="123456")

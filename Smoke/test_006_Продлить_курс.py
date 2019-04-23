@@ -1,7 +1,7 @@
 import allure
 import time
 
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.url import UrlHomeSchool
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
@@ -14,7 +14,7 @@ from POM.refresh import Refresh
 
 @allure.feature("Авторизоваться и продлить курс ДШ")
 @allure.story("Авторизация, продлить 7 класс, С Учителем, 3 месяца + ПН")
-class LoginAndExtendCourseSchool(StartTildaClassMethod):
+class LoginAndExtendCourseSchool(OpenTilda):
     def test_extend_course_school(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -27,7 +27,7 @@ class LoginAndExtendCourseSchool(StartTildaClassMethod):
         step_refresh = Refresh(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
             step_user.enter_email(user_name="hs02@yopmail.com")
             step_user.enter_password(password="123456")

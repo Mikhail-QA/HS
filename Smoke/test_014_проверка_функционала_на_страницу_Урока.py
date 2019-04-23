@@ -1,7 +1,7 @@
 import allure
 import time
 
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
 from POM.users import Hs02
@@ -9,14 +9,13 @@ from POM.schedule_page import SchedulePage
 from POM.lesson_page import LessonPage
 from POM.asserts import AssertForTest014
 from POM.url import UrlHomeSchool
-from POM.refresh import Refresh
 
 
 @allure.issue("EDU-4327, EDU-4571")
 @allure.feature("Страница урока/Страница расписания")
 @allure.story(
     "Проверить тур на странице расписания, перейти на страницу урока, проверить фкнуционал страницы урока")
-class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
+class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
     def test_000_go_lesson_page(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -24,7 +23,7 @@ class LoginAndGoToLessonPageTestAllFunction(StartTildaClassMethod):
         step_user = Hs02(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
             step_user.enter_email(user_name="hs02@yopmail.com")
             step_user.enter_password(password="123456")

@@ -1,7 +1,7 @@
 import allure
 import time
 
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.url import UrlHomeSchool
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
@@ -14,7 +14,7 @@ from POM.subscribe_page import PageSubscribe
 
 @allure.feature("Купить курс у ПД пользователя")
 @allure.story("Авторизация, купить курс через виджет ПД в ЛК")
-class LoginAndBuyCourseInTrialAccess(StartTildaClassMethod):
+class LoginAndBuyCourseInTrialAccess(OpenTilda):
     def test_buy_trial_access(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -27,7 +27,7 @@ class LoginAndBuyCourseInTrialAccess(StartTildaClassMethod):
         step_subscribe = PageSubscribe(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs04@yopmail.com/123456"):
             step_user.enter_email(user_name="hs04@yopmail.com")
             step_user.enter_password(password="123456")

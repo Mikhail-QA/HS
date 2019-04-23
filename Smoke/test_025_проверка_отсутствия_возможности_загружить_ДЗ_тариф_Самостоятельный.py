@@ -1,5 +1,5 @@
 import allure
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
 from POM.users import Hs01
@@ -9,7 +9,7 @@ from POM.url import UrlHomeSchool
 
 @allure.feature("Тариф Самостоятельный")
 @allure.story("Проверка отсутствия загрузки ДЗ и заглушка на Яклассе")
-class LoginAndGoToLessonPageCheckHomeworkAndYaklass(StartTildaClassMethod):
+class LoginAndGoToLessonPageCheckHomeworkAndYaklass(OpenTilda):
     def test_000_go_lesson_page(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -17,7 +17,7 @@ class LoginAndGoToLessonPageCheckHomeworkAndYaklass(StartTildaClassMethod):
         step_user = Hs01(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs01@yopmail.com/123456"):
             step_user.enter_email(user_name="hs01@yopmail.com")
             step_user.enter_password(password="123456")

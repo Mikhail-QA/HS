@@ -1,7 +1,7 @@
 import allure
 from POM.url import UrlHomeSchool
 from POM.lesson_page import LessonPage
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
 from POM.users import Hs02
 from POM.popup_auth_and_reg import PopupSignIn
@@ -10,7 +10,7 @@ from POM.asserts import AssertForTest023
 
 @allure.feature("Плеер ИУ")
 @allure.story("Проверить воспроизведения видео в плеере ИУ")
-class PlayVideoIu(StartTildaClassMethod):
+class PlayVideoIu(OpenTilda):
     def test_check_player_iu(self):
         driver = self.driver
         get_lesson = UrlHomeSchool(driver)
@@ -20,7 +20,7 @@ class PlayVideoIu(StartTildaClassMethod):
         step_enter = PopupSignIn(driver)
         step_assert = AssertForTest023(driver)
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
             step_user.enter_email(user_name="hs02@yopmail.com")
             step_user.enter_password(password="123456")

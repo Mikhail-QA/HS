@@ -47,4 +47,4 @@ class CreateAccountAndCheckEmail(StartLandingClassMethod):
         # with allure.step("Нажать на кнопку Сохранить"):
         #     step_profile.click_button_save_changes()
         with allure.step("В ЛК отображается почта указанная при регистрации"):
-            step_assert.check_email_for_user()
+            step_assert.check_email_in_user()

@@ -1,5 +1,5 @@
 import allure
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.url import UrlHomeSchool
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
@@ -11,7 +11,7 @@ from POM.my_profile import OffAutoPayInPersonalMentor
 
 @allure.feature("Отключить автоплатеж в ПН")
 @allure.story("Авторизация, отключить АП в ПН в 11 классе")
-class LoginAndOffAutoPaymentInPersonalMentor(StartTildaClassMethod):
+class LoginAndOffAutoPaymentInPersonalMentor(OpenTilda):
     def test_off_auto_payment(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -23,7 +23,7 @@ class LoginAndOffAutoPaymentInPersonalMentor(StartTildaClassMethod):
         step_off = OffAutoPayInPersonalMentor(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs03@yopmail.com/123456"):
             step_user.enter_email(user_name="hs03@yopmail.com")
             step_user.enter_password(password="123456")

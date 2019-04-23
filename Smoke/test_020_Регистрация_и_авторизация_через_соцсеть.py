@@ -1,6 +1,6 @@
 import allure
 from POM.social_networks import SocialVk
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.url import UrlHomeSchool
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
@@ -10,7 +10,7 @@ from POM.school_page import SchoolPage
 
 @allure.feature("Авторизация через соцсеть")
 @allure.story("Авторизоваться на сайте ДШ П через соцсеть ВК (gruzd-vikto@rambler.ru)")
-class RegistrationAndAuthUserInSocialNetwork(StartTildaClassMethod):
+class RegistrationAndAuthUserInSocialNetwork(OpenTilda):
     def test_000_reg_user(self):
         driver = self.driver
         auth_vk = SocialVk(driver)

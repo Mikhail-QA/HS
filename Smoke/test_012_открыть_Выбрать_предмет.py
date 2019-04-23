@@ -1,5 +1,5 @@
 import allure
-from POM.setup import StartTildaClassMethod
+from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
 from POM.users import Hs02
@@ -9,7 +9,7 @@ from POM.asserts import AssertForTest012
 
 @allure.feature("Страница расписания")
 @allure.story("Авторизоваться, открыть Выбрать предметы")
-class LoginAndOpenChosenSubject(StartTildaClassMethod):
+class LoginAndOpenChosenSubject(OpenTilda):
     def test_open_chosen_subject(self):
         driver = self.driver
         step_tilda = TildaPage(driver)
@@ -19,7 +19,7 @@ class LoginAndOpenChosenSubject(StartTildaClassMethod):
         step_schedule = SchedulePage(driver)
 
         with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_button_enter()
+            step_tilda.click_login_button()
         with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
             step_user.enter_email(user_name="hs02@yopmail.com")
             step_user.enter_password(password="123456")
