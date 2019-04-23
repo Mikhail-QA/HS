@@ -92,12 +92,12 @@ class PageSubscribe(object):
 
 
 class SubscribeLocatorsStepSix:
-    school_years = ".payment-summary_list:nth-child(1) div:nth-child(1)"
-    grade = ".payment-summary_list:nth-child(1) div:nth-child(2)"
-    format_in_course = ".payment-summary_list:nth-child(1) div:nth-child(3)"
-    payment_course = ".payment-summary_list:nth-child(1) div:nth-child(4)"
-    lock_date_course = ".payment-summary_list:nth-child(1) div:nth-child(5)"
-    mentor_service_included = ".payment-summary_list:nth-child(1) div:nth-child(6)"
-    period_mentor = ".payment-summary_list:nth-child(1) div:nth-child(7)"
-    lock_date_mentor = ".payment-summary_list:nth-child(1) div:nth-child(8)"
-    payment_summary_price = ".payment-summary_price"
+    element_school_years = ".payment-summary_list:nth-child(1) div:nth-child(1)"
+    element_grade = ".payment-summary_list:nth-child(1) div:nth-child(2)"
+    element_format_in_course = ".payment-summary_list:nth-child(1) div:nth-child(3)"
+    element_payment_course = ".payment-summary_list:nth-child(1) div:nth-child(4)"
+    element_lock_date_course = ".payment-summary_list:nth-child(1) div:nth-child(5)"
+    element_mentor_service_included = ".payment-summary_list:nth-child(1) div:nth-child(6)"
+    element_period_mentor = ".payment-summary_list:nth-child(1) div:nth-child(7)"
+    element_lock_date_mentor = ".payment-summary_list:nth-child(1) div:nth-child(8)"
+    element_payment_summary_price = ".payment-summary_price"
