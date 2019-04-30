@@ -47,7 +47,7 @@ class PageSubscribe(object):
 
     def enable_button_auto_payments_in_personal_mentor(self):
         self.driver.find_element_by_css_selector(
-            "div:nth-child(4) > div.payment-item_content_autopay.ng-scope > label").click()
+            "div:nth-child(5) > div.payment-item_content_autopay.ng-scope > label").click()
 
     def click_button_see_tab_one_ege_curse(self):
         # self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

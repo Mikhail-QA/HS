@@ -55,10 +55,10 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
             step_profile.click_button_pay_for_access()
         with allure.step("Выбрать 10 класс"):
             step_buy.select_ten_class()
-        with allure.step("Выбрать период 9 месяцев"):
-            step_buy.choose_period_nine_month()
         with allure.step("Выбрать тарифа с Зачислением"):
             step_buy.choose_tariff_with_enrollment()
+        with allure.step("Выбрать период 9 месяцев"):
+            step_buy.choose_period_nine_month()
         with allure.step("Включить ПН"):
             step_buy.selected_service_personal_mentor()
         with allure.step("Включить АП в ПН"):
