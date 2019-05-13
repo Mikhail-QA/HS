@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from POM.delete_popup import DeleteModalPopup
 from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
@@ -8,6 +10,7 @@ from POM.asserts import AssertForTest019
 from POM.schedule_page import SchedulePage
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Выход из профиля")
 @allure.story("Авторизоваться П и выйти из аккаунта кнопкой выход")
 class LoginAndExitProfile(OpenTilda):

@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from POM.setup import OpenTilda
 from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
@@ -7,6 +9,7 @@ from POM.schedule_page import SchedulePage
 from POM.asserts import AssertForTest015
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Страница расписания")
 @allure.story("Авторизоваться, Перейти на Журнала успеваемости")
 class LoginAndGoToAcademicJournal(OpenTilda):
@@ -31,5 +34,3 @@ class LoginAndGoToAcademicJournal(OpenTilda):
             step_assert.check_text_all_page()
         with allure.step("Сверить url со ссылкой на которой находится П"):
             step_assert.check_url()
-
-

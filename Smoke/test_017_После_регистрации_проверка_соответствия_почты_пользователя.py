@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from POM.url import UrlHomeSchool
 from POM.setup import StartLandingClassMethod
 from POM.school_page import LandingPage
@@ -9,6 +11,7 @@ from POM.users import Hs05
 from POM.asserts import AssertForTest017
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Проверка в ЛК E-mail")
 @allure.story("Зарегистрироваться П и проверить указанную почтовы в ЛК")
 class CreateAccountAndCheckEmail(StartLandingClassMethod):

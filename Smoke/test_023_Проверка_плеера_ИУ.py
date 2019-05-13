@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from POM.url import UrlHomeSchool
 from POM.lesson_page import LessonPage
 from POM.setup import OpenTilda
@@ -8,6 +10,7 @@ from POM.popup_auth_and_reg import PopupSignIn
 from POM.asserts import AssertForTest023
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Плеер ИУ")
 @allure.story("Проверить воспроизведения видео в плеере ИУ")
 class PlayVideoIu(OpenTilda):

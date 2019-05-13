@@ -9,6 +9,7 @@ from POM.users import Hs05
 from POM.asserts import AssertForTest017
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @pytest.mark.end_to_end
 @pytest.mark.regression
 @allure.feature("Проверка в ЛК E-mail")
