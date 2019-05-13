@@ -11,6 +11,11 @@ from POM.asserts import AssertForTest014
 from POM.url import UrlHomeSchool
 
 
+# Поменять ссылки в:
+# test_002_check_tour_in_lesson_page
+# test_006_click_button_next_step
+# test_027
+
 @allure.issue("EDU-4327, EDU-4571")
 @allure.feature("Страница урока/Страница расписания")
 @allure.story(
