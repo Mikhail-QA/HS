@@ -22,14 +22,14 @@ class UrlHomeSchool(object):
         self.driver.get("https://web-dev01.interneturok.ru/school/logout")
 
     def go_to_lesson_page_test(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21877/video/95854")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21895/video/96018")
         assert (self.driver.find_element_by_css_selector("#step9"))
 
     def go_to_lesson_page_1_klass(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21493/homework/91341")
 
     def go_to_lesson_page_tab_homework(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21877/homework/95855")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/21895/homework/96019")
         assert (self.driver.find_element_by_css_selector(
             ".next-item-btn"))
         time.sleep(2)
