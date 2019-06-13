@@ -521,6 +521,7 @@ class AssertForTest012(AssertForTest001):
                          u"\n ОБЖ"
                          u"\n Астрономия"
                          u"\n Профориентация от SuperJob"
+                         u"\n Профориентация - игры от tendo.studio"
                          u"\nДомашняя школа, 7 класс:"
                          u"\n Алгебра. Стандартный курс"
                          u"\n Геометрия. Стандартный курс"
@@ -539,6 +540,7 @@ class AssertForTest012(AssertForTest001):
                          u"\n Физкультура"
                          u"\n Технология"
                          u"\n Профориентация от SuperJob"
+                         u"\n Профориентация - игры от tendo.studio"
                          u"\nРепетитор ЕГЭ:"
                          u"\n Математика Профильный",
                          self.driver.find_element_by_css_selector("div.block-subject-elem-container").text)
