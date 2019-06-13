@@ -22,7 +22,7 @@ class RegistrationAndAuthUserInSocialNetwork(OpenTilda):
             auth_vk.auth_user_vk()
         with allure.step("Перейти на Tilda"):
             get_main_page.go_to_tilda_landing()
-        with allure.step("Нажать на кнопку Регистрация"):
+        with allure.step("Нажать на кнопку Начать заниматься"):
             open_popup_auth.click_button_registration()
         with allure.step("В поп-апе регистрации нажать на иконку соцсети ВК"):
             activity_popup.click_button_vk_reg()
