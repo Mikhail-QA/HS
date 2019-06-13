@@ -15,8 +15,8 @@ class UrlHomeSchool(object):
             "//*[@id='subjects-page-wrapper']/div/div[2]/form/div[1]/div/div[1]/user-personal-info/div[7]/label").text)
 
     def go_to_tilda_landing(self):
-        self.driver.get("http://iu:123456@project752209.tilda.ws/")
-        assert (self.driver.find_element_by_css_selector("div.t396__elem.tn-elem.tn-elem__596361131472555385669"))
+        self.driver.get("https://home-school-dev01.interneturok.ru/")
+        assert (self.driver.find_element_by_css_selector("a.footer__top_button.orange__link")) # кнопка начать заниматься
 
     def exit_profile(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/logout")
