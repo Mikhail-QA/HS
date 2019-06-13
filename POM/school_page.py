@@ -62,7 +62,7 @@ class FormSignIn(SchoolPage):
         self.driver.find_element_by_css_selector("#page-login > div > iu-authorization > div > form > button").click()
         time.sleep(4)
         assert (self.driver.find_elements_by_css_selector(
-            "div.row:nth-child(7) > div:nth-child(1) > div:nth-child(2) > button:nth-child(1)"))
+            "div.filter:nth-child(2) span:nth-child(2)"))
         time.sleep(1)
 
     def click_button_login_admin(self):
