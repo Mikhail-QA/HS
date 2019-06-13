@@ -17,7 +17,8 @@ class PopupSignIn(object):
         self.driver.find_element_by_link_text("Вход").click()
 
     def click_button_vk_reg(self):
-        self.driver.find_element_by_xpath("//*[@id='rec59637330']/div/div/div[2]/div/div[1]/ul/li[1]/a").click()
+        self.driver.find_element_by_css_selector(
+            "body > div.pp.pp__registration.show > div.pp__content.pp__content_registration > div.pp__content_head > div.fastlogin-box > a:nth-child(1)").click()
         assert (u"Я новый пользователь",
                 self.driver.find_element_by_css_selector("body > div > div.actions > a:nth-child(1)").text)
 
@@ -45,13 +46,12 @@ class PopupSignIn(object):
 
     @allure.step
     def click_button_login(self):
-        self.driver.find_element_by_css_selector(
-            "#form59637329 > div.t330__input-wrapper > div.t330__blockbutton > button").click()
+        self.driver.find_element_by_css_selector("#singin > button").click()
         assert (self.driver.find_element_by_css_selector("a.dropdown-toggle"))
         time.sleep(2)
 
     def click_button_login_and_wait_donwload_main_page(self):
-        self.driver.find_element_by_css_selector(
-            "#form59637329 > div.t330__input-wrapper > div.t330__blockbutton > button").click()
-        assert (self.driver.find_element_by_css_selector("span.green"))
+        self.driver.find_element_by_css_selector("#singin > button").click()
+        assert (
+            self.driver.find_element_by_css_selector("schedule-date.ng-isolate-scope"))  # первая дата в списке уроков
         time.sleep(5)
