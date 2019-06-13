@@ -6,13 +6,14 @@ class StepTeacher(object):
         self.driver = driver
 
     def search_user(self, user_name="hs02@yopmail.com"):
-        self.driver.find_element_by_css_selector("input.form-control:nth-child(2)").send_keys(
+        self.driver.find_element_by_css_selector("div.col-md-8 input.ng-untouched.ng-valid.ng-empty").send_keys(
             user_name)
 
     def click_button_show(self):
-        self.driver.find_element_by_css_selector("div:nth-child(2) > button").click()
-        time.sleep(2)
+        self.driver.find_element_by_css_selector("div.col-md-4 button.btn.btn-xs.btn-warning").click()
+        time.sleep(1)
         assert (self.driver.find_element_by_css_selector("a.btn.btn-sm.btn-primary"))
+        time.sleep(1.5)
 
     def click_button_check(self):
         self.driver.find_element_by_css_selector("a.btn.btn-sm.btn-primary").click()
@@ -34,7 +35,7 @@ class StepTeacher(object):
 
     def click_button_filter_all(self):
         self.driver.find_element_by_css_selector(
-            ".col-sm-4 > div:nth-child(1) > div:nth-child(2) > span:nth-child(2)").click()
+            "div.filter:nth-child(3) span:nth-child(4)").click()
 
     def open_img(self):
         self.driver.find_element_by_css_selector("span.atach-img").click()
