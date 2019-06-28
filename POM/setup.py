@@ -108,8 +108,8 @@ class OpenTilda(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         cls.driver.implicitly_wait(40)
         cls.driver.maximize_window()
-        # cls.driver.get("https://iu:123456@test-school01.interneturok.ru/")
-        cls.driver.get("https://home-school-dev01.interneturok.ru/")
+        cls.driver.get("https://iu:123456@test-school01.interneturok.ru/")
+        # cls.driver.get("https://home-school-dev01.interneturok.ru/")
         time.sleep(3)
         cls.verificationErrors = []
 
