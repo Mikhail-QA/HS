@@ -1,9 +1,8 @@
 pytest==3.10.1
 selenium==3.0.0
 allure-pytest==2.3.1b1
-pytest-allure-adaptor==1.7.10
+allure-python-commons==2.3.1b1
 requests==2.21.0
 pytest-rerunfailures==7.0
 webdriver-manager==1.7
 pytest-fixture-config==1.4.0
-vcrpy==2.0.1

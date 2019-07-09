@@ -7,6 +7,7 @@ from POM.tilda_page import TildaPage
 from POM.popup_auth_and_reg import PopupSignIn
 from POM.users import Hs05
 from POM.asserts import AssertForTest017
+from POM.save_screenshot import SaveScreen
 
 
 @pytest.mark.flaky(reruns=1, reruns_delay=1)
@@ -21,6 +22,7 @@ class LoginAndCheckEmailForUser(OpenTilda):
         self.user = Hs05(self.driver)
         self.go = UrlHomeSchool(self.driver)
         self.assert_step = AssertForTest017(self.driver)
+        self.save = SaveScreen(self.driver)
 
         self.tilda_page.click_login_button()
         self.user.enter_email(user_name="hs05@yopmail.com")
@@ -28,3 +30,4 @@ class LoginAndCheckEmailForUser(OpenTilda):
         self.popup_sigin.click_button_login()
         self.go.go_to_my_profile()
         self.assert_step.check_email_in_user()
+        self.save.screen()
