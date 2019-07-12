@@ -52,6 +52,8 @@ class CreateAccountAndBuyLearningOneMonth(StartLandingClassMethod):
         #     step_profile.click_button_save_changes()
         with allure.step("Нажать на кнопку Оплатить доступ"):
             step_profile.click_button_pay_for_access()
+        self.driver.get("https://web-dev01.interneturok.ru/school/subjects-subscribe")
+        time.sleep(2)
         with allure.step("Выбрать 1 класс"):
             step_buy.select_one_class()
         with allure.step("Выбрать период 1 месяц"):

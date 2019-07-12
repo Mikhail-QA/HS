@@ -37,6 +37,8 @@ class LoginAndBuyCourseInTrialAccess(OpenTilda):
             step_go_to_profile.go_to_my_profile()
         with allure.step("В 10 классе нажать на кнопку Олпатить обучение"):
             step_profile.click_button_pay_school_in_pd()
+        self.driver.get("https://web-dev01.interneturok.ru/school/subjects-subscribe")
+        time.sleep(2)
         with allure.step(
                 "В блоке № 5 отображается текст Класс: 10, Формат обучения: «С учителем», Дата Услуга «Персональный наставник»: выключена, Сумма к оплате: 6 600 руб."):
             step_assert.check_text_in_tab_6()

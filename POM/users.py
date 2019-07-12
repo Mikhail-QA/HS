@@ -17,13 +17,13 @@ class Hs01(object):
             password)
 
     def enter_email(self, user_name="hs01@yopmail.com"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
-
-        # self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
 
     def enter_password(self, password="123456"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
-        time.sleep(1)
+        self.driver.find_element_by_name("user[password]").send_keys(password)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
+        # time.sleep(1)
 
     def reg_mobile(self, number="+71234567"):
         self.driver.find_element_by_css_selector(
@@ -46,15 +46,13 @@ class Hs02(object):
             password)
 
     def enter_email(self, user_name="hs02@yopmail.com"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
-
-        # self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
 
     def enter_password(self, password="123456"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
-        time.sleep(1)
-
-        # self.driver.find_element_by_name("user[password]").send_keys(password)
+        self.driver.find_element_by_name("user[password]").send_keys(password)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
+        # time.sleep(1)
 
     def reg_mobile(self, number="+712345678"):
         self.driver.find_element_by_css_selector(
@@ -77,13 +75,13 @@ class Hs03(object):
             password)
 
     def enter_email(self, user_name="hs03@yopmail.com"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
-
-        # self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
 
     def enter_password(self, password="123456"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
-        time.sleep(1)
+        self.driver.find_element_by_name("user[password]").send_keys(password)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
+        # time.sleep(1)
 
     def reg_mobile(self, number="+7123456789"):
         self.driver.find_element_by_css_selector(
@@ -111,13 +109,13 @@ class Hs04(object):
             number)
 
     def enter_email(self, user_name="hs04@yopmail.com"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
-
-        # self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
 
     def enter_password(self, password="123456"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
-        time.sleep(1)
+        self.driver.find_element_by_name("user[password]").send_keys(password)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
+        # time.sleep(1)
 
 
 class Hs05(object):
@@ -136,14 +134,14 @@ class Hs05(object):
 
     @allure.step
     def enter_email(self, user_name="hs05@yopmail.com"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
-
-        # self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
 
     @allure.step
     def enter_password(self, password="123456"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
-        time.sleep(1)
+        self.driver.find_element_by_name("user[password]").send_keys(password)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
+        # time.sleep(1)
 
     def reg_mobile(self, number="+71234567890"):
         self.driver.find_element_by_css_selector(
@@ -166,13 +164,13 @@ class Hs06(object):
             password)
 
     def enter_email(self, user_name="hs06@yopmail.com"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
-
-        # self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        self.driver.find_element_by_name("user[email]").send_keys(user_name)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[1]/input").send_keys(user_name)
 
     def enter_password(self, password="123456"):
-        self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
-        time.sleep(1)
+        self.driver.find_element_by_name("user[password]").send_keys(password)
+        # self.driver.find_element_by_xpath("//*[@id='singin']/div[2]/input").send_keys(password)
+        # time.sleep(1)
 
 
 class Teacher(object):

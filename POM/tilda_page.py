@@ -12,10 +12,12 @@ class TildaPage(object):
 
     @allure.step
     def click_login_button(self):
-        self.driver.find_element_by_css_selector("a.singin__link").click()
-        time.sleep(1.5)
+        self.driver.find_element_by_link_text("Войти").click()
+        # self.driver.find_element_by_css_selector("a.singin__link").click()
+        # time.sleep(1.5)
 
     @allure.step
     def click_button_registration(self):
-        self.driver.find_element_by_css_selector("a.pp_.footer__top_button.orange__link").click()
+        self.driver.find_element_by_link_text("Регистрация").click()
+        # self.driver.find_element_by_css_selector("a.pp_.footer__top_button.orange__link").click()
         time.sleep(1)

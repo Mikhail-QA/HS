@@ -1,11 +1,8 @@
 import time
 import unittest
-
-import os
-
-import allure
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 # Config = {
@@ -105,7 +102,7 @@ class OpenTilda(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
+        cls.driver = webdriver.Chrome(ChromeDriverManager().install())
         cls.driver.implicitly_wait(40)
         cls.driver.maximize_window()
         cls.driver.get("https://iu:123456@test-school01.interneturok.ru/")
