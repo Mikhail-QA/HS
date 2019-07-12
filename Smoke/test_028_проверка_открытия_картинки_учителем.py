@@ -1,4 +1,5 @@
 import allure
+import pytest
 from POM.asserts import AssertForTest028
 from POM.setup import StartSchoolClassMethod
 from POM.school_page import FormSignIn
@@ -6,6 +7,7 @@ from POM.users import Teacher
 from POM.teacher import StepTeacher
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Проверка открытия картинки")
 @allure.story("Авторизаваться учителем, в ДЗ напроверку открыть картинку")
 class LoginTeacherAndCheckImg(StartSchoolClassMethod):

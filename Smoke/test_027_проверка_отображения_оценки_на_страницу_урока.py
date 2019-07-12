@@ -1,6 +1,5 @@
 import allure
-import time
-
+import pytest
 from POM.setup import OpenTilda
 from POM.asserts import AssertForTest027
 from POM.popup_auth_and_reg import PopupSignIn
@@ -9,6 +8,7 @@ from POM.users import Hs02
 from POM.url import UrlHomeSchool
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Проверка отображения оценки в слайде ДЗ на странице урока")
 @allure.story("Авторизаваться учеником, перейти в слайд ДЗ, отображается оценка 4")
 class LoginStudentAndCheckBallInHomeWorks(OpenTilda):
