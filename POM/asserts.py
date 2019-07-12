@@ -723,6 +723,7 @@ class AssertForTest024(AssertForTest001):
 
     def check_one_homework_in_list(self):
         assert len(self.driver.find_elements_by_css_selector("a.user-name")) == 1
+        time.sleep(1)
 
 
 class AssertForTest025(AssertForTest001):
