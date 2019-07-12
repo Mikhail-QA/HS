@@ -28,8 +28,8 @@ class RegistrationAndAuthUserInSocialNetwork(OpenTilda):
             activity_popup.click_button_vk_reg()
         with allure.step("В окне Регистрации dev-passport отображается заголовок с текстом (Регистрация)"):
             self.assertEqual(u"Регистрация", driver.find_element_by_css_selector("h3").text)
-        with allure.step("В окне Регистрации dev-passport отображается имя П (Трявняк Тимир)"):
-            self.assertEqual("Трявняк Тимир", driver.find_element_by_css_selector("p.b-oauth-user__name").text)
+        with allure.step("В окне Регистрации dev-passport отображается имя П (Tryavnyak Timir)"):
+            self.assertEqual("Tryavnyak Timir", driver.find_element_by_css_selector("p.b-oauth-user__name").text)
         with allure.step("В окне Регистрации dev-passport отображается E-mail П (gruzd-vikto@rambler.ru)"):
             self.assertEqual("gruzd-vikto@rambler.ru",
                              driver.find_element_by_css_selector("p.b-oauth-user__email").text)
