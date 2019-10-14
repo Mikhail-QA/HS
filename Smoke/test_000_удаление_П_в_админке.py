@@ -7,7 +7,7 @@ from POM.setup import StartSchoolClassMethod
 from POM.admin_delete_users import AdminDeleteUser
 
 
-@pytest.mark.flaky(reruns=2, reruns_delay=1)
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Админка")
 @allure.story("Удалить пользователей в админке")
 class RemovingUsersInAdminPanel(StartSchoolClassMethod):

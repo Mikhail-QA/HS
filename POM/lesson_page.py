@@ -1,6 +1,8 @@
 import time
-
 import os
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class LessonPage(object):
@@ -8,12 +10,13 @@ class LessonPage(object):
         self.driver = driver
 
     def click_button_show_summary(self):
-        self.driver.find_element_by_link_text("Показать конспект").click()
-        time.sleep(1)
+        click_button_show_summary = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable(
+            (By.CSS_SELECTOR, "div.lesson-footer.text-center:nth-child(3) a.dotted-link")))
+        click_button_show_summary.click()
 
     def click_button_next_step(self):
         self.driver.find_element_by_css_selector("#step9").click()
-        assert (self.driver.find_element_by_css_selector("a.lesson-step-print-blue.ng-scope"))
+        assert (self.driver.find_element_by_css_selector("div.col-md-12.block-online-bottom-side.video-desk"))
 
     def send_text_in_input_ask_question(self):
         self.driver.find_element_by_id("input-lesson-comment").send_keys("ومنظومة الظواهر الملحوظة")
@@ -36,7 +39,7 @@ class LessonPage(object):
 
     def attach_img_in_upload_homework(self):
         Imagepath = os.path.abspath(
-            u"D:\photo_2018-09-18_13-28-24.jpg")
+            u"L:\photo_2018-09-18_13-28-24.jpg")
         self.driver.find_element_by_id("upload-homework").clear()
         self.driver.find_element_by_id("upload-homework").send_keys(Imagepath)
         assert (u"photo_2018-09-18_13-28-24.jpg",
@@ -45,7 +48,7 @@ class LessonPage(object):
 
     def attach_img_in_ask_question(self):
         Imagepath = os.path.abspath(
-            u"D:\photo_2018-09-18_13-28-24.jpg")
+            u"L:\photo_2018-09-18_13-28-24.jpg")
         self.driver.find_element_by_name("attach_file_select_lesson").send_keys(Imagepath)
 
     def click_submit_a_job(self):
@@ -77,6 +80,7 @@ class LessonPage(object):
 
     def click_button_close_in_tour(self):
         self.driver.find_element_by_css_selector("a.introjs-skipbutton").click()
+        time.sleep(1.5)
 
     def go_test(self):
         self.driver.find_element_by_css_selector(

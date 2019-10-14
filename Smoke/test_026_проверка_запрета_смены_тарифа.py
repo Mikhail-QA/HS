@@ -1,3 +1,4 @@
+import pytest
 import allure
 from POM.setup import OpenTilda
 from POM.url import UrlHomeSchool
@@ -8,6 +9,7 @@ from POM.asserts import AssertForTest026
 from POM.subscribe_page import PageSubscribe
 
 
+@pytest.mark.flaky(reruns=1, reruns_delay=1)
 @allure.feature("Убедиться в запрете самостоятельной смены тарифа")
 @allure.story("Авторизация, на странице оплаты выбрать другой тариф курса")
 class LoginAndChangeRateCourse(OpenTilda):

@@ -18,8 +18,7 @@ from POM.url import UrlHomeSchool
 
 @allure.issue("EDU-4327, EDU-4571")
 @allure.feature("Страница урока/Страница расписания")
-@allure.story(
-    "Проверить тур на странице расписания, перейти на страницу урока, проверить фкнуционал страницы урока")
+@allure.story("Проверить тур на странице расписания, перейти на страницу урока, проверить фкнуционал страницы урока")
 class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
     def test_000_go_lesson_page(self):
         driver = self.driver
@@ -66,11 +65,9 @@ class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
 
     def test_003_check_button_show_summary(self):
         driver = self.driver
-        go_lesson_page = UrlHomeSchool(driver)
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Перейти на страницу урока Информатика, 7 класс , неделя 13 (19 ноября - 24 ноября)тест"):
-            go_lesson_page.go_to_lesson_page_test()
+
         with allure.step("Нажать на кнопку Показать конспект"):
             step_lesson_page.click_button_show_summary()
         with allure.step("Кнопка Показать конспект поменяла название на Свернуть конспект"):
@@ -105,13 +102,16 @@ class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
     def test_006_click_button_next_step(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
+        step_go_dz = UrlHomeSchool(driver)
         step_assert = AssertForTest014(driver)
 
         with allure.step("Нажать на кнопку Следующий шаг"):
             step_lesson_page.click_button_next_step()
-        with allure.step(
-                "После нажатия на кнопку Следующий шаг П перешел во вкладку ДЗ"
-                "кнопка поменяла название на Перейти к расписанию и поменялся URL"):
+        with allure.step("После нажатия на кнопку Следующий шаг П перешел во вкладку видеоурок, Сверить URL видеоурока"):
+            step_assert.check_redirect_url()
+        with allure.step("По прямой ссылке прейти в слайд ДЗ"):
+            step_go_dz.go_to_lesson_page_tab_homework()
+        with allure.step("Проверка отображения кнопки Перейти к расписанию"):
             step_assert.check_button_go_to_schedule()
 
     def test_007_to_download_dz(self):
