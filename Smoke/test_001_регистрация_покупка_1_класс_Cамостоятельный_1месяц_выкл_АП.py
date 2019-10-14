@@ -18,9 +18,7 @@ class CreateAccountAndBuyLearningOneMonth(StartLandingClassMethod):
     def test_buy_learning_per_one_month(self):
         driver = self.driver
         step_school = LandingPage(driver)
-        # step_reg = FormRegistration(driver)
         step_user = Hs01(driver)
-        # step_delete = DeleteModalPopup(driver)
         step_go_to_profile = UrlHomeSchool(driver)
         step_profile = MyProfile(driver)
         step_buy = PageSubscribe(driver)
@@ -35,25 +33,10 @@ class CreateAccountAndBuyLearningOneMonth(StartLandingClassMethod):
             step_user.reg_mobile(number="+71234567")
         with allure.step("Нажать на кнопку Зарегистрироваться"):
             step_school.click_sign_up()
-        # with allure.step("На странице /school в форме нажать на кнопку Зарегистрироваться"):
-        #     step_school.go_to_popup_registration()
-        # with allure.step("В поле email и password ввести hs01@yopmail.com/123456"):
-        #     step_user.reg_email(user_name="hs01@yopmail.com")
-        #     step_user.reg_password(password="123456")
-        # with allure.step("Нажать на кнопку Зарегистрироваться"):
-        #     step_reg.click_sign_up()
         with allure.step("Перейти в Личный кабинет"):
             step_go_to_profile.go_to_my_profile()
-        # with allure.step("Удалить попап подтверждения телефона"):
-        #     step_delete.delete_popup_mobile()
-        # with allure.step("Ввести номер телефона"):
-        #     step_profile.input_number_mobile()
-        # with allure.step("Нажать на кнопку Сохранить"):
-        #     step_profile.click_button_save_changes()
         with allure.step("Нажать на кнопку Оплатить доступ"):
             step_profile.click_button_pay_for_access()
-        self.driver.get("https://web-dev01.interneturok.ru/school/subjects-subscribe")
-        time.sleep(2)
         with allure.step("Выбрать 1 класс"):
             step_buy.select_one_class()
         with allure.step("Выбрать период 1 месяц"):
@@ -76,7 +59,6 @@ class CreateAccountAndBuyLearningOneMonth(StartLandingClassMethod):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(20)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):

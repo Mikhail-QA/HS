@@ -12,8 +12,8 @@ class AssertForTest001(unittest.TestCase):
         self.driver = driver
 
     def check_text_in_tab_6(self):
-        self.assertEqual(u"Учебный год: 2018/2019",
-                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
+        # self.assertEqual(u"Учебный год: 2018/2019",
+        #                  self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
 
         self.assertEqual(u"Класс: 1",
                          self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_grade).text)
@@ -37,7 +37,7 @@ class AssertForTest001(unittest.TestCase):
 
     def check_block_select_payment_types(self):
         assert len(
-            self.driver.find_elements_by_css_selector("div.payment-iconostasis_type_epl")) == 1
+            self.driver.find_elements_by_css_selector("div.payment-confirmation-container__section_id_switcher")) == 1
 
     def not_display_select_payment_types(self):
         assert len(
@@ -104,8 +104,8 @@ class AssertForTest002(AssertForTest001):
         super(AssertForTest002, self).__init__(driver)
 
     def check_text_in_tab_6(self):
-        self.assertEqual(u"Учебный год: 2018/2019",
-                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
+        # self.assertEqual(u"Учебный год: 2018/2019",
+        #                  self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
 
         self.assertEqual(u"Класс: 7",
                          self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_grade).text)
@@ -202,8 +202,8 @@ class AssertForTest003(AssertForTest001):
         super(AssertForTest003, self).__init__(driver)
 
     def check_text_in_tab_6(self):
-        self.assertEqual(u"Учебный год: 2018/2019",
-                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
+        # self.assertEqual(u"Учебный год: 2018/2019",
+        #                  self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
 
         self.assertEqual(u"Класс: 10",
                          self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_grade).text)
@@ -417,8 +417,8 @@ class AssertForTest010(AssertForTest001):
         super(AssertForTest010, self).__init__(driver)
 
     def check_text_in_tab_6(self):
-        self.assertEqual(u"Учебный год: 2018/2019",
-                         self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
+        # self.assertEqual(u"Учебный год: 2018/2019",
+        #                  self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_school_years).text)
 
         self.assertEqual(u"Класс: 10",
                          self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_grade).text)
@@ -523,6 +523,7 @@ class AssertForTest012(AssertForTest001):
                          u"\n Профориентация от SuperJob"
                          u"\n Профориентация - игры от tendo.studio"
                          u"\nДомашняя школа, 7 класс:"
+                         u"\n Немецкий язык"
                          u"\n Алгебра. Стандартный курс"
                          u"\n Геометрия. Стандартный курс"
                          u"\n Информатика"
@@ -536,11 +537,14 @@ class AssertForTest012(AssertForTest001):
                          u"\n Литература"
                          u"\n Английский язык"
                          u"\n История"
+                         u"\n Вводный урок"
                          u"\n Обществознание"
                          u"\n Физкультура"
                          u"\n Технология"
                          u"\n Профориентация от SuperJob"
                          u"\n Профориентация - игры от tendo.studio"
+                         u"\n Музыка"
+                         u"\n ИЗО"
                          u"\nРепетитор ЕГЭ:"
                          u"\n Математика Профильный",
                          self.driver.find_element_by_css_selector("div.block-subject-elem-container").text)
@@ -584,8 +588,10 @@ class AssertForTest014(AssertForTest001):
         self.assertEqual(u"Перейти к расписанию",
                          self.driver.find_element_by_css_selector(
                              "button.btn.btn-primary.pull-right.ng-scope").text)
+
+    def check_redirect_url(self):
         time.sleep(0.5)
-        URL = "https://web-dev01.interneturok.ru/school/lesson/21895/homework/96019"
+        URL = "https://web-dev01.interneturok.ru/school/lesson/22530/video-consult/99811"
         assert self.driver.current_url == URL
 
     def check_message_for_ask_questions(self):
@@ -623,7 +629,7 @@ class AssertForTest015(AssertForTest001):
         super(AssertForTest015, self).__init__(driver)
 
     def check_text_all_page(self):
-        self.assertEqual(u"IV четверть", self.driver.find_element_by_css_selector(
+        self.assertEqual(u"I четверть", self.driver.find_element_by_css_selector(
             ".journal_header_name span").text)
 
     def check_url(self):
@@ -731,13 +737,13 @@ class AssertForTest025(AssertForTest001):
         super(AssertForTest025, self).__init__(driver)
 
     def check_step_one(self):
-        self.assertEqual("Доступ к материалам ограничен", self.driver.find_element_by_css_selector(
-            "#lesson-content > div > div > div > div > div > div > div > div > div:nth-child(2) > div.b-empty.bl.ng-isolate-scope > div > div > div:nth-child(2)").text)
+        self.assertEqual("Доступ к материалам ограничен",
+                         self.driver.find_element_by_css_selector("div.b-empty.bl div:nth-child(2)").text)
 
         self.assertIn(
             "Для получения доступа к заданиями со множеством вариантов условий,\nавтоматической проверкой и разными уровнями сложности\nоплатите обучение в форматах «С учителем» или «С зачислением»\nПодробнее о форматах обучения",
             self.driver.find_element_by_css_selector(
-                "#lesson-content > div > div > div > div > div > div > div > div > div:nth-child(2) > div.b-empty.bl.ng-isolate-scope > div > div > div:nth-child(3)").text)
+                "div.b-empty.bl div:nth-child(3)").text)
 
         self.assertEqual("Оплатить обучение", self.driver.find_element_by_css_selector("button.btn.btn-success").text)
 

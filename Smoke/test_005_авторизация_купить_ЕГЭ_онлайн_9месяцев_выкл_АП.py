@@ -37,8 +37,6 @@ class LoginBuyEgeCourseNineMonth(OpenTilda):
             step_go_to_profile.go_to_my_profile()
         with allure.step("Нажать на кнопку Оплатить другие классы"):
             step_profile.click_button_pay_other_classes()
-        self.driver.get("https://web-dev01.interneturok.ru/school/subjects-subscribe")
-        time.sleep(2)
         with allure.step("Нажать на кнопку Профильный курс подготовки к ЕГЭ по математике"):
             step_buy.click_button_see_tab_one_ege_curse()
         with allure.step("Выбрать период 9 месяцев"):

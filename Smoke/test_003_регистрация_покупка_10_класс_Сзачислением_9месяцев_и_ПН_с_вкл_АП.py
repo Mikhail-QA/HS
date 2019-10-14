@@ -18,9 +18,7 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
     def test_buy_learning_per_nine_month(self):
         driver = self.driver
         step_school = LandingPage(driver)
-        # step_reg = FormRegistration(driver)
         step_user = Hs03(driver)
-        # step_delete = DeleteModalPopup(driver)
         step_go_to_profile = UrlHomeSchool(driver)
         step_profile = MyProfile(driver)
         step_buy = PageSubscribe(driver)
@@ -35,26 +33,10 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
             step_user.reg_mobile(number="+7123456789")
         with allure.step("Нажать на кнопку Зарегистрироваться"):
             step_school.click_sign_up()
-
-        # with allure.step("На странице /school в форме нажать на кнопку Зарегистрироваться"):
-        #     step_school.go_to_popup_registration()
-        # with allure.step("В поле email и password ввести hs03@yopmail.com/123456"):
-        #     step_user.reg_email(user_name="hs03@yopmail.com")
-        #     step_user.reg_password(password="123456")
-        # with allure.step("Нажать на кнопку Зарегистрироваться"):
-        #     step_reg.click_sign_up()
         with allure.step("Перейти в Личный кабинет"):
             step_go_to_profile.go_to_my_profile()
-        # with allure.step("Удалить попап подтверждения телефона"):
-        #     step_delete.delete_popup_mobile()
-        # with allure.step("Ввести номер телефона"):
-        #     step_profile.input_number_mobile()
-        # with allure.step("Нажать на кнопку Сохранить"):
-        #     step_profile.click_button_save_changes()
         with allure.step("Нажать на кнопку Оплатить доступ"):
             step_profile.click_button_pay_for_access()
-        self.driver.get("https://web-dev01.interneturok.ru/school/subjects-subscribe")
-        time.sleep(2)
         with allure.step("Выбрать 10 класс"):
             step_buy.select_ten_class()
         with allure.step("Выбрать тарифа с Зачислением"):
@@ -64,7 +46,7 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
         with allure.step("Включить ПН"):
             step_buy.selected_service_personal_mentor()
         with allure.step("Включить АП в ПН"):
-            step_buy.enable_button_auto_payments_in_personal_mentor()
+            step_buy.click_off_button_auto_payments_in_curse()
         with allure.step(
                 "В блоке № 6 отображается текст Класс: 10, Формат обучения: «С Зачислением», «Персональный наставник»: включена, Сумма к оплате: 57 600 руб."):
             step_assert.check_text_in_tab_6()
@@ -78,7 +60,6 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
             step_buy.enter_data_card()
         with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
             step_go_to_profile.go_to_my_profile()
-            time.sleep(5)
         with allure.step("Обновить страницу"):
             step_refresh.refresh()
         with allure.step("В ЛК проверить соответствия купленному курсу"):
