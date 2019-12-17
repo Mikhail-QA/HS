@@ -630,7 +630,7 @@ class AssertForTest015(AssertForTest001):
         super(AssertForTest015, self).__init__(driver)
 
     def check_text_all_page(self):
-        self.assertEqual(u"I четверть", self.driver.find_element_by_css_selector(
+        self.assertEqual(u"II четверть", self.driver.find_element_by_css_selector(
             ".journal_header_name span").text)
 
     def check_url(self):
