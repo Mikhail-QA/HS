@@ -60,9 +60,9 @@ class RemovingUsersInAdminPanel(StartSchoolClassMethod):
         with allure.step("Удаляю пользователя hs05@yopmail.com"):
             steps_delete.user_5(pupil_5="hs05@yopmail.com")
 
-    def test_delete_social_user(self):
-        driver = self.driver
-        steps_delete = AdminDeleteUser(driver)
-
-        with allure.step("Удаляю пользователя gruzd-vikto@rambler.ru"):
-            steps_delete.user_6(pupil_6="gruzd-vikto@rambler.ru")
+    # def test_delete_social_user(self): # П был для теста соц сети (авторизация/регистрация)
+    #     driver = self.driver
+    #     steps_delete = AdminDeleteUser(driver)
+    #
+    #     with allure.step("Удаляю пользователя gruzd-vikto@rambler.ru"):
+    #         steps_delete.user_6(pupil_6="gruzd-vikto@rambler.ru")
