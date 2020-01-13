@@ -1,10 +1,12 @@
 import time
+import allure
 
 
 class Test(object):
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step
     def start_test(self):
         self.driver.find_element_by_css_selector("div.b-input-radio__name").click()
         self.driver.find_element_by_link_text(u"Ответить").click()
@@ -26,6 +28,7 @@ class Test(object):
         self.driver.find_element_by_link_text(u"Ответить").click()
         time.sleep(5)
 
+    @allure.step
     def click_button_finish(self):
         self.driver.find_element_by_link_text("Завершить").click()
         time.sleep(1)
@@ -35,6 +38,7 @@ class Exercise(object):
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step
     def test(self):
         step = 1
         answer = 1
@@ -57,6 +61,7 @@ class Exercise(object):
             element.click()
             answer += 1
 
+    @allure.step
     def click_button_finish(self):
         self.driver.find_element_by_link_text("Завершить").click()
         time.sleep(2)

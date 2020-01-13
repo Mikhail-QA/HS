@@ -23,21 +23,12 @@ class LoginAndExitProfile(OpenTilda):
         step_assert = AssertForTest019(driver)
         step_delete = DeleteModalPopup(driver)
 
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs05@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs05@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
-            # with allure.step("Удалить попап подтверждения телефона"):
-            #     step_delete.delete_popup_mobile()
-        with allure.step("Удалить попап ПД"):
-            step_delete.delete_popup_trial()
-        with allure.step("Нажать на кнопку Мой профиль"):
-            step_schedule.click_button_my_profile()
-        with allure.step("Нажать на кнопку Выход"):
-            step_schedule.click_text_exit()
-        with allure.step("После выхода отображается кнопка Войти и поменялась ссылка в URL"):
-            step_assert.check_button_name_enter()
-            step_assert.check_url()
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs05@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login()
+        step_delete.delete_popup_trial()
+        step_schedule.click_button_my_profile()
+        step_schedule.click_text_exit()
+        step_assert.check_button_name_enter()
+        step_assert.check_url()

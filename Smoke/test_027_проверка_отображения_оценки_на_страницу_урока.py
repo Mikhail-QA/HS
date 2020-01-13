@@ -21,14 +21,9 @@ class LoginStudentAndCheckBallInHomeWorks(OpenTilda):
         step_url = UrlHomeSchool(driver)
         step_assert = AssertForTest027(driver)
 
-        with allure.step("На TILDA нажать на кнопку Вход"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
-        with allure.step("Перейти на страницу урока"):
-            step_url.go_to_lesson_page_tab_homework()
-        with allure.step("Проверить на странице урока во вкладке ДЗ отображение оценки Итоговая оценка: 4 / Хорошо"):
-            step_assert.check_bal_in_homweork_for_lesson_page()
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login()
+        step_url.go_to_lesson_page_tab_homework()
+        step_assert.check_bal_in_homweork_for_lesson_page()

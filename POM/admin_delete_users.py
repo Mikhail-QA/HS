@@ -6,11 +6,13 @@ class AdminDeleteUser(object):
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step
     def go_to_admin(self):
         self.driver.get("https://web-dev01.interneturok.ru/school/admin/users")
         assert (self.driver.find_element_by_css_selector("button.btn:nth-child(3)"))
         time.sleep(5)
 
+    @allure.step
     def user_1(self, pupil_1):
         with allure.step("В инпуте удалить текст"):
             self.driver.find_element_by_css_selector("input.form-control.ng-pristine.ng-untouched.ng-valid").clear()
@@ -37,6 +39,7 @@ class AdminDeleteUser(object):
             assert (self.driver.find_element_by_css_selector("button.btn:nth-child(3)"))
             time.sleep(2)
 
+    @allure.step
     def user_2(self, pupil_2):
         with allure.step("В инпуте удалить текст"):
             self.driver.find_element_by_css_selector(
@@ -65,6 +68,7 @@ class AdminDeleteUser(object):
             assert (self.driver.find_element_by_css_selector("button.btn:nth-child(3)"))
             time.sleep(2)
 
+    @allure.step
     def user_3(self, pupil_3):
         with allure.step("В инпуте удалить текст"):
             self.driver.find_element_by_css_selector(
@@ -93,6 +97,7 @@ class AdminDeleteUser(object):
             assert (self.driver.find_element_by_css_selector("button.btn:nth-child(3)"))
             time.sleep(2)
 
+    @allure.step
     def user_4(self, pupil_4):
         with allure.step("В инпуте удалить текст"):
             self.driver.find_element_by_css_selector(
@@ -121,6 +126,7 @@ class AdminDeleteUser(object):
             assert (self.driver.find_element_by_css_selector("button.btn:nth-child(3)"))
             time.sleep(2)
 
+    @allure.step
     def user_5(self, pupil_5):
         with allure.step("В инпуте удалить текст"):
             self.driver.find_element_by_css_selector(
@@ -149,6 +155,7 @@ class AdminDeleteUser(object):
             assert (self.driver.find_element_by_css_selector("button.btn:nth-child(3)"))
             time.sleep(2)
 
+    @allure.step
     def user_6(self, pupil_6):
         with allure.step("В инпуте удалить текст"):
             self.driver.find_element_by_css_selector(

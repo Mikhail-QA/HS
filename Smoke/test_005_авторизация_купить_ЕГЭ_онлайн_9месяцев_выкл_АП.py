@@ -26,36 +26,20 @@ class LoginBuyEgeCourseNineMonth(OpenTilda):
         step_assert = AssertForTest002(driver)
         step_refresh = Refresh(driver)
 
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
-        with allure.step("Перейти в Личный кабинет"):
-            step_go_to_profile.go_to_my_profile()
-        with allure.step("Нажать на кнопку Оплатить другие классы"):
-            step_profile.click_button_pay_other_classes()
-        with allure.step("Нажать на кнопку Профильный курс подготовки к ЕГЭ по математике"):
-            step_buy.click_button_see_tab_one_ege_curse()
-        with allure.step("Выбрать период 9 месяцев"):
-            step_buy.choose_period_nine_month_in_ege()
-        with allure.step("Выключить АП"):
-            step_buy.click_off_button_auto_payments_in_ege()
-        with allure.step("Нажать на кнопку Оплатить"):
-            step_buy.click_button_pay_ege_online()
-        with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 6300 руб"):
-            step_assert.price_amount_displayed_in_demo_kassa_ege_hs02()
-        with allure.step(
-                "На странице ЯКассы П без АП доступен выбор способа оплаты 1. Банковская карта 2. Яндекс день 3. Сбербанк Онлайн 4. Все способы оплаты"):
-            step_assert.check_block_select_payment_types()
-        with allure.step("На странице ЯК ввести данные карты и нажать на кнопку Заплатить"):
-            step_buy.enter_data_card()
-        with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
-            time.sleep(5)
-            step_go_to_profile.go_to_my_profile()
-        with allure.step("Обновить страницу"):
-            step_refresh.refresh()
-        with allure.step("В ЛК проверить соответствия купленному курсу"):
-            step_assert.check_text_in_widget_my_ege()
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login()
+        step_go_to_profile.go_to_my_profile()
+        step_profile.click_button_pay_other_classes()
+        step_buy.click_button_see_tab_one_ege_curse()
+        step_buy.choose_period_nine_month_in_ege()
+        step_buy.click_off_button_auto_payments_in_ege()
+        step_buy.click_button_pay_ege_online()
+        step_assert.price_amount_displayed_in_demo_kassa_ege_hs02()
+        step_assert.check_block_select_payment_types()
+        step_buy.enter_data_card()
+        time.sleep(5)
+        step_go_to_profile.go_to_my_profile()
+        step_refresh.refresh()
+        step_assert.check_text_in_widget_my_ege()

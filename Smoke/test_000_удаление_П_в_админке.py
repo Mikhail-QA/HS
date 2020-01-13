@@ -17,48 +17,40 @@ class RemovingUsersInAdminPanel(StartSchoolClassMethod):
         step_user = Admin(driver)
         step_enter = FormSignIn(driver)
 
-        with allure.step("В поле email и password ввести school.interneturok@yandex.ru/34t3hEOfbTT2k"):
-            step_user.enter_email(user_name="school.interneturok@yandex.ru")
-            step_user.enter_password(password="34t3hEOfbTT2k")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login_admin()
-        with allure.step("Перейти в раздел пользователи"):
-            steps_delete.go_to_admin()
+        step_user.enter_email(user_name="school.interneturok@yandex.ru")
+        step_user.enter_password(password="34t3hEOfbTT2k")
+        step_enter.click_button_login_admin()
+        steps_delete.go_to_admin()
 
     def test_delete_HS1(self):
         driver = self.driver
         steps_delete = AdminDeleteUser(driver)
 
-        with allure.step("Удаляю пользователя hs01@yopmail.com"):
-            steps_delete.user_1(pupil_1="hs01@yopmail.com")
+        steps_delete.user_1(pupil_1="hs01@yopmail.com")
 
     def test_delete_HS2(self):
         driver = self.driver
         steps_delete = AdminDeleteUser(driver)
 
-        with allure.step("Удаляю пользователя hs02@yopmail.com"):
-            steps_delete.user_2(pupil_2="hs02@yopmail.com")
+        steps_delete.user_2(pupil_2="hs02@yopmail.com")
 
     def test_delete_HS3(self):
         driver = self.driver
         steps_delete = AdminDeleteUser(driver)
 
-        with allure.step("Удаляю пользователя hs03@yopmail.com"):
-            steps_delete.user_3(pupil_3="hs03@yopmail.com")
+        steps_delete.user_3(pupil_3="hs03@yopmail.com")
 
     def test_delete_HS4(self):
         driver = self.driver
         steps_delete = AdminDeleteUser(driver)
 
-        with allure.step("Удаляю пользователя hs04@yopmail.com"):
-            steps_delete.user_4(pupil_4="hs04@yopmail.com")
+        steps_delete.user_4(pupil_4="hs04@yopmail.com")
 
     def test_delete_HS5(self):
         driver = self.driver
         steps_delete = AdminDeleteUser(driver)
 
-        with allure.step("Удаляю пользователя hs05@yopmail.com"):
-            steps_delete.user_5(pupil_5="hs05@yopmail.com")
+        steps_delete.user_5(pupil_5="hs05@yopmail.com")
 
     # def test_delete_social_user(self): # П был для теста соц сети (авторизация/регистрация)
     #     driver = self.driver

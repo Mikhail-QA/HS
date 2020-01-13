@@ -18,18 +18,10 @@ class LoginAndGoToFeed(OpenTilda):
         step_assert = AssertForTest016(driver)
         step_schedule = SchedulePage(driver)
 
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
-        with allure.step("Перейти в Ленту"):
-            step_schedule.go_to_feed()
-        with allure.step("На странице Лента отображается текст Лента событий"):
-            step_assert.check_text_all_page()
-        with allure.step("Сверить url со ссылкой на которой находится П"):
-            step_assert.check_url()
-
-
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login()
+        step_schedule.go_to_feed()
+        step_assert.check_text_all_page()
+        step_assert.check_url()

@@ -25,42 +25,23 @@ class CreateAccountAndBuyLearningNineMonth(StartLandingClassMethod):
         step_assert = AssertForTest003(driver)
         step_refresh = Refresh(driver)
 
-        with allure.step("На странице /landing в форме нажать на кнопку Начать заниматься"):
-            step_school.click_button_to_start()
-        with allure.step("В поле email и password ввести hs03@yopmail.com/123456"):
-            step_user.reg_email(user_name="hs03@yopmail.com")
-            step_user.reg_password(password="123456")
-            step_user.reg_mobile(number="+7123456789")
-        with allure.step("Нажать на кнопку Зарегистрироваться"):
-            step_school.click_sign_up()
-        with allure.step("Перейти в Личный кабинет"):
-            step_go_to_profile.go_to_my_profile()
-        with allure.step("Нажать на кнопку Оплатить доступ"):
-            step_profile.click_button_pay_for_access()
-        with allure.step("Выбрать 10 класс"):
-            step_buy.select_ten_class()
-        with allure.step("Выбрать тарифа с Зачислением"):
-            step_buy.choose_tariff_with_enrollment()
-        with allure.step("Выбрать период 9 месяцев"):
-            step_buy.choose_period_nine_month()
-        with allure.step("Включить ПН"):
-            step_buy.selected_service_personal_mentor()
-        with allure.step("Включить АП в ПН"):
-            step_buy.click_off_button_auto_payments_in_curse()
-        with allure.step(
-                "В блоке № 6 отображается текст Класс: 10, Формат обучения: «С Зачислением», «Персональный наставник»: включена, Сумма к оплате: 57 600 руб."):
-            step_assert.check_text_in_tab_6()
-        with allure.step("Нажать на кнопку Оплатить обучение"):
-            step_buy.click_button_pay_school()
-        with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 57 600 руб"):
-            step_assert.price_amount_displayed_in_demo_kassa()
-        with allure.step("На странице ЯКассы П с вкл АП отсутствует блок выбора способа оплаты"):
-            step_assert.not_display_select_payment_types()
-        with allure.step("На странице ЯК ввести данные карты и нажать на кнопку Заплатить"):
-            step_buy.enter_data_card()
-        with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
-            step_go_to_profile.go_to_my_profile()
-        with allure.step("Обновить страницу"):
-            step_refresh.refresh()
-        with allure.step("В ЛК проверить соответствия купленному курсу"):
-            step_assert.check_text_in_widget_my_school()
+        step_school.click_button_to_start()
+        step_user.reg_email(user_name="hs03@yopmail.com")
+        step_user.reg_password(password="123456")
+        step_user.reg_mobile(number="+7123456789")
+        step_school.click_sign_up()
+        step_go_to_profile.go_to_my_profile()
+        step_profile.click_button_pay_for_access()
+        step_buy.select_ten_class()
+        step_buy.choose_tariff_with_enrollment()
+        step_buy.choose_period_nine_month()
+        step_buy.selected_service_personal_mentor()
+        step_buy.click_off_button_auto_payments_in_curse()
+        step_assert.check_text_in_tab_6()
+        step_buy.click_button_pay_school()
+        step_assert.price_amount_displayed_in_demo_kassa()
+        step_assert.not_display_select_payment_types()
+        step_buy.enter_data_card()
+        step_go_to_profile.go_to_my_profile()
+        step_refresh.refresh()
+        step_assert.check_text_in_widget_my_school()

@@ -26,32 +26,18 @@ class LoginAndExtendCourseSchool(OpenTilda):
         step_assert = AssertForTest006(driver)
         step_refresh = Refresh(driver)
 
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
-        with allure.step("Перейти в Личный кабинет"):
-            step_go_to_profile.go_to_my_profile()
-        with allure.step("Нажать на кнопку Продлить обучение"):
-            step_profile.click_button_extend_access()
-        with allure.step("Включить ПН"):
-            step_buy.extend_service_personal_mentor()
-        with allure.step(
-                "На странице продления отображается текст: Класс: 7 класс, Формат обучения: С учителем, Продление обучения на: 3 месяца, Сумма к оплате: 13 800 руб."):
-            step_assert.check_text_in_tab_total()
-        with allure.step("Нажать на кнопку Продлить обучение"):
-            step_buy.click_button_pay_school()
-        with allure.step("На странице ЯК сумма оплаты соответствует выбранному тарифу 13 800 руб"):
-            step_assert.price_amount_displayed_in_demo_kassa()
-        with allure.step("На странице ЯК ввести данные карты"):
-            step_buy.enter_data_card()
-        with allure.step("Вернуться в Мой профиль по пряммой ссылке"):
-            step_go_to_profile.go_to_my_profile()
-            time.sleep(5)
-        with allure.step("Обновить страницу"):
-            step_refresh.refresh()
-        with allure.step("В ЛК проверить соответствия купленному курсу"):
-            step_assert.check_text_in_widget_my_school()
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login()
+        step_go_to_profile.go_to_my_profile()
+        step_profile.click_button_extend_access()
+        step_buy.extend_service_personal_mentor()
+        step_assert.check_text_in_tab_total()
+        step_buy.click_button_pay_school()
+        step_assert.price_amount_displayed_in_demo_kassa()
+        step_buy.enter_data_card()
+        step_go_to_profile.go_to_my_profile()
+        time.sleep(5)
+        step_refresh.refresh()
+        step_assert.check_text_in_widget_my_school()

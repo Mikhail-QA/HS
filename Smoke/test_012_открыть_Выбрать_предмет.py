@@ -21,15 +21,9 @@ class LoginAndOpenChosenSubject(OpenTilda):
         step_assert = AssertForTest012(driver)
         step_schedule = SchedulePage(driver)
 
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login_and_wait_donwload_main_page()
-        with allure.step("Нажать на кнопку Выбрать предметы"):
-            step_schedule.click_button_chosen_subject()
-        with allure.step(
-                "Проверить отображение списка предметов в открытом списке Выбрать Предметы + 11 бонусный класс за кейс 005"):
-            step_assert.check_text_in_page_chosen_subject()
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login_and_wait_donwload_main_page()
+        step_schedule.click_button_chosen_subject()
+        step_assert.check_text_in_page_chosen_subject()

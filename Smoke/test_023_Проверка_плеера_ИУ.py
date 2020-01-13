@@ -22,18 +22,11 @@ class PlayVideoIu(OpenTilda):
         step_user = Hs02(driver)
         step_enter = PopupSignIn(driver)
         step_assert = AssertForTest023(driver)
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
-        with allure.step("Перейти на урок"):
-            get_lesson.go_to_lesson_tab_video()
-        with allure.step("Нажать на кнопку Плей"):
-            steps_video.click_play_video_iu()
-        # with allure.step("После вкл видео в плеере появилась кнопка Pause"): ## убрал проверку после обновления плеера
-        #     step_assert.check_button_pause_in_video()
-        with allure.step("Элемент плеера поменял статус на vjs-playing"):
-            step_assert.check_button_play_video()
+
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login()
+        get_lesson.go_to_lesson_tab_video()
+        steps_video.click_play_video_iu()
+        step_assert.check_button_play_video()

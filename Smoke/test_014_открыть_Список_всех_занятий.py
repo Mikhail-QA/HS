@@ -21,15 +21,9 @@ class LoginAndGoListAllActivities(OpenTilda):
         step_assert = AssertForTest011(driver)
         step_list = SchedulePage(driver)
 
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login_and_wait_donwload_main_page()
-        with allure.step("Нажать на кнопку Список всех занятий"):
-            step_list.click_button_list_all_activities()
-        with allure.step(
-                "Проверить отображение текста Выбрать предметы Список всех занятий Подробное расписание на неделю"):
-            step_assert.check_text_in_page_list_all_activities()
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login_and_wait_donwload_main_page()
+        step_list.click_button_list_all_activities()
+        step_assert.check_text_in_page_list_all_activities()

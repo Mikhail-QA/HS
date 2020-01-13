@@ -26,78 +26,61 @@ class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
         step_enter = PopupSignIn(driver)
         step_user = Hs02(driver)
 
-        with allure.step("На TILDA нажать на кнопку Войти"):
-            step_tilda.click_login_button()
-        with allure.step("В поле email и password ввести hs02@yopmail.com/123456"):
-            step_user.enter_email(user_name="hs02@yopmail.com")
-            step_user.enter_password(password="123456")
-        with allure.step("Нажать на кнопку Авторизоваться"):
-            step_enter.click_button_login()
+        step_tilda.click_login_button()
+        step_user.enter_email(user_name="hs02@yopmail.com")
+        step_user.enter_password(password="123456")
+        step_enter.click_button_login()
 
     def test_001_check_tour_in_schedule_page(self):
         driver = self.driver
         step_tour = SchedulePage(driver)
         time.sleep(15)
-        with allure.step("Пройти весь тур кликнув Далее 7 раз"):
-            step_tour.click_button_next_in_tour()
-        with allure.step("В туре нажать на кнопку Назад"):
-            step_tour.click_button_prew_in_tour()
-        with allure.step("В туре нажать на кнопку Закрыть"):
-            step_tour.click_button_close_in_tour()
+        step_tour.click_button_next_in_tour()
+        step_tour.click_button_prew_in_tour()
+        step_tour.click_button_close_in_tour()
 
     def test_002_check_tour_in_lesson_page(self):
         driver = self.driver
         go_lesson_page = UrlHomeSchool(driver)
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Перейти на страницу видеоурока История, 7 класс , неделя 23 (3 февраля - 8 февраля)"):
-            go_lesson_page.go_to_lesson_page_test()
-        with allure.step("Пройти весь тур кликнув Далее 5 раз"):
-            step_lesson_page.click_button_next_in_tour()
-        with allure.step("В туре нажать на кнопку Назад"):
-            step_lesson_page.click_button_prew_in_tour()
-        with allure.step("В туре нажать на кнопку Закрыть"):
-            step_lesson_page.click_button_close_in_tour()
-        with allure.step("На странице урока отображаются Показать конспект, Следующий шаг, Блок Задай вопрос"):
-            step_assert.check_text_show_summary()
-            step_assert.check_button_display_show_next_step()
-            step_assert.check_display_show_block_ask_question()
+        # Перейти на страницу видеоурока История, 7 класс , неделя 23 (3 февраля - 8 февраля)
+        go_lesson_page.go_to_lesson_page_test()
+        # Пройти весь тур кликнув Далее 5 раз
+        step_lesson_page.click_button_next_in_tour()
+        step_lesson_page.click_button_prew_in_tour()
+        step_lesson_page.click_button_close_in_tour()
+        step_assert.check_text_show_summary()
+        step_assert.check_button_display_show_next_step()
+        step_assert.check_display_show_block_ask_question()
 
     def test_003_check_button_show_summary(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
 
-        with allure.step("Нажать на кнопку Показать конспект"):
-            step_lesson_page.click_button_show_summary()
-        with allure.step("Кнопка Показать конспект поменяла название на Свернуть конспект"):
-            step_assert.check_button_hide_summary()
+        step_lesson_page.click_button_show_summary()
+        step_assert.check_button_hide_summary()
 
     def test_004_ask_a_question_teacher(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Ввести текст в инпут Задать вопрос ومنظومة الظواهر الملحوظة"):
-            step_lesson_page.send_text_in_input_ask_question()
-        with allure.step("Нажать на кнопку Отправить"):
-            step_lesson_page.click_button_send()
-        with allure.step("Обновить страницу"):  ## шаг необходим из-за выкл faye на дев01
-            self.driver.refresh()
-        with allure.step("После появляется сообщение от П с текстом ومنظومة الظواهر الملحوظة"):
-            step_assert.check_message_for_ask_questions()
+        step_lesson_page.send_text_in_input_ask_question()
+        step_lesson_page.click_button_send()
+        ## шаг необходим из-за выкл faye на дев01
+        self.driver.refresh()
+        step_assert.check_message_for_ask_questions()
 
     def test_005_in_tab_ask_a_question_teacher_download_file(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Загрузить картинку"):
-            step_lesson_page.attach_img_in_ask_question()
-        with allure.step("Нажать на кнопку Отправить"):
-            step_lesson_page.click_button_send()
-        with allure.step("Обновить страницу"):  ## шаг необходим из-за выкл faye на дев01
-            self.driver.refresh()
-        with allure.step("После появляется сообщение от П с название файла photo_2018-09-18_13-28-24.jpg "):
-            step_assert.check_file_for_ask_question()
+        step_lesson_page.attach_img_in_ask_question()
+        step_lesson_page.click_button_send()
+        ## шаг необходим из-за выкл faye на дев01
+        self.driver.refresh()
+        step_assert.check_file_for_ask_question()
 
     def test_006_click_button_next_step(self):
         driver = self.driver
@@ -105,41 +88,26 @@ class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
         step_go_dz = UrlHomeSchool(driver)
         step_assert = AssertForTest014(driver)
 
-        with allure.step("Нажать на кнопку Следующий шаг"):
-            step_lesson_page.click_button_next_step()
-        with allure.step("После нажатия на кнопку Следующий шаг П перешел во вкладку Онлайн-чат с учителем, Сверить URL"):
-            step_assert.check_redirect_url()
-        with allure.step("По прямой ссылке прейти в слайд ДЗ. ИЗО, 7 класс , неделя 23 (3 февраля - 8 февраля)"):
-            step_go_dz.go_to_lesson_page_tab_homework()
-        with allure.step("Проверка отображения кнопки Перейти к расписанию"):
-            step_assert.check_button_go_to_schedule()
+        step_lesson_page.click_button_next_step()
+        step_assert.check_redirect_url()
+        step_go_dz.go_to_lesson_page_tab_homework()
+        step_assert.check_button_go_to_schedule()
 
     def test_007_to_download_dz(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Нажать на кнопку Загрузить решение"):
-            step_lesson_page.click_download_dz()
-        with allure.step("Загрузить картинку"):
-            step_lesson_page.attach_img_in_upload_homework()
-        with allure.step("Нажать на кнопку Отправить решение"):
-            step_lesson_page.click_submit_a_job()
-        with allure.step("В попапе нажать на кнопку Да"):
-            step_lesson_page.click_yes_in_popup()
-        with allure.step("Проверка отображения прогресс-бара загрузки файлов"):
-            step_assert.check_uploader_progress()
-        with allure.step("Обновить страницу"):  ## шаг необходим из-за выкл faye на дев01
-            self.driver.refresh()
-        with allure.step(
-                "После отправки ДЗ появилось сообщение Ваше решение успешно отправлено и ожидает проверки учителем."):
-            step_assert.check_text_successfully_download_az()
+        step_lesson_page.click_download_dz()
+        step_lesson_page.attach_img_in_upload_homework()
+        step_lesson_page.click_submit_a_job()
+        step_lesson_page.click_yes_in_popup()
+        step_assert.check_uploader_progress()
+        self.driver.refresh()
+        step_assert.check_text_successfully_download_az()
 
     def test_008_click_button_go_to_schedule(self):
         driver = self.driver
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Нажать на кнопку Перейти к расписанию"):
-            step_lesson_page.click_button_go_to_schedule()
-        with allure.step(
-                "Пользователя редиректит на страницу расписания /school"):
-            step_assert.check_redirect_user_to_schedule_page()
+        step_lesson_page.click_button_go_to_schedule()
+        step_assert.check_redirect_user_to_schedule_page()
