@@ -50,7 +50,7 @@ class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
         go_lesson_page = UrlHomeSchool(driver)
         step_lesson_page = LessonPage(driver)
         step_assert = AssertForTest014(driver)
-        with allure.step("Перейти на страницу видеоурока Информатика, 7 класс , неделя 13 (19 ноября - 24 ноября)тест"):
+        with allure.step("Перейти на страницу видеоурока История, 7 класс , неделя 23 (3 февраля - 8 февраля)"):
             go_lesson_page.go_to_lesson_page_test()
         with allure.step("Пройти весь тур кликнув Далее 5 раз"):
             step_lesson_page.click_button_next_in_tour()
@@ -107,9 +107,9 @@ class LoginAndGoToLessonPageTestAllFunction(OpenTilda):
 
         with allure.step("Нажать на кнопку Следующий шаг"):
             step_lesson_page.click_button_next_step()
-        with allure.step("После нажатия на кнопку Следующий шаг П перешел во вкладку видеоурок, Сверить URL видеоурока"):
+        with allure.step("После нажатия на кнопку Следующий шаг П перешел во вкладку Онлайн-чат с учителем, Сверить URL"):
             step_assert.check_redirect_url()
-        with allure.step("По прямой ссылке прейти в слайд ДЗ"):
+        with allure.step("По прямой ссылке прейти в слайд ДЗ. ИЗО, 7 класс , неделя 23 (3 февраля - 8 февраля)"):
             step_go_dz.go_to_lesson_page_tab_homework()
         with allure.step("Проверка отображения кнопки Перейти к расписанию"):
             step_assert.check_button_go_to_schedule()

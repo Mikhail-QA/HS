@@ -22,7 +22,7 @@ class UrlHomeSchool(object):
         self.driver.get("https://web-dev01.interneturok.ru/school/logout")
 
     def go_to_lesson_page_test(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/22530/video/99812")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/22487/video/99635")
         assert (self.driver.find_element_by_css_selector("#step9"))
 
     def go_to_lesson_page_1_klass(self):
@@ -30,7 +30,7 @@ class UrlHomeSchool(object):
         # Математика, 1 класс , неделя 13 (25 ноября - 30 ноября)
 
     def go_to_lesson_page_tab_homework(self):
-        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/22537/homework/99858")
+        self.driver.get("https://web-dev01.interneturok.ru/school/lesson/26214/homework/124230")
         assert (self.driver.find_element_by_css_selector(
             ".next-item-btn"))
         time.sleep(2)

@@ -592,7 +592,7 @@ class AssertForTest014(AssertForTest001):
 
     def check_redirect_url(self):
         time.sleep(0.5)
-        URL = "https://web-dev01.interneturok.ru/school/lesson/22530/video-consult/99811"
+        URL = "https://web-dev01.interneturok.ru/school/lesson/22487/video-consult/99633"
         assert self.driver.current_url == URL
 
     def check_message_for_ask_questions(self):
@@ -630,7 +630,7 @@ class AssertForTest015(AssertForTest001):
         super(AssertForTest015, self).__init__(driver)
 
     def check_text_all_page(self):
-        self.assertEqual(u"II четверть", self.driver.find_element_by_css_selector(
+        self.assertEqual(u"III четверть", self.driver.find_element_by_css_selector(
             ".journal_header_name span").text)
 
     def check_url(self):
