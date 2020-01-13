@@ -30,7 +30,7 @@ class LoginAndGoToAcademicJournal(OpenTilda):
             step_enter.click_button_login()
         with allure.step("Перейти на страницу Журнала успеваемости"):
             step_schedule.go_to_academic_journal()
-        with allure.step("На странице Журнала успеваемости отоброжается текст I четверть"):
+        with allure.step("На странице Журнала успеваемости отоброжается текст III четверть"):
             step_assert.check_text_all_page()
         with allure.step("Сверить url со ссылкой на которой находится П"):
             step_assert.check_url()
