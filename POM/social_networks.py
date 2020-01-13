@@ -30,5 +30,5 @@ class ExpectedResultSocial(unittest.TestCase):
         self.driver = driver
 
     def check_url(self):
-        url = 'https://dev-passport.interneturok.ru/login'
+        url = 'https://web-dev01.interneturok.ru/school/'
         assert self.driver.current_url == url

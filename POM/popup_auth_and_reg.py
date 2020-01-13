@@ -24,9 +24,8 @@ class PopupSignIn(object):
                 self.driver.find_element_by_css_selector("body > div > div.actions > a:nth-child(1)").text)
 
     def click_button_vk_autorization(self):
-        self.driver.find_element_by_css_selector('a.oauth-vk').click()
-        assert (u"Я новый пользователь",
-                self.driver.find_element_by_css_selector("body > div > div.actions > a:nth-child(1)").text)
+        self.driver.find_element_by_css_selector('a.auth__links-item.auth__links-item_vk').click()
+        assert (self.driver.find_element_by_css_selector("a.dropdown-toggle"))
 
     def click_button_vk_auth(self):
         self.driver.find_element_by_xpath("//*[@id='rec59637329']/div/div/div[2]/div/div[1]/ul/li[1]/a").click()
