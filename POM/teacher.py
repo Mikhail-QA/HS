@@ -43,8 +43,7 @@ class StepTeacher(object):
 
     @allure.step
     def click_button_filter_all(self):
-        self.driver.find_element_by_css_selector(
-            "div.filter:nth-child(3) span:nth-child(4)").click()
+        self.driver.find_element_by_css_selector("div.filter:nth-child(4) span.ng-not-empty:nth-child(2)").click()
 
     @allure.step
     def open_img(self):
