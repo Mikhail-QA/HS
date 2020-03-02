@@ -29,7 +29,7 @@ class PopupSignIn(object):
 
     @allure.step
     def click_button_vk_autorization(self):
-        self.driver.find_element_by_css_selector('a.auth__links-item.auth__links-item_vk').click()
+        self.driver.find_element_by_xpath('//*[@id="rec59637329"]/div/div/div[2]/div/div[1]/ul/li[1]/a').click()
         assert (self.driver.find_element_by_css_selector("a.dropdown-toggle"))
 
     @allure.step

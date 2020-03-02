@@ -1,6 +1,8 @@
 import time
-
 import allure
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class UrlHomeSchool(object):
@@ -16,8 +18,12 @@ class UrlHomeSchool(object):
     @allure.step
     def go_to_tilda_landing(self):
         self.driver.get("https://test-school01.interneturok.ru/")
-        assert (self.driver.find_element_by_css_selector(
-            "div.t396__elem.tn-elem.tn-elem__596361131472555385669"))  # кнопка начать заниматься
+        # assert (self.driver.find_element_by_css_selector(
+        #     "div.t396__elem.tn-elem.tn-elem__596361131472555385669"))  # кнопка начать заниматься
+        WebDriverWait(self.driver, 10).until(
+            ec.element_to_be_clickable(
+                (By.CSS_SELECTOR, 'div.t396__elem.tn-elem.tn-elem__596361131472555385669')))
+        time.sleep(1.5)
 
     @allure.step
     def exit_profile(self):
