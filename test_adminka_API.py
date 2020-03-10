@@ -15,6 +15,12 @@ from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school
     TestFilterGradesInAssessmentsJournal
 from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterUser
 from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterLabels
+from API.admin_panel_filters.test_003_filter_chats import TestFilterSchoolsChats
+from API.admin_panel_filters.test_003_filter_chats import TestFilterGradesInChats
+from API.admin_panel_filters.test_003_filter_chats import TestFilterSubjectsChats
+from API.admin_panel_filters.test_003_filter_chats import TestFilterAccessChats
+from API.admin_panel_filters.test_003_filter_chats import TestFilterLabelsChats
+from API.admin_panel_filters.test_003_filter_chats import TestFilterUserChats
 
 
 def suite():
@@ -34,4 +40,10 @@ def suite():
     suite_test.addTest(requests.makeSuite(TestFilterUser))
     suite_test.addTest(requests.makeSuite(TestFilterLabels))
     suite_test.addTest(requests.makeSuite(TestFilterWeeks))
+    suite_test.addTest(requests.makeSuite(TestFilterSchoolsChats))
+    suite_test.addTest(requests.makeSuite(TestFilterGradesInChats))
+    suite_test.addTest(requests.makeSuite(TestFilterSubjectsChats))
+    suite_test.addTest(requests.makeSuite(TestFilterAccessChats))
+    suite_test.addTest(requests.makeSuite(TestFilterLabelsChats))
+    suite_test.addTest(requests.makeSuite(TestFilterUserChats))
     return suite_test
