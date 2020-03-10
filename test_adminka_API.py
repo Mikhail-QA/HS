@@ -1,10 +1,10 @@
 import requests
-from API.admin_panel_filters.test_000_save_token import SaveToken
 from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterGradesInHomework
 from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterSubjectsInHomework
 from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterTypeDz
 from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterStatusDz
 from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterFormatAccess
+from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterWeeks
 from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterQuarter
 from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterYears
 from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestTrainingFormat
@@ -14,12 +14,12 @@ from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school
 from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import \
     TestFilterGradesInAssessmentsJournal
 from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterUser
+from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterLabels
 
 
 def suite():
     suite_test = requests.TestSuite()
 
-    suite_test.addTest(requests.makeSuite(SaveToken))
     suite_test.addTest(requests.makeSuite(TestFilterGradesInHomework))
     suite_test.addTest(requests.makeSuite(TestFilterSubjectsInHomework))
     suite_test.addTest(requests.makeSuite(TestFilterTypeDz))
@@ -32,4 +32,6 @@ def suite():
     suite_test.addTest(requests.makeSuite(TestFilterSubjectsInAssessmentsJournal))
     suite_test.addTest(requests.makeSuite(TestFilterGradesInAssessmentsJournal))
     suite_test.addTest(requests.makeSuite(TestFilterUser))
+    suite_test.addTest(requests.makeSuite(TestFilterLabels))
+    suite_test.addTest(requests.makeSuite(TestFilterWeeks))
     return suite_test
