@@ -725,6 +725,42 @@ class TestFilterSubjectsInAssessmentsJournal:
             assert subject_superjob.status_code == 200
             assert list(subject_superjob.json().keys()) == parameter_array
 
+    def test_subject_german_language(self):
+        with allure.step("Проверка параметра (Немецкий язык) в предметах"):
+            url = FilterSubjects.subject_german_language
+            german_language = requests.get(url, allow_redirects=False)
+            try:
+                german_language.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=german_language)
+            assert german_language.status_code == 200
+            assert list(german_language.json().keys()) == parameter_array
+
+    def test_subject_osnovy_sovet_itiki(self):
+        with allure.step("Проверка параметра (Основы светской этики) в предметах"):
+            url = FilterSubjects.subject_osnovy_sovet_itiki
+            osnovy_sovet_itiki = requests.get(url, allow_redirects=False)
+            try:
+                osnovy_sovet_itiki.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=osnovy_sovet_itiki)
+            assert osnovy_sovet_itiki.status_code == 200
+            assert list(osnovy_sovet_itiki.json().keys()) == parameter_array
+
+    def test_subject_tendo_studio(self):
+        with allure.step("Проверка параметра (Профориентация - игры от tendo.studio) в предметах"):
+            url = FilterSubjects.subject_tendo_studio
+            subject_tendo_studio = requests.get(url, allow_redirects=False)
+            try:
+                subject_tendo_studio.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=subject_tendo_studio)
+            assert subject_tendo_studio.status_code == 200
+            assert list(subject_tendo_studio.json().keys()) == parameter_array
+
 
 @allure.feature("Админка Журнал оценок вкладка Домашняя школа Фильтр Ученик")
 @allure.story("Проверка ответ статус кода при поиске без E-mail все остальные фильтры Все")

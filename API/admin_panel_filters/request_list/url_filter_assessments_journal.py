@@ -65,6 +65,9 @@ subject_osnovi_sovetskoi_itiki = '&subject_ids=186'
 subject_obz = '&subject_ids=200,202'
 subject_astronomia = '&subject_ids=203'
 subject_superJob = '&subject_ids=211,212,213,214,215'
+subject_german_language = '&subject_ids=221,222,225,226,227'
+subject_osnovy_sovet_itiki = '&subject_ids=186'
+subject_tendo_studio = '&subject_ids=216,217,218,219,220'
 # FilterUser
 search_all_users = '&student_id='
 search_user_hexcal = '&student_id=hexcal@mail.ru'
@@ -147,6 +150,9 @@ class FilterSubjects:
     subject_obz = staging_dev01 + page + quarter_three + school_all + search_user_hexcal + klass_all + subject_obz + token_admin + received_token + year_2018_2019
     subject_astronomia = staging_dev01 + page + quarter_three + school_all + search_user_hexcal + klass_all + subject_astronomia + token_admin + received_token + year_2018_2019
     subject_superJob = staging_dev01 + page + quarter_three + school_all + search_user_hexcal + klass_all + subject_superJob + token_admin + received_token + year_2018_2019
+    subject_german_language = staging_dev01 + page + quarter_three + school_all + search_user_hexcal + klass_all + subject_german_language + token_admin + received_token + year_2018_2019
+    subject_osnovy_sovet_itiki = staging_dev01 + page + quarter_three + school_all + search_user_hexcal + klass_all + subject_osnovy_sovet_itiki + token_admin + received_token + year_2018_2019
+    subject_tendo_studio = staging_dev01 + page + quarter_three + school_all + search_user_hexcal + klass_all + subject_tendo_studio + token_admin + received_token + year_2018_2019
 
 
 class FilterUser:

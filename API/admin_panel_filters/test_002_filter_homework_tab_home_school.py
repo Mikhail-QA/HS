@@ -7,6 +7,7 @@ from API.admin_panel_filters.request_list.url_filter_homework import FilterWeek
 from API.admin_panel_filters.request_list.url_filter_homework import FilterTypeDz
 from API.admin_panel_filters.request_list.url_filter_homework import FilterFormatAccess
 from API.admin_panel_filters.request_list.url_filter_homework import FilterMark
+from API.admin_panel_filters.request_list.url_filter_homework import FilterSchools
 from API.setting_tests import LogInfoApi
 
 parameter_array = ['homeworks', 'total', 'page', 'per_page']
@@ -14,6 +15,37 @@ success_total = 21
 
 
 # total_standard = 21  # это стандартное значение кол-ва изначально отображающихся на странице ДЗ.
+
+
+@allure.feature("Админка Домашние задания вкладка Домашняя школа Фильтр Школы")
+@allure.story(
+    "Проверяю ответ статус кода в Школах. Во всех остальных фильтрах выбран параметр (Все)")
+class TestFilterSchools:
+    def test_not_school(self):
+        with allure.step("Проверка параметра (Школа не указан)"):
+            url = FilterSchools.Not_school
+            not_school = requests.get(url, allow_redirects=False)
+            try:
+                not_school.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=not_school)
+            assert not_school.status_code == 200
+            assert list(not_school.json().keys()) == parameter_array
+            assert dict(not_school.json()).get('total') == success_total
+
+    def test_school_stolichniy_kit(self):
+        with allure.step("Проверка параметра (Школа Столичный-КИТ)"):
+            url = FilterSchools.school_stolichniy_kit
+            school_stolichniy_kit = requests.get(url, allow_redirects=False)
+            try:
+                school_stolichniy_kit.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=school_stolichniy_kit)
+            assert school_stolichniy_kit.status_code == 200
+            assert list(school_stolichniy_kit.json().keys()) == parameter_array
+            assert dict(school_stolichniy_kit.json()).get('total') == success_total
 
 
 @allure.feature("Админка Домашние задания вкладка Домашняя школа фильтр Классы")
@@ -633,6 +665,45 @@ class TestFilterSubjectsInHomework:
             assert superjob.status_code == 200
             assert list(superjob.json().keys()) == parameter_array
             assert dict(superjob.json()).get('total') <= success_total
+
+    def test_subject_german_language(self):
+        with allure.step("Проверка параметра (Немецкий язык) в предметах"):
+            url = FilterSubjects.subject_german_language
+            german_language = requests.get(url, allow_redirects=False)
+            try:
+                german_language.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=german_language)
+            assert german_language.status_code == 200
+            assert list(german_language.json().keys()) == parameter_array
+            assert dict(german_language.json()).get('total') <= success_total
+
+    def test_subject_osnovy_sovet_itiki(self):
+        with allure.step("Проверка параметра (Основы светской этики) в предметах"):
+            url = FilterSubjects.subject_osnovy_sovet_itiki
+            osnovy_sovet_itiki = requests.get(url, allow_redirects=False)
+            try:
+                osnovy_sovet_itiki.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=osnovy_sovet_itiki)
+            assert osnovy_sovet_itiki.status_code == 200
+            assert list(osnovy_sovet_itiki.json().keys()) == parameter_array
+            assert dict(osnovy_sovet_itiki.json()).get('total') <= success_total
+
+    def test_subject_tendo_studio(self):
+        with allure.step("Проверка параметра (Профориентация - игры от tendo.studio) в предметах"):
+            url = FilterSubjects.subject_tendo_studio
+            subject_tendo_studio = requests.get(url, allow_redirects=False)
+            try:
+                subject_tendo_studio.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=subject_tendo_studio)
+            assert subject_tendo_studio.status_code == 200
+            assert list(subject_tendo_studio.json().keys()) == parameter_array
+            assert dict(subject_tendo_studio.json()).get('total') <= success_total
 
 
 @allure.feature("Админка Домашние задания вкладка Домашняя школа Фильтр Неделя:")
