@@ -112,8 +112,8 @@ class PageSubscribe(object):
         self.driver.find_element_by_name("skr_cardCvc").send_keys("000")
         time.sleep(1)
         self.driver.find_element_by_css_selector("button.button").click()
-        WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, 'submitcvc')))
-        self.driver.find_element_by_id("submitcvc").click()
+        # WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, 'submitcvc')))
+        # self.driver.find_element_by_id("submitcvc").click()
         assert (self.driver.find_element_by_css_selector("i.icon_name_checkmark-green"))
 
 

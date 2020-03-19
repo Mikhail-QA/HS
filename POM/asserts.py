@@ -140,7 +140,7 @@ class AssertForTest002(AssertForTest001):
 
     @allure.step
     def price_amount_displayed_in_demo_kassa(self):
-        self.assertIn("7 202", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("7202", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_text_in_widget_my_school(self):
@@ -307,7 +307,7 @@ class AssertForTest006(AssertForTest001):
 
     @allure.step
     def price_amount_displayed_in_demo_kassa(self):
-        self.assertIn("7 202", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("7202", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_text_in_widget_my_school(self):
