@@ -17,8 +17,8 @@ class RemovingUsersInAdminPanel(StartSchoolClassMethod):
         step_user = Admin(driver)
         step_enter = FormSignIn(driver)
 
-        step_user.enter_email(user_name="school.interneturok@yandex.ru")
-        step_user.enter_password(password="34t3hEOfbTT2k")
+        step_user.enter_email(user_name="ponomarev@interneturok.ru")
+        step_user.enter_password(password="12qw34er5t")
         step_enter.click_button_login_admin()
         steps_delete.go_to_admin()
 
