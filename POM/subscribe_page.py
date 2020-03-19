@@ -106,7 +106,7 @@ class PageSubscribe(object):
 
     @allure.step
     def enter_data_card(self):
-        self.driver.find_element_by_id("cardNumber").send_keys("5555555555554477")
+        self.driver.find_element_by_id("cardNumber").send_keys("5555555555554444")
         self.driver.find_element_by_name("skr_month").send_keys("12")
         self.driver.find_element_by_name("skr_year").send_keys("20")
         self.driver.find_element_by_name("skr_cardCvc").send_keys("000")

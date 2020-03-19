@@ -29,13 +29,13 @@ class AssertForTest001(unittest.TestCase):
         self.assertEqual(u"Услуга «Персональный наставник»: выключена",
                          self.driver.find_element_by_css_selector(
                              SubscribeLocatorsStepSix.element_mentor_service_included).text)
-        self.assertEqual(u"Сумма к оплате: 800 руб.",
+        self.assertEqual(u"Сумма к оплате: 1 руб.",
                          self.driver.find_element_by_css_selector(
                              SubscribeLocatorsStepSix.element_payment_summary_price).text)
 
     @allure.step
     def price_amount_displayed_in_demo_kassa(self):
-        self.assertIn("800", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("1", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_block_select_payment_types(self):
@@ -49,11 +49,11 @@ class AssertForTest001(unittest.TestCase):
 
     @allure.step
     def price_amount_displayed_in_demo_kassa_ege_hs01(self):
-        self.assertIn("400", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("1", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def price_amount_displayed_in_demo_kassa_ege_hs02(self):
-        self.assertIn("6300", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("4", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_text_in_widget_my_school(self):
@@ -133,14 +133,14 @@ class AssertForTest002(AssertForTest001):
         self.assertEqual(u"Период действия услуги: 3 месяца",
                          self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_period_mentor).text)
 
-        self.assertEqual(u"Сумма к оплате: 13 800 руб.",
+        self.assertEqual(u"Сумма к оплате: 7 202 руб.",
                          self.driver.find_element_by_css_selector(
                              SubscribeLocatorsStepSix.element_payment_summary_price).text)
         time.sleep(3)
 
     @allure.step
     def price_amount_displayed_in_demo_kassa(self):
-        self.assertIn("13 800", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("7 202", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_text_in_widget_my_school(self):
@@ -236,13 +236,13 @@ class AssertForTest003(AssertForTest001):
         self.assertEqual(u"Период действия услуги: 9 месяцев",
                          self.driver.find_element_by_css_selector(SubscribeLocatorsStepSix.element_period_mentor).text)
 
-        self.assertEqual(u"Сумма к оплате: 57 600 руб.",
+        self.assertEqual(u"Сумма к оплате: 21 603 руб.",
                          self.driver.find_element_by_css_selector(
                              SubscribeLocatorsStepSix.element_payment_summary_price).text)
 
     @allure.step
     def price_amount_displayed_in_demo_kassa(self):
-        self.assertIn("57 600", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("21 603", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_text_in_widget_my_school(self):
@@ -302,12 +302,12 @@ class AssertForTest006(AssertForTest001):
         self.assertEqual(u"Период продления услуги: 3 месяца",
                          self.driver.find_element_by_css_selector(ProlongationLocators.period_mentor).text)
 
-        self.assertEqual(u"Сумма к оплате: 13 800 руб.",
+        self.assertEqual(u"Сумма к оплате: 7 202 руб.",
                          self.driver.find_element_by_css_selector(ProlongationLocators.payment_summary_price).text)
 
     @allure.step
     def price_amount_displayed_in_demo_kassa(self):
-        self.assertIn("13 800", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("7 202", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_text_in_widget_my_school(self):
@@ -457,13 +457,13 @@ class AssertForTest010(AssertForTest001):
         self.assertEqual(u"Услуга «Персональный наставник»: выключена", self.driver.find_element_by_css_selector(
             SubscribeLocatorsStepSix.element_mentor_service_included).text)
 
-        self.assertEqual(u"Сумма к оплате: 6 600 руб.",
+        self.assertEqual(u"Сумма к оплате: 2 руб.",
                          self.driver.find_element_by_css_selector(
                              SubscribeLocatorsStepSix.element_payment_summary_price).text)
 
     @allure.step
     def price_amount_displayed_in_demo_kassa(self):
-        self.assertIn("6600", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
+        self.assertIn("2", self.driver.find_element_by_class_name(YakassaLocators.price_amout).text)
 
     @allure.step
     def check_text_in_widget_my_school(self):
