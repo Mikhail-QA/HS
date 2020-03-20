@@ -13,8 +13,8 @@ class TokenSave:
     @staticmethod
     def get_token_user_admin():
         user_admin = {
-            "user[email]": "school.interneturok@yandex.ru",
-            "user[password]": "34t3hEOfbTT2k",
+            "user[email]": "ponomarev@interneturok.ru",
+            "user[password]": "12qw34er5t",
             "remember_me": "true"
         }
 
