@@ -2,6 +2,7 @@ from API.setting_tests import TokenSave
 
 # Dev01 Staging
 staging_dev01 = 'https://api-test-ege.interneturok.ru/api/v1/journal/admin/school_users?'
+put_mark_in_user = 'https://api-test-ege.interneturok.ru/api/v2/results/homeworks/27060198'
 
 # FilterYears
 year_2018_2019 = '&year_id=2019'
@@ -78,6 +79,7 @@ quarter_four = '&quarter=4'
 year = '&quarter=5'
 # Other
 token_admin = '&token='
+token_admin_put_mark = '?token='
 page = '&page=1'
 # The token received after login admin
 received_token = TokenSave.get_token_user_admin()
@@ -164,3 +166,12 @@ class FilterQuarter:
     quarter_three = staging_dev01 + page + quarter_three + school_all + search_user_hexcal + subject_all + token_admin + received_token + year_2018_2019
     quarter_four = staging_dev01 + page + quarter_four + school_all + search_user_hexcal + subject_all + token_admin + received_token + year_2018_2019
     year = staging_dev01 + page + year + school_all + search_user_hexcal + subject_all + token_admin + received_token + year_2018_2019
+
+
+class PutMark:
+    put_mark_4 = put_mark_in_user + token_admin_put_mark + received_token
+    data = {
+        'id': '27060198',
+        'mark': '4',
+        'status': 'checked',
+    }

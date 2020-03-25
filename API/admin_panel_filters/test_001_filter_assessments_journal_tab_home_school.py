@@ -776,3 +776,18 @@ class TestFilterUser:
             LogInfoApi.log_info(log=search_all_users)
             assert search_all_users.status_code == 200
             assert list(search_all_users.json().keys()) == parameter_array
+
+
+@allure.feature("Админка Журнал оценок")
+@allure.story("Выставление оценки за урок в журнале ученика")
+class TestPutMarkUser:
+    def test_put_mark_users(self):
+        with allure.step("В журанле оценок выставить оценку 4"):
+            url = PutMark.put_mark_4
+            put_mark_users = requests.put(url, data=PutMark.data, allow_redirects=False)
+            try:
+                put_mark_users.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                print('ERROR: %s' % e)
+            LogInfoApi.log_info(log=put_mark_users)
+            assert put_mark_users.status_code == 200
