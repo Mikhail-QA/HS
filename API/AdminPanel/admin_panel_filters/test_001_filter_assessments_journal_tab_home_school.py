@@ -1,6 +1,6 @@
 import requests
 import allure
-from API.admin_panel_filters.request_list.url_filter_assessments_journal import *
+from API.AdminPanel.admin_panel_filters.request_list.url_filter_assessments_journal import *
 from API.setting_tests import LogInfoApi
 
 parameter_array = ['per_page', 'page', 'total', 'users']
@@ -58,32 +58,32 @@ class TestFilterQuarter:
             assert list(year_quarter.json().keys()) == parameter_array
 
 
-@allure.feature("Админка Журнал оценок вкладка Домашняя школа Фильтр Год обучения")
-@allure.story("Проверяю ответ статус кода в 2018-2019 и 2017-2018 УГ")
-class TestFilterYears:
-    def test_2018_2019_years(self):
-        with allure.step("Фильтр 2018-2019 учебный год"):
-            url = FilterYears.year_2018_2019
-            years_2019 = requests.get(url, allow_redirects=False)
-            try:
-                years_2019.raise_for_status()
-            except requests.exceptions.HTTPError as e:
-                print('ERROR: %s' % e)
-            LogInfoApi.log_info(log=years_2019)
-            assert years_2019.status_code == 200
-            assert list(years_2019.json().keys()) == parameter_array
-
-    def test_2017_2018_years(self):
-        with allure.step("Фильтр 2017-2018 учебный год"):
-            url = FilterYears.year_2017_2018
-            years_2018 = requests.get(url, allow_redirects=False)
-            try:
-                years_2018.raise_for_status()
-            except requests.exceptions.HTTPError as e:
-                print('ERROR: %s' % e)
-            LogInfoApi.log_info(log=years_2018)
-            assert years_2018.status_code == 200
-            assert list(years_2018.json().keys()) == parameter_array
+# @allure.feature("Админка Журнал оценок вкладка Домашняя школа Фильтр Год обучения")
+# @allure.story("Проверяю ответ статус кода в 2018-2019 и 2017-2018 УГ")
+# class TestFilterYears:
+#     def test_2018_2019_years(self):
+#         with allure.step("Фильтр 2018-2019 учебный год"):
+#             url = FilterYears.year_2017_2018
+#             years_2019 = requests.get(url, allow_redirects=False)
+#             try:
+#                 years_2019.raise_for_status()
+#             except requests.exceptions.HTTPError as e:
+#                 print('ERROR: %s' % e)
+#             LogInfoApi.log_info(log=years_2019)
+#             assert years_2019.status_code == 200
+#             assert list(years_2019.json().keys()) == parameter_array
+#
+#     def test_2017_2018_years(self):
+#         with allure.step("Фильтр 2017-2018 учебный год"):
+#             url = FilterYears.year_2017_2018
+#             years_2018 = requests.get(url, allow_redirects=False)
+#             try:
+#                 years_2018.raise_for_status()
+#             except requests.exceptions.HTTPError as e:
+#                 print('ERROR: %s' % e)
+#             LogInfoApi.log_info(log=years_2018)
+#             assert years_2018.status_code == 200
+#             assert list(years_2018.json().keys()) == parameter_array
 
 
 @allure.feature("Админка Журнал оценок вкладка Домашняя школа Фильтр Формат обучения")
@@ -762,20 +762,21 @@ class TestFilterSubjectsInAssessmentsJournal:
             assert list(subject_tendo_studio.json().keys()) == parameter_array
 
 
-@allure.feature("Админка Журнал оценок вкладка Домашняя школа Фильтр Ученик")
-@allure.story("Проверка ответ статус кода при поиске без E-mail все остальные фильтры Все")
-class TestFilterUser:
-    def test_search_all_users(self):
-        with allure.step("В поле ученик пусто (нет e-mail) во всех остальных фильтра Все"):
-            url = FilterUser.search_all_users
-            search_all_users = requests.get(url, allow_redirects=False)
-            try:
-                search_all_users.raise_for_status()
-            except requests.exceptions.HTTPError as e:
-                print('ERROR: %s' % e)
-            LogInfoApi.log_info(log=search_all_users)
-            assert search_all_users.status_code == 200
-            assert list(search_all_users.json().keys()) == parameter_array
+# @allure.feature("Админка Журнал оценок вкладка Домашняя школа Фильтр Ученик")
+# @allure.story("Проверка ответ статус кода при поиске без E-mail все остальные фильтры Все")
+# @pytest.mark.skip(reason="Очень долгий")
+# class TestFilterUser:
+#     def test_search_all_users(self):
+#         with allure.step("В поле ученик пусто (нет e-mail) во всех остальных фильтра Все"):
+#             url = FilterUser.search_all_users
+#             search_all_users = requests.get(url, allow_redirects=False)
+#             try:
+#                 search_all_users.raise_for_status()
+#             except requests.exceptions.HTTPError as e:
+#                 print('ERROR: %s' % e)
+#             LogInfoApi.log_info(log=search_all_users)
+#             assert search_all_users.status_code == 200
+#             assert list(search_all_users.json().keys()) == parameter_array
 
 
 @allure.feature("Админка Журнал оценок")

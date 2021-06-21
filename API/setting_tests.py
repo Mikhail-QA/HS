@@ -1,5 +1,7 @@
 import logging
 import requests
+import os
+import configparser
 
 
 class LogInfoApi:
@@ -14,7 +16,7 @@ class TokenSave:
     def get_token_user_admin():
         user_admin = {
             "user[email]": "ponomarev@interneturok.ru",
-            "user[password]": "12qw34er5t",
+            "user[password]": "12qw34er5tfbTT2k",
             "remember_me": "true"
         }
 
@@ -24,3 +26,9 @@ class TokenSave:
         req1 = session_admin.post(url1, data=user_admin)
         result_tokentype = req1.json()['token']
         return result_tokentype
+
+
+class Parser:
+    config = configparser.ConfigParser()
+    file_local = os.path.join(os.path.dirname(__file__), '.', 'local.ini')
+    config.read(file_local)

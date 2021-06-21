@@ -1,26 +1,26 @@
 import requests
-from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterGradesInHomework
-from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterSubjectsInHomework
-from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterTypeDz
-from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterStatusDz
-from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterFormatAccess
-from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterWeeks
-from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterQuarter
-from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterYears
-from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestTrainingFormat
-from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterSchool
-from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import \
+from API.AdminPanel.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterGradesInHomework
+from API.AdminPanel.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterSubjectsInHomework
+from API.AdminPanel.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterTypeDz
+from API.AdminPanel.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterStatusDz
+from API.AdminPanel.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterFormatAccess
+from API.AdminPanel.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterWeeks
+from API.AdminPanel.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterQuarter
+# from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterYears
+from API.AdminPanel.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestTrainingFormat
+from API.AdminPanel.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterSchool
+from API.AdminPanel.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import \
     TestFilterSubjectsInAssessmentsJournal
-from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import \
+from API.AdminPanel.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import \
     TestFilterGradesInAssessmentsJournal
-from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterUser
-from API.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterLabels
-from API.admin_panel_filters.test_003_filter_chats import TestFilterSchoolsChats
-from API.admin_panel_filters.test_003_filter_chats import TestFilterGradesInChats
-from API.admin_panel_filters.test_003_filter_chats import TestFilterSubjectsChats
-from API.admin_panel_filters.test_003_filter_chats import TestFilterAccessChats
-from API.admin_panel_filters.test_003_filter_chats import TestFilterLabelsChats
-from API.admin_panel_filters.test_003_filter_chats import TestFilterUserChats
+# from API.admin_panel_filters.test_001_filter_assessments_journal_tab_home_school import TestFilterUser
+from API.AdminPanel.admin_panel_filters.test_002_filter_homework_tab_home_school import TestFilterLabels
+from API.AdminPanel.admin_panel_filters.test_003_filter_chats import TestFilterSchoolsChats
+from API.AdminPanel.admin_panel_filters.test_003_filter_chats import TestFilterGradesInChats
+from API.AdminPanel.admin_panel_filters.test_003_filter_chats import TestFilterSubjectsChats
+from API.AdminPanel.admin_panel_filters.test_003_filter_chats import TestFilterAccessChats
+from API.AdminPanel.admin_panel_filters.test_003_filter_chats import TestFilterLabelsChats
+from API.AdminPanel.admin_panel_filters.test_003_filter_chats import TestFilterUserChats
 
 
 def suite():
@@ -32,12 +32,12 @@ def suite():
     suite_test.addTest(requests.makeSuite(TestFilterStatusDz))
     suite_test.addTest(requests.makeSuite(TestFilterFormatAccess))
     suite_test.addTest(requests.makeSuite(TestFilterQuarter))
-    suite_test.addTest(requests.makeSuite(TestFilterYears))
+    # suite_test.addTest(requests.makeSuite(TestFilterYears))
     suite_test.addTest(requests.makeSuite(TestTrainingFormat))
     suite_test.addTest(requests.makeSuite(TestFilterSchool))
     suite_test.addTest(requests.makeSuite(TestFilterSubjectsInAssessmentsJournal))
     suite_test.addTest(requests.makeSuite(TestFilterGradesInAssessmentsJournal))
-    suite_test.addTest(requests.makeSuite(TestFilterUser))
+    # suite_test.addTest(requests.makeSuite(TestFilterUser))
     suite_test.addTest(requests.makeSuite(TestFilterLabels))
     suite_test.addTest(requests.makeSuite(TestFilterWeeks))
     suite_test.addTest(requests.makeSuite(TestFilterSchoolsChats))

@@ -7,3 +7,4 @@ pytest-rerunfailures==7.0
 webdriver-manager==1.7
 pytest-fixture-config==1.4.0
 logging==0.4.9.6
+psycopg2==2.8.6
